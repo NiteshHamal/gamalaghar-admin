@@ -33,14 +33,14 @@
 
                <li class="nav-flag-select">
                    <div class="dropdown-custom">
-                       <a href="javascript:;" class="nav-item-toggle">
+                       {{-- <a href="javascript:;" class="nav-item-toggle">
                            @if ($lang->lang == 'en')
                                <img src="{{ url('assets/img/flag.png') }}" alt class="rounded-circle">
                            @else
                             <img src="{{ url('assets/img/nepali-flag.png') }}" alt class="rounded-circle">
                            @endif
 
-                       </a>
+                       </a> --}}
                        <div class="dropdown-parent-wrapper">
                            <div class="dropdown-wrapper dropdown-wrapper--small">
 
