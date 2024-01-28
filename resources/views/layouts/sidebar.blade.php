@@ -5,7 +5,7 @@
                  <li class="{{request()->is('admin/dashboard')?'active':""}}">
                      <a href="{{ url('admin/dashboard') }}" class="{{request()->is('admin/dashboard')?'active':""}}">
                          <span class="nav-icon uil uil-create-dashboard"></span>
-                         <span class="menu-text">@lang('translation.dashboard_btn')</span>
+                         <span class="menu-text">Dashboard</span>
 
                      </a>
 
@@ -69,14 +69,14 @@
                 <li class="{{ request()->is('admin/contacts') ? 'active' : '' }}">
                      <a href="{{ url('admin/contacts') }}">
                          <span class="nav-icon uil uil-at"></span>
-                         <span class="menu-text">@lang('translation.contacts_btn')</span>
+                         <span class="menu-text">Produt</span>
                      </a>
                  </li>
 
                  <li class>
                      <a href="sign-up.html">
                          <span class="nav-icon uil uil-sign-out-alt"></span>
-                         <span class="menu-text">@lang('translation.sign_out_btn')</span>
+                         <span class="menu-text">Sign Out</span>
                      </a>
                  </li>
              </ul>

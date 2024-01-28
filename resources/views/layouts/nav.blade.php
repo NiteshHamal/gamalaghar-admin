@@ -2,8 +2,8 @@
        <div class="navbar-left">
            <div class="logo-area">
                <a class="navbar-brand" href="{{ url('admin/dashboard') }}">
-                   <img class="dark" src="{{ url('assets/img/infolocket-high-resolution-logo-transparent.png') }}" alt>
-                   <img class="light" src="{{ url('assets/img/infolocket-high-resolution-logo-transparent.png') }}" alt>
+                   <img class="dark" src="{{ url('assets/img/Logo.png') }}" alt>
+                   <img class="light" src="{{ url('assets/img/Logo.png') }}" alt>
                </a>
                <a href="{{ url('admin/dashboard') }}" class="sidebar-toggle">
                    <img class="svg" src="img/svg/align-center-alt.svg" alt="img"></a>
@@ -71,19 +71,19 @@
                                    </div>
                                    <div>
                                        <h6>{{ Auth()->user()->name }}</h6>
-                                       <span>@lang('translation.user_status')</span>
+                                       <span>Admin</span>
                                    </div>
                                </div>
                                <div class="nav-author__options">
                                    <ul>
                                        <li>
                                            <a href="{{ url('admin/profile') }}">
-                                               <i class="uil uil-user"></i> @lang('translation.profile')</a>
+                                               <i class="uil uil-user"></i>Profile</a>
                                        </li>
                                        <li>
                                            <a href>
                                                <i class="uil uil-setting"></i>
-                                               @lang('translation.setting_btn')</a>
+                                               Settings</a>
                                        </li>
                                        {{-- <li>
                                            <a href>
@@ -95,11 +95,11 @@
                                        </li> --}}
                                        <li>
                                            <a href="{{ url('admin/support') }}">
-                                               <i class="uil uil-bell"></i> @lang('translation.help_btn')</a>
+                                               <i class="uil uil-bell"></i>Support</a>
                                        </li>
                                    </ul>
                                    <a href class="nav-author__signout">
-                                       <i class="uil uil-sign-out-alt"></i> @lang('translation.sign_out_btn')</a>
+                                       <i class="uil uil-sign-out-alt"></i> Sign Out</a>
                                </div>
                            </div>
 
