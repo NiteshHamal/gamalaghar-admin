@@ -21,13 +21,20 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('forgot-password',[ForgotPasswordController::class,'index']);
+Route::get('forgot-password', [ForgotPasswordController::class, 'index']);
 
-Route::post('login',[LoginController::class,'login']);
+Route::post('login', [LoginController::class, 'login']);
 
-Route::group([],function(){
+Route::group([], function () {
 
-    Route::get('admin/dashboard',[DashboardController::class, 'dashboard']);
-    Route::get('admin/product',[ProductController::class,'index']);
+    Route::get('admin/dashboard', [DashboardController::class, 'dashboard']);
+    Route::get('admin/product', [ProductController::class, 'index']);
+});
 
+Route::get('admin/profile', function () {
+    return view('admin.profile');
+});
+
+Route::get('admin/profile/setting', function () {
+    return view('admin.profile_setting');
 });
