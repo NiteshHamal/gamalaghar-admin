@@ -1,15 +1,4 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gamala Ghar</title>
-    @include('layouts.header')
-</head>
-
-<body class="layout-light side-menu">
+@include('layouts.header')
     <div class="mobile-search">
         <form action="/" class="search-form">
             <img src="img/svg/search.svg" alt="search" class="svg">
@@ -192,8 +181,8 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        
+
+
                         <div class="col-xxl-6 col-lg-6 mb-25">
                             <div class="card border-0 px-25">
                                 <div class="card-header px-0 border-0">

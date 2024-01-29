@@ -1,3 +1,5 @@
+
+
  <div class="sidebar-wrapper">
      <div class="sidebar sidebar-collapse" id="sidebar">
          <div class="sidebar__menu-group">
@@ -67,9 +69,9 @@
                  </li> --}}
 
                 <li class="{{ request()->is('admin/contacts') ? 'active' : '' }}">
-                     <a href="{{ url('admin/contacts') }}">
+                     <a href="{{ url('admin/product') }}">
                          <span class="nav-icon uil uil-at"></span>
-                         <span class="menu-text">Produt</span>
+                         <span class="menu-text">Product</span>
                      </a>
                  </li>
 
