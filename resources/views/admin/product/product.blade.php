@@ -11,7 +11,6 @@
 </header>
 <main class="main-content">
     @include('layouts.sidebar')
-
     <div class="contents">
         <div class="container-fluid">
             <div class="row">
@@ -36,34 +35,27 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-
                     <div class="product-add global-shadow px-sm-30 py-sm-50 px-0 py-20 bg-white radius-xl w-100 mb-40">
                         <div class="row justify-content-center">
                             <div class="col-xxl-7 col-lg-10">
                                 <div class="mx-sm-30 mx-20 ">
-
                                     <div class="card add-product p-sm-30 p-20 mb-30">
                                         <div class="card-body p-0">
                                             <div class="card-header">
                                                 <h6 class="fw-500">About Product</h6>
                                             </div>
-
                                             <div class="add-product__body px-sm-40 px-20">
-
                                                 <form>
-
                                                     <div class="form-group">
                                                         <label for="name1">product name</label>
                                                         <input type="text" class="form-control" id="name1"
                                                             placeholder="red chair">
                                                     </div>
-
                                                     <div class="form-group">
                                                         <label for="product_code">product code</label>
                                                         <input type="number" class="form-control" id="product_code"
                                                             placeholder="Product Code">
                                                     </div>
-
                                                     <div class="form-group">
                                                         <div class="countryOption">
                                                             <label for="countryOption">
@@ -79,7 +71,6 @@
                                                             </select>
                                                         </div>
                                                     </div>
-
                                                     <div class="form-group">
                                                         <div class="countryOption">
                                                             <label for="countryOption">
@@ -95,7 +86,6 @@
                                                             </select>
                                                         </div>
                                                     </div>
-
                                                     <div class="form-group">
                                                         <div class="countryOption">
                                                             <label for="countryOption">
@@ -110,7 +100,6 @@
                                                             </select>
                                                         </div>
                                                     </div>
-
                                                     <div class="form-group">
                                                         <div class="countryOption">
                                                             <label for="countryOption">
@@ -124,8 +113,6 @@
                                                             </select>
                                                         </div>
                                                     </div>
-
-
                                                     <div class="form-group quantity-appearance">
                                                         <label>price</label>
                                                         <div class="input-group">
@@ -142,14 +129,11 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
                                                     <div class="form-group">
                                                         <label for="stock">No. of Stock</label>
                                                         <input type="number" class="form-control" id="stock"
                                                             placeholder="Number of Stocks">
                                                     </div>
-
-
                                                     <div class="form-group quantity-appearance">
                                                         <label>Discount</label>
                                                         <div class="input-group">
@@ -165,7 +149,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
                                                     <div class="form-group status-radio add-product-status-radio mb-20">
                                                         <label class="mb-15">status</label>
                                                         <div class="d-flex">
@@ -189,39 +172,31 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
                                                     <div class="form-group">
                                                         <label for="exampleFormControlTextarea1">Product
                                                             Description</label>
                                                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                                                             placeholder="loram ipsum dolor sit amit"></textarea>
                                                     </div>
-
                                                     <div class="form-group">
                                                         <label for="name8">Meta Title</label>
                                                         <input type="text" class="form-control" id="name8"
                                                             placeholder="Meta title">
                                                     </div>
-
                                                     <div class="form-group mb-0">
                                                         <label for="name9">Meta Keyword</label>
                                                         <input type="text" class="form-control" id="name9"
                                                             placeholder="Meta keyword">
                                                     </div>
                                                 </form>
-
                                             </div>
-
                                         </div>
                                     </div>
-
-
                                     <div class="card add-product p-sm-30 p-20 ">
                                         <div class="card-body p-0">
                                             <div class="card-header">
                                                 <h6 class="fw-500">Product image</h6>
                                             </div>
-
                                             <div class="add-product__body-img px-sm-40 px-20">
                                                 <label for="upload" class="file-upload__label">
                                                     <span class="upload-product-img px-10 d-block">
@@ -256,11 +231,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
-
-
                                     <div
                                         class="button-group add-product-btn d-flex justify-content-sm-end justify-content-center mt-40">
                                         <button
@@ -270,17 +242,12 @@
                                             product
                                         </button>
                                     </div>
-
                                 </div>
                             </div>
-
                         </div>
                     </div>
-
                 </div>
-
             </div>
         </div>
     </div>
-
     @include('layouts.footer')

@@ -11,7 +11,6 @@
 </header>
 <main class="main-content">
     @include('layouts.sidebar')
-
     <div class="contents">
         <div class="container-fluid">
             <div class="row">
@@ -36,21 +35,17 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-
                     <div class="product-add global-shadow px-sm-30 py-sm-50 px-0 py-20 bg-white radius-xl w-100 mb-40">
                         <div class="row justify-content-center">
                             <div class="col-xxl-7 col-lg-10">
                                 <div class="mx-sm-30 mx-20 ">
-
                                     <div class="card add-product p-sm-30 p-20 mb-30">
                                         <div class="card-body p-0">
                                             <div class="card-header">
                                                 <h6 class="fw-500">Category</h6>
                                             </div>
-
                                             <div class="add-product__body px-sm-40 px-20">
-
-                                                <form action="{{ url('admin/add_category') }}" method="POST">   
+                                                <form action="{{ url('admin/add_category') }}" method="POST">
                                                     @csrf
                                                     <div class="form-group">
                                                         <label for="name1">categoy name</label>
@@ -60,7 +55,6 @@
                                                             <p class="text-danger">{{ $message }}</p>
                                                             @enderror
                                                     </div>
-
                                                     <div
                                                         class="button-group add-product-btn d-flex justify-content-sm-end justify-content-center mt-40">
                                                         <button
@@ -73,9 +67,7 @@
                                                         </button>
                                                     </div>
                                                 </form>
-
                                             </div>
-
                                         </div>
                                     </div>
                                     <div class="card add-product p-sm-30 p-20 mb-30">
@@ -83,11 +75,8 @@
                                             <div class="card-header">
                                                 <h6 class="fw-500">Sub-Category</h6>
                                             </div>
-
                                             <div class="add-product__body px-sm-40 px-20">
-
                                                 <form>
-
                                                     <div class="form-group">
                                                         <label for="name1">sub-categoy name</label>
                                                         <input type="text" class="form-control" id="name1"
@@ -108,7 +97,6 @@
                                                             </select>
                                                         </div>
                                                     </div>
-
                                                     <div
                                                         class="button-group add-product-btn d-flex justify-content-sm-end justify-content-center mt-40">
                                                         <button
@@ -121,22 +109,15 @@
                                                         </button>
                                                     </div>
                                                 </form>
-
                                             </div>
-
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
-
                         </div>
                     </div>
-
                 </div>
-
             </div>
         </div>
     </div>
-
     @include('layouts.footer')
