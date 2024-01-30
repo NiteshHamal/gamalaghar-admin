@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\LoginController;
@@ -29,6 +30,8 @@ Route::group([], function () {
 
     Route::get('admin/dashboard', [DashboardController::class, 'dashboard']);
     Route::get('admin/product', [ProductController::class, 'index']);
+    Route::get('admin/add_category',[CategoryController::class, 'index']);
+    Route::post('admin/add_category',[CategoryController::class,'store']);
 });
 
 Route::get('admin/profile', function () {

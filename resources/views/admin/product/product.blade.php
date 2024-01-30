@@ -64,8 +64,6 @@
                                                             placeholder="Product Code">
                                                     </div>
 
-
-
                                                     <div class="form-group">
                                                         <div class="countryOption">
                                                             <label for="countryOption">
@@ -74,15 +72,59 @@
                                                             <select
                                                                 class="js-example-basic-single js-states form-control"
                                                                 id="countryOption">
-                                                                <option value="JAN">Indian Pots</option>
-                                                                <option value="FBR">Chinese Pots</option>
-                                                                <option value="FBR">Indoor Plants</option>
-                                                                <option value="FBR">Outdoor Plants</option>
+                                                                <option value="JAN"> Pots</option>
+                                                                <option value="FBR">Plants</option>
                                                                 <option value="FBR">Soil & Fertilizers</option>
                                                                 <option value="FBR">Garden Decor</option>
                                                             </select>
                                                         </div>
                                                     </div>
+
+                                                    <div class="form-group">
+                                                        <div class="countryOption">
+                                                            <label for="countryOption">
+                                                                sub-category
+                                                            </label>
+                                                            <select
+                                                                class="js-example-basic-single js-states form-control"
+                                                                id="countryOption">
+                                                                <option value="JAN">India Pots</option>
+                                                                <option value="FBR">Chinsese Pots</option>
+                                                                <option value="FBR">Indoor Plants</option>
+                                                                <option value="FBR">Outdoor plants</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="countryOption">
+                                                            <label for="countryOption">
+                                                                property
+                                                            </label>
+                                                            <select
+                                                                class="js-example-basic-single js-states form-control"
+                                                                id="countryOption">
+                                                                <option value="JAN">Size</option>
+                                                                <option value="FBR">Material</option>
+                                                                <option value="FBR">Acessories</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="countryOption">
+                                                            <label for="countryOption">
+                                                                sub-property
+                                                            </label>
+                                                            <select
+                                                                class="js-example-basic-single js-states form-control"
+                                                                id="countryOption">
+                                                                <option value="JAN">Ceramic</option>
+                                                                <option value="FBR">Plastic</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
 
                                                     <div class="form-group quantity-appearance">
                                                         <label>price</label>

@@ -1,19 +1,17 @@
+<div class="sidebar-wrapper">
+    <div class="sidebar sidebar-collapse" id="sidebar">
+        <div class="sidebar__menu-group">
+            <ul class="sidebar_nav">
+                <li class="{{ request()->is('admin/dashboard') ? 'active' : '' }}">
+                    <a href="{{ url('admin/dashboard') }}" class="{{ request()->is('admin/dashboard') ? 'active' : '' }}">
+                        <span class="nav-icon uil uil-create-dashboard"></span>
+                        <span class="menu-text">Dashboard</span>
 
+                    </a>
 
- <div class="sidebar-wrapper">
-     <div class="sidebar sidebar-collapse" id="sidebar">
-         <div class="sidebar__menu-group">
-             <ul class="sidebar_nav">
-                 <li class="{{request()->is('admin/dashboard')?'active':""}}">
-                     <a href="{{ url('admin/dashboard') }}" class="{{request()->is('admin/dashboard')?'active':""}}">
-                         <span class="nav-icon uil uil-create-dashboard"></span>
-                         <span class="menu-text">Dashboard</span>
+                </li>
 
-                     </a>
-
-                 </li>
-
-                 {{-- <li>
+                {{-- <li>
                      <a href="changelog.html" class>
                          <span class="nav-icon uil uil-arrow-growth"></span>
                          <span class="menu-text">Changelog</span>
@@ -68,20 +66,40 @@
                      </ul>
                  </li> --}}
 
-                <li class="{{ request()->is('admin/contacts') ? 'active' : '' }}">
-                     <a href="{{ url('admin/product') }}">
-                         <span class="nav-icon uil uil-at"></span>
-                         <span class="menu-text">Product</span>
-                     </a>
-                 </li>
+                {{-- <li class="{{ request()->is('admin/contacts') ? 'active' : '' }}">
+                    <a href="{{ url('admin/product') }}">
+                        <span class="nav-icon uil uil-at"></span>
+                        <span class="menu-text">Product</span>
+                    </a>
+                </li> --}}
 
-                 <li class>
-                     <a href="sign-up.html">
-                         <span class="nav-icon uil uil-sign-out-alt"></span>
-                         <span class="menu-text">Sign Out</span>
-                     </a>
-                 </li>
-             </ul>
-         </div>
-     </div>
- </div>
+                <li class="has-child open">
+                    <a href="#" class=" active">
+                        <span class="nav-icon uil uil-at"></span>
+                        <span class="menu-text">Product</span>
+                        <span class="toggle-icon"></span>
+                    </a>
+                    <ul>
+                        <li class="{{ request()->is('admin/product') ? 'active' : '' }}">
+                            <a href="{{ url('admin/product') }}">Add Product</a>
+                        </li>
+                        <li class="{{ request()->is('admin/add_category')? 'active' : '' }}">
+                            <a href="{{ url('admin/add_category') }}">Add Category</a>
+                        </li>
+                        <li class>
+                            <a href="contact-3.html">Contact
+                                Create</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class>
+                    <a href="sign-up.html">
+                        <span class="nav-icon uil uil-sign-out-alt"></span>
+                        <span class="menu-text">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

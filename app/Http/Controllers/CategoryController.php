@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Product\AddCategoryRequest;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class ProductController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.product.product');
+        return view('admin.product.add_category');
     }
 
     /**
@@ -25,9 +28,21 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AddCategoryRequest $request)
     {
-        //
+        try {
+            $category=DB::transaction(function() use($request){
+                $category=Category::create([
+                    'category'=>$request->category,
+                ]);
+                return $category;
+            });
+            if ($category) {
+                return back()->with('success', 'Category Created Successfully!');
+            }
+        } catch (\Exception $e) {
+            return back()->with('error', $e->getMessage());
+        }
     }
 
     /**
