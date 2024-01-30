@@ -50,7 +50,8 @@ class CategoryController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $category= Category::find();
+        return view(compact('category'));
     }
 
     /**
@@ -66,7 +67,23 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $category=Category::find($id);
+        if (is_null($category)) {
+            return back()->with('error','Category not found!');
+        }
+        try {
+            $category=DB::transaction(function() use($request, $category){
+                $category->update([
+                    'category'=>$request->category,
+                ]);
+                return $category;
+            });
+            if ($category) {
+                return back()->with('success', 'Category Updated Successfully!');
+            }
+        } catch (\Exception $e) {
+            return back()->with('error', $e->getMessage());
+        }
     }
 
     /**
@@ -74,6 +91,20 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $category = Category::find($id);
+        if(is_null($category)){
+            return back()->with('error', 'Category not found!');
+        }
+        try {
+            $category=DB::transaction(function() use($category){
+                $category->delete();
+                return $category;
+            });
+            if ($category) {
+                return back()->with('success','Category Deleated Successfully!');
+            }
+        } catch (\Exception $e) {
+            return back()->with('error', $e->getMessage());
+        }
     }
 }
