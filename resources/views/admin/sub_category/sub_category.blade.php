@@ -1,7 +1,7 @@
 @include('layouts.header')
 <div class="mobile-search">
     <form action="/" class="search-form">
-        <img src="{{url('img/svg/search.svg')}}" alt="search" class="svg">
+        <img src="{{ url('img/svg/search.svg') }}" alt="search" class="svg">
         <input class="form-control me-sm-2 box-shadow-none" type="search" placeholder="Search..." aria-label="Search">
     </form>
 </div>
@@ -23,9 +23,9 @@
                             <div class="breadcrumb-action justify-content-center flex-wrap">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}"><i
-                                                    class="uil uil-estate"></i>Dashboard</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Main Category</li>
+                                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}" class="text-primary"><i
+                                                    class="uil uil-estate text-primary"></i>Dashboard</a></li>
+                                        <li class="breadcrumb-item active text-primary" aria-current="page">Main Category</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -67,7 +67,8 @@
                                 </div>
                             </form>
                         </div>
-                       {{-- category table start --}}
+
+                        {{-- category table start --}}
                         <div class="row">
                             <div class="col-lg-12">
 
@@ -76,18 +77,15 @@
                                         <thead class="bg-primary text-light">
                                             <tr>
                                                 <th>ID</th>
+                                                <th>Sub Category</th>
                                                 <th>Main Category</th>
                                                 <th>Action</th>
 
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @forelse ($mainCategory as $data)
+                                            @forelse ($subCategory as $data)
                                                 <tr>
-                                                    <td>{{$data->id}}</td>
-                                                    <td>{{$data->main_category}}</td>
-                                                    <td><a class="btn btn-primary"><i class='bx bx-edit-alt'></i></a>
-                                                    <a class="btn btn-danger"><i class='bx bx-trash'></i></a></td>
 
                                                 </tr>
                                             @empty

@@ -29915,7 +29915,7 @@ body:after {
     --color-warnings: #ffbb00;
     --color-dangers: #ff0f0f;
     --color-purple: #a722f6;
-    --bg-primary: #8231d3;
+    --bg-primary: #691C91;
     --bg-secondary: #5840ff;
     --bg-success: #01b81a;
     --bg-info: #00aaff;
@@ -29939,7 +29939,7 @@ body:after {
     --color-dark-rgba: 10, 10, 10;
     --color-primary-rgba-shadow: rgba(var(--color-primary-rgba), 0.2);
     --color-white: #fff;
-    --color-light: #747474;
+    --color-light: white;
     --color-lighten: #a0a0a0;
     --color-lighter: #f8f9fb;
     --color-lighten-x: #5d658c;

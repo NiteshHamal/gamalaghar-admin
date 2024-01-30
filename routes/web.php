@@ -6,6 +6,7 @@ use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MainCategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SubCategoryController;
 use App\Models\MainCategory;
 use Illuminate\Support\Facades\Route;
 
@@ -34,7 +35,7 @@ Route::group(['middleware'=>'auth'], function () {
     Route::get('admin/products', [ProductController::class, 'index']);
     Route::get('admin/category/main',[MainCategoryController::class, 'index']);
     Route::post('admin/category/main', [MainCategoryController::class, 'store']);
-    Route::post('admin/main-category/add',[MainCategoryController::class,'store']);
+    Route::get('admin/category/sub-category',[SubCategoryController::class,'index']);
 
 
 

@@ -24,8 +24,8 @@
                          <li class="{{ request()->is('admin/category/main') ? 'active' : '' }}">
                              <a href="{{url('admin/category/main')}}">Main Category</a>
                          </li>
-                         <li class>
-                             <a href="read-email.html">Sub Category</a>
+                         <li class="{{ request()->is('admin/category/sub-category') ? 'active' : '' }}">
+                             <a href="{{url('admin/category/sub-category')}}">Sub Category</a>
                          </li>
                      </ul>
                  </li>

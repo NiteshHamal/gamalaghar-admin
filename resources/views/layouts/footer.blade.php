@@ -4,11 +4,11 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="footer-copyright">
-                        <p><span>© <?php echo Date('Y'); ?></span><a href="#">@lang('translation.tech_revo')</a>
+                        <p><span>© <?php echo Date('Y'); ?></span><a href="#">Gamala Ghar</a>
                         </p>
                     </div>
                 </div>
-                <div class="col-md-6">
+                {{-- <div class="col-md-6">
                     <div class="footer-menu text-end">
                         <ul>
                             <li>
@@ -26,7 +26,7 @@
                         </ul>
                     </div>
 
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
