@@ -2,19 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Product\AddCategoryRequest;
-use App\Models\Category;
+use App\Http\Requests\MainCategory\MainCategoryCreateRequest;
+use App\Models\MainCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class CategoryController extends Controller
+class MainCategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        return view('product.add_category');
+       return view('admin.main_category.main_category');
     }
 
     /**
@@ -28,17 +25,17 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(AddCategoryRequest $request)
+    public function store(MainCategoryCreateRequest $request)
     {
         try {
-            $category=DB::transaction(function() use($request){
-                $category=Category::create([
-                    'category'=>$request->category,
+            $category = DB::transaction(function () use ($request) {
+                $category = MainCategory::create([
+                    'main_category' => $request->main_category,
                 ]);
                 return $category;
             });
             if ($category) {
-                return back()->with('success', 'Category Created Successfully!');
+                return back()->with('success', 'Main Category Created Successfully!');
             }
         } catch (\Exception $e) {
             return back()->with('error', $e->getMessage());
@@ -50,7 +47,7 @@ class CategoryController extends Controller
      */
     public function show(string $id)
     {
-        $category= Category::find();
+        $category = MainCategory::find();
         return view(compact('category'));
     }
 
@@ -67,14 +64,14 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $category=Category::find($id);
+        $category = MainCategory::find($id);
         if (is_null($category)) {
-            return back()->with('error','Category not found!');
+            return back()->with('error', 'Category not found!');
         }
         try {
-            $category=DB::transaction(function() use($request, $category){
+            $category = DB::transaction(function () use ($request, $category) {
                 $category->update([
-                    'category'=>$request->category,
+                    'category' => $request->category,
                 ]);
                 return $category;
             });
@@ -91,17 +88,17 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        $category = Category::find($id);
-        if(is_null($category)){
+        $category = MainCategory::find($id);
+        if (is_null($category)) {
             return back()->with('error', 'Category not found!');
         }
         try {
-            $category=DB::transaction(function() use($category){
+            $category = DB::transaction(function () use ($category) {
                 $category->delete();
                 return $category;
             });
             if ($category) {
-                return back()->with('success','Category Deleated Successfully!');
+                return back()->with('success', 'Category Deleated Successfully!');
             }
         } catch (\Exception $e) {
             return back()->with('error', $e->getMessage());

@@ -4,7 +4,9 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MainCategoryController;
 use App\Http\Controllers\ProductController;
+use App\Models\MainCategory;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,20 +20,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('login');
-});
+Route::get('/',[LoginController::class,'index'])->name('login');
 
 Route::get('forgot-password', [ForgotPasswordController::class, 'index']);
 
 Route::post('login', [LoginController::class, 'login']);
 
-Route::group([], function () {
+
+
+Route::group(['middleware'=>'auth'], function () {
 
     Route::get('admin/dashboard', [DashboardController::class, 'dashboard']);
-    Route::get('admin/product', [ProductController::class, 'index']);
-    Route::get('admin/add_category',[CategoryController::class, 'index']);
-    Route::post('admin/add_category',[CategoryController::class,'store']);
+    Route::get('admin/products', [ProductController::class, 'index']);
+    Route::get('admin/category/main',[MainCategoryController::class, 'index']);
+    Route::post('admin/main-category/add',[MainCategoryController::class,'store']);
+
+
+
+    
 });
 
 Route::get('admin/profile', function () {

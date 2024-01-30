@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
+
+    public function index(){
+        return view('login');
+    }
     public function logout(){
         session()->flush();
         return redirect('/')->with('success','You have logout successfully');

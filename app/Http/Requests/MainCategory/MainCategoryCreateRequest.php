@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Product;
+namespace App\Http\Requests\MainCategory;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AddCategoryRequest extends FormRequest
+class MainCategoryCreateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,7 +22,7 @@ class AddCategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'category'=>['required'],
+            'main_category'=>['required']
         ];
     }
 }
