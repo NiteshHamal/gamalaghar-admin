@@ -51,9 +51,9 @@
                                                         <label for="name1">categoy name</label>
                                                         <input type="text" class="form-control" id="name1"
                                                             placeholder="red chair" name="category">
-                                                            @error('category')
+                                                        @error('category')
                                                             <p class="text-danger">{{ $message }}</p>
-                                                            @enderror
+                                                        @enderror
                                                     </div>
                                                     <div
                                                         class="button-group add-product-btn d-flex justify-content-sm-end justify-content-center mt-40">
@@ -68,8 +68,78 @@
                                                     </div>
                                                 </form>
                                             </div>
+                                            <div class="card-header">
+                                                <h6 class="fw-500">Category Table</h6>
+                                            </div>
+                                            {{-- category table start --}}
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div
+                                                        class="userDatatable global-shadow border-light-0 p-30 bg-white radius-xl w-100 mb-30">
+                                                        <div class="table-responsive">
+                                                            <table class="table mb-0 table-borderless">
+                                                                <thead>
+                                                                    <tr class="userDatatable-header">
+                                                                        <th>
+                                                                            <div class="d-flex align-items-center">
+                                                                                <div class="custom-checkbox  check-all">
+                                                                                    <label for="check-44">
+                                                                                        <span
+                                                                                            class="checkbox-text userDatatable-title">category</span>
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <span
+                                                                                class="userDatatable-title float-end">Edit</span>
+                                                                        </th>
+                                                                        <th>
+                                                                            <span
+                                                                                class="userDatatable-title float-end">delete</span>
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="d-flex">
+
+                                                                                <div class="userDatatable-inline-title">
+                                                                                    <a href="#"
+                                                                                        class="text-dark fw-500">
+                                                                                        <h6>Kellie Marquot</h6>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div
+                                                                                class="orderDatatable_actions mb-0 d-flex flex-wrap">
+                                                                                <a href="#" class="view">
+                                                                                    <i class="uil uil-edit"></i>
+                                                                                </a>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div
+                                                                                class="orderDatatable_actions mb-0 d-flex flex-wrap">
+                                                                                <a href="#" class="remove">
+                                                                                    <i class="uil uil-trash-alt"></i>
+                                                                                </a>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {{-- category table ends --}}
                                         </div>
                                     </div>
+
                                     <div class="card add-product p-sm-30 p-20 mb-30">
                                         <div class="card-body p-0">
                                             <div class="card-header">
