@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.product.add_category');
+        return view('product.add_category');
     }
 
     /**

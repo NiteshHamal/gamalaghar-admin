@@ -74,7 +74,7 @@
                 </li> --}}
 
                 <li class="has-child open">
-                    <a href="#" class=" active">
+                    <a href="#" >
                         <span class="nav-icon uil uil-at"></span>
                         <span class="menu-text">Product</span>
                         <span class="toggle-icon"></span>
@@ -83,12 +83,24 @@
                         <li class="{{ request()->is('admin/product') ? 'active' : '' }}">
                             <a href="{{ url('admin/product') }}">Add Product</a>
                         </li>
-                        <li class="{{ request()->is('admin/add_category')? 'active' : '' }}">
+                        <li class="">
+                            <a href="">Show all Products</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="has-child open">
+                    <a href="#">
+                        <span class="nav-icon uil uil-at"></span>
+                        <span class="menu-text">Category</span>
+                        <span class="toggle-icon"></span>
+                    </a>
+                    <ul>
+                        <li class="{{ request()->is('admin/add_category') ? 'active' : '' }}">
                             <a href="{{ url('admin/add_category') }}">Add Category</a>
                         </li>
-                        <li class>
-                            <a href="contact-3.html">Contact
-                                Create</a>
+                        <li class="">
+                            <a href="">Show Category</a>
                         </li>
                     </ul>
                 </li>
