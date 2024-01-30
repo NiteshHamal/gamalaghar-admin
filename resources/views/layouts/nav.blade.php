@@ -6,7 +6,7 @@
                    <img class="light" src="{{ url('assets/img/Logo.png') }}" alt>
                </a>
                <a href="{{ url('admin/dashboard') }}" class="sidebar-toggle">
-                   <img class="svg" src="img/svg/align-center-alt.svg" alt="img"></a>
+                   <img class="svg" src="{{url('admin/img/svg/align-center-alt.svg')}}" alt="img"></a>
            </div>
 
 

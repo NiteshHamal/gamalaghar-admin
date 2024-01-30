@@ -8,7 +8,7 @@ use Spatie\Sluggable\SlugOptions;
 use Illuminate\Database\Eloquent\Model;
 
 
-class MainCategory extends Model
+class MainCategory extends BaseModel
 {
     use HasFactory;
     use HasSlug;

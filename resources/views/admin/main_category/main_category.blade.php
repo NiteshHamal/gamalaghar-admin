@@ -1,7 +1,7 @@
 @include('layouts.header')
 <div class="mobile-search">
     <form action="/" class="search-form">
-        <img src="img/svg/search.svg" alt="search" class="svg">
+        <img src="{{url('img/svg/search.svg')}}" alt="search" class="svg">
         <input class="form-control me-sm-2 box-shadow-none" type="search" placeholder="Search..." aria-label="Search">
     </form>
 </div>
@@ -23,7 +23,7 @@
                             <div class="breadcrumb-action justify-content-center flex-wrap">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="{{url('admin/dashboard')}}"><i
+                                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}"><i
                                                     class="uil uil-estate"></i>Dashboard</a></li>
                                         <li class="breadcrumb-item active" aria-current="page">Main Category</li>
                                     </ol>
@@ -46,13 +46,13 @@
                             <h6 class="fw-500">Main Category</h6>
                         </div>
                         <div class="add-product__body px-sm-40 px-20">
-                            <form action="{{ url('admin/add_category') }}" method="POST">
+                            <form action="{{ url('admin/category/main') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <label for="name1">categoy name</label>
-                                    <input type="text" class="form-control" id="name1" placeholder="red chair"
-                                        name="category">
-                                    @error('category')
+                                    <input type="text" class="form-control" id="name1" placeholder="Pot"
+                                        name="main_category">
+                                    @error('main_category')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
@@ -98,32 +98,36 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex">
+                                                @forelse ($mainCategory as $data)
+                                                    <tr>
+                                                        <td>
+                                                            <div class="d-flex">
 
-                                                            <div class="userDatatable-inline-title">
-                                                                <a href="#" class="text-dark fw-500">
-                                                                    <h6>Kellie Marquot</h6>
+                                                                <div class="userDatatable-inline-title">
+                                                                    <a href="#" class="text-dark fw-500">
+                                                                        <h6>{{$data->main_category}}</h6>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="orderDatatable_actions mb-0 d-flex flex-wrap">
+                                                                <a href="" class="view">
+                                                                    <i class="uil uil-edit"></i>
                                                                 </a>
                                                             </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="orderDatatable_actions mb-0 d-flex flex-wrap">
-                                                            <a href="#" class="view">
-                                                                <i class="uil uil-edit"></i>
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="orderDatatable_actions mb-0 d-flex flex-wrap">
-                                                            <a href="#" class="remove">
-                                                                <i class="uil uil-trash-alt"></i>
-                                                            </a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
+                                                        </td>
+                                                        <td>
+                                                            <div class="orderDatatable_actions mb-0 d-flex flex-wrap">
+                                                                <a href="#" class="remove">
+                                                                    <i class="uil uil-trash-alt"></i>
+                                                                </a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                @empty
+                                                @endforelse
+
                                             </tbody>
                                         </table>
                                     </div>

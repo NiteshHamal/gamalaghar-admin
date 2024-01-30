@@ -11,7 +11,8 @@ class MainCategoryController extends Controller
 {
     public function index()
     {
-       return view('admin.main_category.main_category');
+        $mainCategory=MainCategory::latest()->get();
+       return view('admin.main_category.main_category',compact('mainCategory'));
     }
 
     /**
