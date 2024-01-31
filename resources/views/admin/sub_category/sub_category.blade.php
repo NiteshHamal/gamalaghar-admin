@@ -23,9 +23,11 @@
                             <div class="breadcrumb-action justify-content-center flex-wrap">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}" class="text-primary"><i
+                                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}"
+                                                class="text-primary"><i
                                                     class="uil uil-estate text-primary"></i>Dashboard</a></li>
-                                        <li class="breadcrumb-item active text-primary" aria-current="page">Sub Category</li>
+                                        <li class="breadcrumb-item active text-primary" aria-current="page">Sub Category
+                                        </li>
                                     </ol>
                                 </nav>
                             </div>
@@ -46,15 +48,31 @@
                             <h6 class="fw-500">Sub Category</h6>
                         </div>
                         <div class="add-product__body px-sm-40 px-20">
-                            <form action="{{ url('admin/category/main') }}" method="POST">
+                            <form action="{{ url('admin/category/sub-category') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <label for="name1">sub-categoy name</label>
                                     <input type="text" class="form-control" id="name1" placeholder="Pot"
-                                        name="main_category">
-                                    @error('main_category')
+                                        name="sub_category">
+                                    @error('sub_category')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
+                                </div>
+                                <div class="form-group">
+                                    <div class="countryOption">
+                                        <label for="countryOption">
+                                            main category
+                                        </label>
+                                        <select class="js-example-basic-single js-states form-control"
+                                            id="countryOption" name="main_category_id">
+                                            @forelse ($mainCategory as $category)
+                                                <option value="{{ $category->id }}"> {{ $category->main_category }}
+                                                </option>
+                                            @empty
+                                                <option>Empty</option>
+                                            @endforelse
+                                        </select>
+                                    </div>
                                 </div>
                                 <div
                                     class="button-group add-product-btn d-flex justify-content-sm-end justify-content-center mt-40">

@@ -42,6 +42,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('admin/category/main-category/update', [MainCategoryController::class, 'update']);
 
     Route::get('admin/category/sub-category', [SubCategoryController::class, 'index']);
+    Route::post('admin/category/sub-category', [SubCategoryController::class, 'store']);
 });
 
 Route::get('admin/profile', function () {
