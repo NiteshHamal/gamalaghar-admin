@@ -19,13 +19,13 @@
                 <div class="col-lg-12">
                     <div class="shop-breadcrumb">
                         <div class="breadcrumb-main">
-                            <h4 class="text-capitalize breadcrumb-title">Add Main category</h4>
+                            <h4 class="text-capitalize breadcrumb-title">Add Sub category</h4>
                             <div class="breadcrumb-action justify-content-center flex-wrap">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}" class="text-primary"><i
                                                     class="uil uil-estate text-primary"></i>Dashboard</a></li>
-                                        <li class="breadcrumb-item active text-primary" aria-current="page">Main Category</li>
+                                        <li class="breadcrumb-item active text-primary" aria-current="page">Sub Category</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -43,13 +43,13 @@
 
 
                         <div class="card-header">
-                            <h6 class="fw-500">Main Category</h6>
+                            <h6 class="fw-500">Sub Category</h6>
                         </div>
                         <div class="add-product__body px-sm-40 px-20">
                             <form action="{{ url('admin/category/main') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="name1">categoy name</label>
+                                    <label for="name1">sub-categoy name</label>
                                     <input type="text" class="form-control" id="name1" placeholder="Pot"
                                         name="main_category">
                                     @error('main_category')

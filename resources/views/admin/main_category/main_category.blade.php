@@ -1,7 +1,7 @@
 @include('layouts.header')
 <div class="mobile-search">
     <form action="/" class="search-form">
-        <img src="{{url('img/svg/search.svg')}}" alt="search" class="svg">
+        <img src="{{ url('img/svg/search.svg') }}" alt="search" class="svg">
         <input class="form-control me-sm-2 box-shadow-none" type="search" placeholder="Search..." aria-label="Search">
     </form>
 </div>
@@ -67,7 +67,7 @@
                                 </div>
                             </form>
                         </div>
-                       {{-- category table start --}}
+                        {{-- category table start --}}
                         <div class="row">
                             <div class="col-lg-12">
 
@@ -84,10 +84,17 @@
                                         <tbody>
                                             @forelse ($mainCategory as $data)
                                                 <tr>
-                                                    <td>{{$data->id}}</td>
-                                                    <td>{{$data->main_category}}</td>
-                                                    <td><a class="btn btn-primary"><i class='bx bx-edit-alt'></i></a>
-                                                    <a class="btn btn-danger"><i class='bx bx-trash'></i></a></td>
+                                                    <td>{{ $data->id }}</td>
+                                                    <td>{{ $data->main_category }}</td>
+                                                    <td>
+                                                        <div class="d-flex">
+                                                        <a class="btn btn-primary me-3"><i
+                                                                class="bi bi-pencil-square"></i></a>
+                                                        <a class="btn btn-danger remove"><i
+                                                                class="bi bi-trash-fill"></i></a>
+                                                        </div>
+
+                                                    </td>
 
                                                 </tr>
                                             @empty
