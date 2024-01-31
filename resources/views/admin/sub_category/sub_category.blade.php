@@ -103,7 +103,7 @@
                                         <tbody>
                                             @forelse ($subCategory as $data1)
                                             <tr>
-                                                <td>{{ $data1->sub_category }}</td>
+                                                <td>{{ $data1->id }}</td>
                                                 <td>{{ $data1 ->sub_category }}</td>
                                                 <td>{{ $data1->main_category }}</td>
                                             </tr>
