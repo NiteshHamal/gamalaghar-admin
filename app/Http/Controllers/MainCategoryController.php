@@ -90,16 +90,16 @@ class MainCategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        $category = MainCategory::find($id);
-        if (is_null($category)) {
+        $mainCategory = MainCategory::find($id);
+        if (is_null($mainCategory)) {
             return back()->with('error', 'Category not found!');
         }
         try {
-            $category = DB::transaction(function () use ($category) {
-                $category->delete();
-                return $category;
+            $mainCategory = DB::transaction(function () use ($mainCategory) {
+                $mainCategory->delete();
+                return $mainCategory;
             });
-            if ($category) {
+            if ($mainCategory) {
                 return back()->with('success', 'Category Deleated Successfully!');
             }
         } catch (\Exception $e) {

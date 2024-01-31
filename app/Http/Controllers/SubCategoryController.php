@@ -37,27 +37,48 @@ class SubCategoryController extends Controller
         }
     }
 
-    public function edit(string $slug){
-        $subCategory=SubCategory::where('slug', $slug)->first();
+    public function edit(string $slug)
+    {
+        $subCategory = SubCategory::where('slug', $slug)->first();
         $mainCategory = MainCategory::latest()->get();
         return view('admin.sub_category.edit_sub_category', compact('subCategory', 'mainCategory'));
     }
 
-    public function update(Request $request){
-        $subCategory= SubCategory::find($request->id);
+    public function update(Request $request)
+    {
+        $subCategory = SubCategory::find($request->id);
         if (is_null($subCategory)) {
             return back()->with('error', 'Sub-Category Not Found!');
         }
         try {
             $subCategory = DB::transaction(function () use ($request, $subCategory) {
-                $subCategory ->update([
+                $subCategory->update([
                     'sub_category' => $request->sub_category,
                     'main_category_id' => $request->main_category_id,
                 ]);
                 return $subCategory;
             });
             if ($subCategory) {
-                return redirect('admin/category/sub-category')->with('success','Sub-Category Edited Successfully!');
+                return redirect('admin/category/sub-category')->with('success', 'Sub-Category Edited Successfully!');
+            }
+        } catch (\Exception $e) {
+            return back()->with('error', $e->getMessage());
+        }
+    }
+
+    public function destroy(string $id)
+    {
+        $subCategory = SubCategory::find($id);
+        if (is_null($subCategory)) {
+            return back()->with('error', 'Sub-Category Not Found!');
+        }
+        try {
+            $subCategory = DB::transaction(function () use ($subCategory) {
+                $subCategory->delete();
+                return $subCategory;
+            });
+            if ($subCategory) {
+                return back()->with('success', 'Sub-Category is Deleted Successfully!');
             }
         } catch (\Exception $e) {
             return back()->with('error', $e->getMessage());
