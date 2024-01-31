@@ -101,11 +101,11 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @forelse ($category as $data)
+                                            @forelse ($subCategory as $data1)
                                             <tr>
-                                                <td>{{ $data ->id }}</td>
-                                                <td>{{ $data ->sub_category }}</td>
-                                                <td>{{ $data ->main_category }}</td>
+                                                <td>{{ $data1->sub_category }}</td>
+                                                <td>{{ $data1 ->sub_category }}</td>
+                                                <td>{{ $data1->main_category }}</td>
                                             </tr>
                                             @empty
                                                 <tr>

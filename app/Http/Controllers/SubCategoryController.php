@@ -12,13 +12,14 @@ class SubCategoryController extends Controller
 {
     public function index()
     {
-        $subCategory = SubCategory::latest()->get();
+
         $mainCategory = MainCategory::latest()->get();
-        $category = SubCategory::join('main_categories', 'sub_categories.main_category_id', '=', 'main_categories.id')
+        
+        $subCategory = SubCategory::join('main_categories', 'main_categories.id', '=', 'sub_categories.main_category_id')
             ->select('sub_categories.id', 'sub_categories.sub_category', 'main_categories.main_category')
             ->get();
 
-        return view('admin.sub_category.sub_category', compact('mainCategory', 'category', 'subCategory'));
+        return view('admin.sub_category.sub_category', compact('mainCategory', 'subCategory'));
     }
 
     public function store(SubCategoryCreateRequest $request)
