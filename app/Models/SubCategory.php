@@ -20,4 +20,8 @@ class SubCategory extends BaseModel
             ->saveSlugsTo('slug')
             ->slugsShouldBeNoLongerThan(50);
     }
+
+    public  function mainCategory(){
+        return $this->hasOne(MainCategory::class, 'main_category_id');
+    }
 }

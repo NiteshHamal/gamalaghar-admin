@@ -98,14 +98,15 @@
                                                 <th>Sub Category</th>
                                                 <th>Main Category</th>
                                                 <th>Action</th>
-
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @forelse ($subCategory as $data)
-                                                <tr>
-
-                                                </tr>
+                                            @forelse ($category as $data)
+                                            <tr>
+                                                <td>{{ $data ->id }}</td>
+                                                <td>{{ $data ->sub_category }}</td>
+                                                <td>{{ $data ->main_category }}</td>
+                                            </tr>
                                             @empty
                                                 <tr>
                                                     <td colspan="5">
