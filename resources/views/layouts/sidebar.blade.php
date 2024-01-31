@@ -11,18 +11,18 @@
 
                 </li>
 
-              
 
-                 <li class="has-child">
+
+                 <li class="has-child {{ request()->is('admin/category*') ? 'open' : '' }}">
                      <a href="#" class>
                          <span class="nav-icon bx bxl-product-hunt"></span>
-                       
+
                          <span class="menu-text">Category</span>
                          <span class="toggle-icon"></span>
                      </a>
                      <ul>
-                         <li class="{{ request()->is('admin/category/main') ? 'active' : '' }}">
-                             <a href="{{url('admin/category/main')}}">Main Category</a>
+                         <li class="{{ request()->is('admin/category/main-category') ? 'active' : '' }}">
+                             <a href="{{url('admin/category/main-category')}}">Main Category</a>
                          </li>
                          <li class="{{ request()->is('admin/category/sub-category') ? 'active' : '' }}">
                              <a href="{{url('admin/category/sub-category')}}">Sub Category</a>
@@ -33,7 +33,7 @@
                  <li class="has-child">
                      <a href="#" class>
                          <span class="nav-icon bi bi-box-seam"></span>
-                      
+
                          <span class="menu-text">Products</span>
                          <span class="toggle-icon"></span>
                      </a>
@@ -46,15 +46,6 @@
                          </li>
                      </ul>
                  </li>
-                
-
-
-                
-
-                
-
-               
-                
 
                 <li class>
                     <a href="sign-up.html">

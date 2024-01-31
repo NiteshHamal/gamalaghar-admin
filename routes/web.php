@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[LoginController::class,'index'])->name('login');
+Route::get('/', [LoginController::class, 'index'])->name('login');
 
 Route::get('forgot-password', [ForgotPasswordController::class, 'index']);
 
@@ -29,17 +29,19 @@ Route::post('login', [LoginController::class, 'login']);
 
 
 
-Route::group(['middleware'=>'auth'], function () {
+Route::group(['middleware' => 'auth'], function () {
 
     Route::get('admin/dashboard', [DashboardController::class, 'dashboard']);
+
     Route::get('admin/products', [ProductController::class, 'index']);
-    Route::get('admin/category/main',[MainCategoryController::class, 'index']);
-    Route::post('admin/category/main', [MainCategoryController::class, 'store']);
-    Route::get('admin/category/sub-category',[SubCategoryController::class,'index']);
 
+    Route::get('admin/category/main-category', [MainCategoryController::class, 'index']);
+    Route::post('admin/category/main-category', [MainCategoryController::class, 'store']);
+    Route::get('admin/category/main-category/delete/{id}', [MainCategoryController::class, 'destroy']);
+    Route::get('admin/category/main-category/edit/{slug}', [MainCategoryController::class, 'edit']);
+    Route::post('admin/category/main-category/update', [MainCategoryController::class, 'update']);
 
-
-    
+    Route::get('admin/category/sub-category', [SubCategoryController::class, 'index']);
 });
 
 Route::get('admin/profile', function () {
