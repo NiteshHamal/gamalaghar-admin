@@ -8,6 +8,7 @@ use App\Http\Controllers\MainCategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SubCategoryController;
 use App\Models\MainCategory;
+use App\Models\SubCategory;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,6 +44,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('admin/category/sub-category', [SubCategoryController::class, 'index']);
     Route::post('admin/category/sub-category', [SubCategoryController::class, 'store']);
+    Route::get('admin/category/sub-category/edit/{slug}', [SubCategoryController::class, 'edit']);
+    Route::post('admin/category/sub-category/update',[SubCategoryController::class, 'update']);
 });
 
 Route::get('admin/profile', function () {
