@@ -46,12 +46,13 @@
                             <h6 class="fw-500">Size</h6>
                         </div>
                         <div class="add-product__body px-sm-40 px-20">
-                            <form action="{{ url('admin/property/size') }}" method="POST">
+                            <form action="{{ url('admin/property/size/update') }}" method="POST">
                                 @csrf
+                                <input type="hidden" value="{{ $size->id }}" name="id">
                                 <div class="form-group">
                                     <label for="name1">size</label>
                                     <input type="text" class="form-control" id="name1" placeholder="Pot"
-                                        name="size">
+                                        name="size" value="{{ $size->size }}">
                                     @error('size')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
@@ -67,55 +68,6 @@
                                 </div>
                             </form>
                         </div>
-                        {{-- category table start --}}
-                        <div class="row">
-                            <div class="col-lg-12">
-
-                                <div class="table-responsive">
-                                    <table class="table mb-0 table-borderless">
-                                        <thead class="bg-primary text-light">
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Size</th>
-                                                <th>Action</th>
-
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @forelse ($size as $sizeProperty)
-                                                <tr>
-                                                    <td>{{ $sizeProperty ->id }}</td>
-                                                    <td>{{ $sizeProperty ->size }}</td>
-                                                    <td>
-                                                        <div class="d-flex">
-                                                            <a class="btn btn-primary me-3"
-                                                                href="{{ url('admin/property/size/edit/'.$sizeProperty->slug) }}"><i
-                                                                    class="bi bi-pencil-square"></i></a>
-                                                            <a class="btn btn-danger remove"
-                                                                href=""><i
-                                                                    class="bi bi-trash-fill"></i></a>
-                                                        </div>
-
-                                                    </td>
-
-                                                </tr>
-                                                @empty
-                                                <tr>
-                                                    <td colspan="5">
-                                                        <img src="{{ url('assets/img/No data-rafiki.png') }}"
-                                                            class="img-fluid d-block mx-auto"
-                                                            style="max-width: 300px" />
-                                                    </td>
-                                                </tr>
-                                                @endforelse
-
-                                        </tbody>
-                                    </table>
-                                </div>
-
-                            </div>
-                        </div>
-                        {{-- category table ends --}}
                     </div>
                 </div>
             </div>

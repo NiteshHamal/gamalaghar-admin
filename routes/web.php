@@ -46,11 +46,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('admin/category/sub-category', [SubCategoryController::class, 'index']);
     Route::post('admin/category/sub-category', [SubCategoryController::class, 'store']);
     Route::get('admin/category/sub-category/edit/{slug}', [SubCategoryController::class, 'edit']);
-    Route::post('admin/category/sub-category/update',[SubCategoryController::class, 'update']);
-    Route::get('admin/category/sub-category/delete/{id}',[SubCategoryController::class,'destroy']);
+    Route::post('admin/category/sub-category/update', [SubCategoryController::class, 'update']);
+    Route::get('admin/category/sub-category/delete/{id}', [SubCategoryController::class, 'destroy']);
 
     Route::get('admin/property/size', [SizeController::class, 'index']);
     Route::post('admin/property/size', [SizeController::class, 'store']);
+    Route::get('admin/property/size/edit/{slug}', [SizeController::class, 'edit']);
+    Route::post('admin/property/size/update', [SizeController::class, 'update']);
 });
 
 Route::get('admin/profile', function () {
