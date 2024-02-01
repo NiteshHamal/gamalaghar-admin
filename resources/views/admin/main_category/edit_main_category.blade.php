@@ -19,13 +19,13 @@
                 <div class="col-lg-12">
                     <div class="shop-breadcrumb">
                         <div class="breadcrumb-main">
-                            <h4 class="text-capitalize breadcrumb-title">Add Main category</h4>
+                            <h4 class="text-capitalize breadcrumb-title">Edit Main category</h4>
                             <div class="breadcrumb-action justify-content-center flex-wrap">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}"><i
-                                                    class="uil uil-estate"></i>Dashboard</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Edit Main Category</li>
+                                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}" class="text-primary"><i
+                                                    class="uil uil-estate text-primary"></i>Dashboard</a></li>
+                                        <li class="breadcrumb-item active text-primary" aria-current="page">Edit Main Category</li>
                                     </ol>
                                 </nav>
                             </div>

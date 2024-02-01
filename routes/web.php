@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MainCategoryController;
+use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SizeController;
 use App\Http\Controllers\SubCategoryController;
@@ -54,6 +55,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('admin/property/size/edit/{slug}', [SizeController::class, 'edit']);
     Route::post('admin/property/size/update', [SizeController::class, 'update']);
     Route::get('admin/property/size/delete/{id}', [SizeController::class, 'destroy']);
+
+    Route::get('admin/property/material', [MaterialController::class, 'index']);
+    Route::post('admin/property/material', [MaterialController::class, 'store']);
+    Route::get('admin/property/material/edit/{slug}', [MaterialController::class, 'edit']);
+    Route::post('admin/property/material/update', [MaterialController::class, 'update']);
+    Route::get('admin/property/material/delete/{id}', [MaterialController::class, 'destroy']);
 });
 
 Route::get('admin/profile', function () {

@@ -23,9 +23,9 @@
                             <div class="breadcrumb-action justify-content-center flex-wrap">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}"><i
-                                                    class="uil uil-estate"></i>Dashboard</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Size</li>
+                                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}" class="text-primary"><i
+                                                    class="uil uil-estate text-primary"></i>Dashboard</a></li>
+                                        <li class="breadcrumb-item active text-primary" aria-current="page">Size</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -49,7 +49,7 @@
                             <form action="{{ url('admin/property/size') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="name1">size</label>
+                                    <label for="name1">Size</label>
                                     <input type="text" class="form-control" id="name1" placeholder="Pot"
                                         name="size">
                                     @error('size')

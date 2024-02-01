@@ -30,7 +30,7 @@
                      </ul>
                  </li>
 
-                 <li class="has-child {{ request() ->is('admin/property*') }}">
+                 <li class="has-child {{ request() ->is('admin/property*') ? 'open' : ''}}">
                     <a href="#" class>
                         <span class="nav-icon bx bxl-product-hunt"></span>
 
@@ -41,8 +41,8 @@
                         <li class="{{ request() ->is('admin/property/size') ? 'active' : '' }}">
                             <a href="{{ url('admin/property/size') }}">Size</a>
                         </li>
-                        <li class="">
-                            <a href="">Material</a>
+                        <li class="{{ request() ->is('admin/property/material') ? 'active' : '' }}">
+                            <a href="{{ url('admin/property/material') }}">Material</a>
                         </li>
                     </ul>
                 </li>

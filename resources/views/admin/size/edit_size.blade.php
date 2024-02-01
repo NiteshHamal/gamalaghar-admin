@@ -19,13 +19,13 @@
                 <div class="col-lg-12">
                     <div class="shop-breadcrumb">
                         <div class="breadcrumb-main">
-                            <h4 class="text-capitalize breadcrumb-title">Add Size</h4>
+                            <h4 class="text-capitalize breadcrumb-title">edit Size</h4>
                             <div class="breadcrumb-action justify-content-center flex-wrap">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}"><i
-                                                    class="uil uil-estate"></i>Dashboard</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Size</li>
+                                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}" class="text-primary"><i
+                                                    class="uil uil-estate text-primary"></i>Dashboard</a></li>
+                                        <li class="breadcrumb-item active text-primary" aria-current="page">edit Size</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -50,7 +50,7 @@
                                 @csrf
                                 <input type="hidden" value="{{ $size->id }}" name="id">
                                 <div class="form-group">
-                                    <label for="name1">size</label>
+                                    <label for="name1">Size</label>
                                     <input type="text" class="form-control" id="name1" placeholder="Pot"
                                         name="size" value="{{ $size->size }}">
                                     @error('size')

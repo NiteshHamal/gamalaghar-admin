@@ -19,13 +19,15 @@
                 <div class="col-lg-12">
                     <div class="shop-breadcrumb">
                         <div class="breadcrumb-main">
-                            <h4 class="text-capitalize breadcrumb-title">Add Main category</h4>
+                            <h4 class="text-capitalize breadcrumb-title">Add material</h4>
                             <div class="breadcrumb-action justify-content-center flex-wrap">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}" class="text-primary"><i
+                                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}"
+                                                class="text-primary"><i
                                                     class="uil uil-estate text-primary"></i>Dashboard</a></li>
-                                        <li class="breadcrumb-item active text-primary" aria-current="page">Main Category</li>
+                                        <li class="breadcrumb-item active text-primary" aria-current="page">Material
+                                        </li>
                                     </ol>
                                 </nav>
                             </div>
@@ -43,16 +45,16 @@
 
 
                         <div class="card-header">
-                            <h6 class="fw-500">Main Category</h6>
+                            <h6 class="fw-500">Material</h6>
                         </div>
                         <div class="add-product__body px-sm-40 px-20">
-                            <form action="{{ url('admin/category/main-category') }}" method="POST">
+                            <form action="{{ url('admin/property/material') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="name1">categoy name</label>
+                                    <label for="name1">Material</label>
                                     <input type="text" class="form-control" id="name1" placeholder="Pot"
-                                        name="main_category">
-                                    @error('main_category')
+                                        name="material">
+                                    @error('material')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
@@ -62,7 +64,7 @@
                                     </button>
                                     <button class="btn btn-primary btn-default btn-squared text-capitalize"
                                         type="submit">save
-                                        category
+                                        material
                                     </button>
                                 </div>
                             </form>
@@ -76,28 +78,26 @@
                                         <thead class="bg-primary text-light">
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Main Category</th>
+                                                <th>Material</th>
                                                 <th>Action</th>
 
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @forelse ($mainCategory as $data)
+                                            @forelse ($material as $materialProperty)
                                                 <tr>
-                                                    <td>{{ $data->id }}</td>
-                                                    <td>{{ $data->main_category }}</td>
+                                                    <td>{{ $materialProperty->id }}</td>
+                                                    <td>{{ $materialProperty->material }}</td>
                                                     <td>
                                                         <div class="d-flex">
                                                             <a class="btn btn-primary me-3"
-                                                                href="{{ url('admin/category/main-category/edit/' . $data->slug) }}"><i
+                                                                href="{{ url('admin/property/material/edit/' . $materialProperty->slug) }}"><i
                                                                     class="bi bi-pencil-square"></i></a>
                                                             <a class="btn btn-danger remove"
-                                                                href="{{ url('admin/category/main-category/delete/' . $data->id) }}"><i
+                                                                href="{{ url('admin/property/material/delete/' . $materialProperty->id) }}"><i
                                                                     class="bi bi-trash-fill"></i></a>
                                                         </div>
-
                                                     </td>
-
                                                 </tr>
                                             @empty
                                                 <tr>
@@ -108,20 +108,12 @@
                                                     </td>
                                                 </tr>
                                             @endforelse
-
                                         </tbody>
                                     </table>
                                 </div>
-
                             </div>
                         </div>
                         {{-- category table ends --}}
-
-
-
-
-
-
                     </div>
                 </div>
             </div>
