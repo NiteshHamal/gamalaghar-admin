@@ -50,6 +50,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('admin/category/sub-category/delete/{id}',[SubCategoryController::class,'destroy']);
 
     Route::get('admin/property/size', [SizeController::class, 'index']);
+    Route::post('admin/property/size', [SizeController::class, 'store']);
 });
 
 Route::get('admin/profile', function () {

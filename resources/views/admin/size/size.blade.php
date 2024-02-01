@@ -46,13 +46,13 @@
                             <h6 class="fw-500">Size</h6>
                         </div>
                         <div class="add-product__body px-sm-40 px-20">
-                            <form action="" method="POST">
+                            <form action="{{ url('admin/property/size') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <label for="name1">size</label>
                                     <input type="text" class="form-control" id="name1" placeholder="Pot"
-                                        name="main_category">
-                                    @error('main_category')
+                                        name="size">
+                                    @error('size')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
