@@ -30,6 +30,23 @@
                      </ul>
                  </li>
 
+                 <li class="has-child {{ request() ->is('admin/property*') }}">
+                    <a href="#" class>
+                        <span class="nav-icon bx bxl-product-hunt"></span>
+
+                        <span class="menu-text">Property</span>
+                        <span class="toggle-icon"></span>
+                    </a>
+                    <ul>
+                        <li class="{{ request() ->is('admin/property/size') ? 'active' : '' }}">
+                            <a href="{{ url('admin/property/size') }}">Size</a>
+                        </li>
+                        <li class="">
+                            <a href="">Material</a>
+                        </li>
+                    </ul>
+                </li>
+
                  <li class="has-child">
                      <a href="#" class>
                          <span class="nav-icon bi bi-box-seam"></span>
