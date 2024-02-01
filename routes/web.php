@@ -53,6 +53,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('admin/property/size', [SizeController::class, 'store']);
     Route::get('admin/property/size/edit/{slug}', [SizeController::class, 'edit']);
     Route::post('admin/property/size/update', [SizeController::class, 'update']);
+    Route::get('admin/property/size/delete/{id}', [SizeController::class, 'destroy']);
 });
 
 Route::get('admin/profile', function () {

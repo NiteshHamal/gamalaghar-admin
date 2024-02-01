@@ -57,4 +57,22 @@ class SizeController extends Controller
             return back()->with('error', $e->getMessage());
         }
     }
+
+    public function destroy(string $id){
+        $size=Size::find($id);
+        if (is_null($size)) {
+            return back()->with('error', 'Size Not Found!');
+        }
+        try {
+            $size=DB::transaction(function() use($size){
+                $size->delete();
+                return $size;
+            });
+            if ($size) {
+                return back()->with('success', 'Size Deleted Successfully!');
+            }
+        } catch (\Exception $e) {
+            return back()->with('error', $e->getMessage());
+        }
+    }
 }
