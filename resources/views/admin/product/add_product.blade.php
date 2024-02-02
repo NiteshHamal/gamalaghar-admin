@@ -37,7 +37,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="product-add global-shadow px-sm-30 py-sm-50 px-0 py-20 bg-white radius-xl w-100 mb-40">
-                        <form class="">
+                        <form action="{{ url('admin/products/add-product') }}" class="" method="POST" enctype="multipart/form-data">
+                            @csrf
 
                             <div class="ec-content-wrapper">
                                 <div class="content">
@@ -56,8 +57,9 @@
                                                                     <div class="avatar-upload">
                                                                         <div class="avatar-edit">
                                                                             <input type='file' id="imageUpload"
+                                                                                name="product_image"
                                                                                 class="ec-image-upload"
-                                                                                accept=".png, .jpg, .jpeg" />
+                                                                                 />
                                                                             <label for="imageUpload"><img
                                                                                     src="{{ url('assets/img/edit.svg') }}"
                                                                                     class="svg_img header_svg"
@@ -70,6 +72,10 @@
                                                                                     alt="edit" />
                                                                             </div>
                                                                         </div>
+                                                                        @error('product_image')
+                                                                        <p class="text-danger">{{$message}}</p>
+                                                                            
+                                                                        @enderror
                                                                     </div>
 
                                                                 </div>
@@ -83,17 +89,17 @@
                                                                         name</label>
                                                                     <input type="text"
                                                                         class="form-control slug-title"
-                                                                        id="inputEmail4">
+                                                                        name="product_name">
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <label class="form-label">Select Categories</label>
-                                                                    <select name="categories" id="Categories"
+                                                                    <select name="sub_category_id" id="Categories"
                                                                         class="form-select">
                                                                         @foreach ($Category as $data)
                                                                             <optgroup
                                                                                 label="{{ $data->main_category }}">
                                                                                 @foreach ($data->subCategories as $subCategoryy)
-                                                                                    <option value="t-shirt">
+                                                                                    <option value=" {{ $subCategoryy->id }}">
                                                                                         {{ $subCategoryy->sub_category }}
                                                                                     </option>
                                                                                 @endforeach
@@ -114,23 +120,32 @@
                                                                     <label class="form-label">Price <span>( In Rupees
                                                                             )</span></label>
                                                                     <input type="number" class="form-control"
-                                                                        id="price1">
+                                                                        name="price" id="price1">
+                                                                         @error('price')
+                                                                        <p class="text-danger">{{ $message }}</p>
+                                                                    @enderror
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <label class="form-label">Product Stock</label>
                                                                     <input type="number" class="form-control"
-                                                                        id="product_stock">
+                                                                        name="product_stock" id="product_stock">
+                                                                         @error('product_stock')
+                                                                        <p class="text-danger">{{ $message }}</p>
+                                                                    @enderror
                                                                 </div>
                                                                 <div class="col-md-12">
-                                                                    <label class="form-label">Ful Detail</label>
+                                                                    <label class="form-label">Description</label>
                                                                     <textarea name="description" class="form-control" rows="4"></textarea>
                                                                 </div>
                                                                 <div class="col-md-12">
                                                                     <label class="form-label">SKU (Product
                                                                         Code)</label>
                                                                     <input type="text" class="form-control"
-                                                                        id="group_tag" name="group_tag" value=""
+                                                                        name="product_code" value=""
                                                                         placeholder="" data-role="tagsinput" />
+                                                                    @error('product_code')
+                                                                        <p class="text-danger">{{ $message }}</p>
+                                                                    @enderror
                                                                 </div>
 
 
@@ -269,6 +284,10 @@
 <script>
     CKEDITOR.replace('short_description');
     CKEDITOR.replace('description');
+</script>
+
+<script>
+CKEDITOR.replace('description');
 </script>
 
 <script>

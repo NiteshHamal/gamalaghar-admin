@@ -23,7 +23,7 @@ class ProductCreateRequest extends FormRequest
     {
         return [
             'product_name'=>['required'],
-            'product_image'=>['required','image'],
+            'product_image'=>['required'],
             'price'=>['required','numeric'],
             'product_stock'=>['required','numeric']
         ];
