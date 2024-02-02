@@ -38,15 +38,6 @@
                     <div class="product-add global-shadow px-sm-30 py-sm-50 px-0 py-20 bg-white radius-xl w-100 mb-40">
 
 
-
-
-
-
-
-
-
-
-
                         <div class="ec-content-wrapper">
                             <div class="content">
                                 <div class="row">
@@ -111,15 +102,7 @@
                                                                         </optgroup>
                                                                     </select>
                                                                 </div>
-                                                                <div class="col-md-12">
-                                                                    <label for="slug"
-                                                                        class="col-12 col-form-label">Slug</label>
-                                                                    <div class="col-12">
-                                                                        <input id="slug" name="slug"
-                                                                            class="form-control here set-slug"
-                                                                            type="text">
-                                                                    </div>
-                                                                </div>
+                                                                
                                                                 <div class="col-md-12">
                                                                     <label class="form-label">Sort Description</label>
                                                                     <textarea class="form-control" rows="2"></textarea>
@@ -134,14 +117,7 @@
                                                                         class="form-control form-control-color"
                                                                         id="exampleColorInput2" value="#33317d"
                                                                         title="Choose your color">
-                                                                    <input type="color"
-                                                                        class="form-control form-control-color"
-                                                                        id="exampleColorInput3" value="#56d4b7"
-                                                                        title="Choose your color">
-                                                                    <input type="color"
-                                                                        class="form-control form-control-color"
-                                                                        id="exampleColorInput4" value="#009688"
-                                                                        title="Choose your color">
+                                                                   
                                                                 </div>
                                                                 <div class="col-md-8 mb-25">
                                                                     <label class="form-label">Size</label>
@@ -161,20 +137,11 @@
                                                                                 value="size">
                                                                             <label>L</label>
                                                                         </div>
-                                                                        <div class="form-check form-check-inline">
-                                                                            <input type="checkbox" name="size1"
-                                                                                value="size">
-                                                                            <label>XL</label>
-                                                                        </div>
-                                                                        <div class="form-check form-check-inline">
-                                                                            <input type="checkbox" name="size1"
-                                                                                value="size">
-                                                                            <label>XXL</label>
-                                                                        </div>
+                                                                        
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6">
-                                                                    <label class="form-label">Price <span>( In USD
+                                                                    <label class="form-label">Price <span>( In Rupees
                                                                             )</span></label>
                                                                     <input type="number" class="form-control"
                                                                         id="price1">
@@ -197,10 +164,7 @@
                                                                         value="" placeholder=""
                                                                         data-role="tagsinput" />
                                                                 </div>
-                                                                <div class="col-md-12">
-                                                                    <button type="submit"
-                                                                        class="btn btn-primary">Submit</button>
-                                                                </div>
+                                                                
                                                             </form>
                                                         </div>
                                                     </div>
