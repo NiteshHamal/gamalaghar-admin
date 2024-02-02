@@ -56,13 +56,32 @@
                      </a>
                      <ul>
                          <li class>
-                             <a href="inbox.html">Main Category</a>
+                             <a href="{{url('admin/products/add-product')}}">Add Product</a>
                          </li>
                          <li class>
                              <a href="read-email.html">Sub Category</a>
                          </li>
                      </ul>
                  </li>
+
+                  <li class="has-child">
+                     <a href="#" class>
+                         <span class="nav-icon bx bx-cog"></span>
+                        
+
+                         <span class="menu-text">Settings</span>
+                         <span class="toggle-icon"></span>
+                     </a>
+                     <ul>
+                         <li class>
+                             <a href="#">App Settings</a>
+                         </li>
+                         {{-- <li class>
+                             <a href="read-email.html">Sub Category</a>
+                         </li> --}}
+                     </ul>
+                 </li>
+                
 
                 <li class>
                     <a href="sign-up.html">

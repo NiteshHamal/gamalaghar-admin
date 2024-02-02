@@ -36,7 +36,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('admin/dashboard', [DashboardController::class, 'dashboard']);
 
-    Route::get('admin/products', [ProductController::class, 'index']);
+    Route::get('admin/products/add-product', [ProductController::class, 'index']);
 
     Route::get('admin/category/main-category', [MainCategoryController::class, 'index']);
     Route::post('admin/category/main-category', [MainCategoryController::class, 'store']);
