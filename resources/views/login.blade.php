@@ -65,7 +65,7 @@
                                             <div class="checkbox-theme-default custom-checkbox ">
                                                 <input class="checkbox" type="checkbox" id="check-1">
                                                 <label for="check-1">
-                                                    <span class="checkbox-text">Keep me logged in</span>
+                                                    <span class="checkbox-text text-primary">Keep me logged in</span>
                                                 </label>
                                             </div>
                                             <a href="{{ url('forgot-password') }}">forget password?</a>

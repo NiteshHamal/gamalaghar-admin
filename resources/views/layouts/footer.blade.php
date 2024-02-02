@@ -47,3 +47,4 @@
 
 <script src="{{ url('assets/js/plugins.min.js') }}"></script>
 <script src="{{ url('assets/js/script.min.js') }}"></script>
+<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>

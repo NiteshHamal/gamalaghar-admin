@@ -21,9 +21,10 @@
                             <div class="breadcrumb-action justify-content-center flex-wrap">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="#"><i
-                                                    class="uil uil-estate"></i>Product</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">GamalaGhar</li>
+                                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}"
+                                                class="text-primary"><i
+                                                    class="uil uil-estate text-primary"></i>Dashboard</a></li>
+                                        <li class="breadcrumb-item active text-primary" aria-current="page"> Add Product
                                     </ol>
                                 </nav>
                             </div>
@@ -36,47 +37,47 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="product-add global-shadow px-sm-30 py-sm-50 px-0 py-20 bg-white radius-xl w-100 mb-40">
+                        <form class="">
 
+                            <div class="ec-content-wrapper">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="card card-default">
+                                                <div class="card-header card-header-border-bottom">
+                                                    <h2>Add Product</h2>
+                                                </div>
 
-                        <div class="ec-content-wrapper">
-                            <div class="content">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="card card-default">
-                                            <div class="card-header card-header-border-bottom">
-                                                <h2>Add Product</h2>
-                                            </div>
-
-                                            <div class="card-body">
-                                                <div class="row ec-vendor-uploads">
-                                                    <div class="col-lg-4">
-                                                        <div class="ec-vendor-img-upload">
-                                                            <div class="ec-vendor-main-img">
-                                                                <div class="avatar-upload">
-                                                                    <div class="avatar-edit">
-                                                                        <input type='file' id="imageUpload"
-                                                                            class="ec-image-upload"
-                                                                            accept=".png, .jpg, .jpeg" />
-                                                                        <label for="imageUpload"><img
-                                                                                src="{{ url('assets/img/edit.svg') }}"
-                                                                                class="svg_img header_svg"
-                                                                                alt="edit" /></label>
-                                                                    </div>
-                                                                    <div class="avatar-preview ec-preview">
-                                                                        <div class="imagePreview ec-div-preview">
-                                                                            <img class="ec-image-preview"
-                                                                                src="{{ url('assets/img/vender-upload-preview.jpg') }}"
-                                                                                alt="edit" />
+                                                <div class="card-body">
+                                                    <div class="row ec-vendor-uploads">
+                                                        <div class="col-lg-4">
+                                                            <div class="ec-vendor-img-upload">
+                                                                <div class="ec-vendor-main-img">
+                                                                    <div class="avatar-upload">
+                                                                        <div class="avatar-edit">
+                                                                            <input type='file' id="imageUpload"
+                                                                                class="ec-image-upload"
+                                                                                accept=".png, .jpg, .jpeg" />
+                                                                            <label for="imageUpload"><img
+                                                                                    src="{{ url('assets/img/edit.svg') }}"
+                                                                                    class="svg_img header_svg"
+                                                                                    alt="edit" /></label>
+                                                                        </div>
+                                                                        <div class="avatar-preview ec-preview">
+                                                                            <div class="imagePreview ec-div-preview">
+                                                                                <img class="ec-image-preview"
+                                                                                    src="{{ url('assets/img/vender-upload-preview.jpg') }}"
+                                                                                    alt="edit" />
+                                                                            </div>
                                                                         </div>
                                                                     </div>
-                                                                </div>
 
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-lg-8">
-                                                        <div class="ec-vendor-upload-detail">
-                                                            <form class="row g-3">
+                                                        <div class="col-lg-8">
+                                                            <div class="ec-vendor-upload-detail row g-3">
+
                                                                 <div class="col-md-6">
                                                                     <label for="inputEmail4" class="form-label">Product
                                                                         name</label>
@@ -88,58 +89,27 @@
                                                                     <label class="form-label">Select Categories</label>
                                                                     <select name="categories" id="Categories"
                                                                         class="form-select">
-                                                                        <optgroup label="Fashion">
-                                                                            <option value="t-shirt">T-shirt</option>
-                                                                            <option value="dress">Dress</option>
-                                                                        </optgroup>
-                                                                        <optgroup label="Furniture">
-                                                                            <option value="table">Table</option>
-                                                                            <option value="sofa">Sofa</option>
-                                                                        </optgroup>
-                                                                        <optgroup label="Electronic">
-                                                                            <option value="phone">I Phone</option>
-                                                                            <option value="laptop">Laptop</option>
-                                                                        </optgroup>
+                                                                        @foreach ($Category as $data)
+                                                                            <optgroup
+                                                                                label="{{ $data->main_category }}">
+                                                                                @foreach ($data->subCategories as $subCategoryy)
+                                                                                    <option value="t-shirt">
+                                                                                        {{ $subCategoryy->sub_category }}
+                                                                                    </option>
+                                                                                @endforeach
+
+
+                                                                            </optgroup>
+                                                                        @endforeach
+
                                                                     </select>
                                                                 </div>
-                                                                
+
                                                                 <div class="col-md-12">
                                                                     <label class="form-label">Sort Description</label>
-                                                                    <textarea class="form-control" rows="2"></textarea>
+                                                                    <textarea name="short_description" class="form-control" rows="2"></textarea>
                                                                 </div>
-                                                                <div class="col-md-4 mb-25">
-                                                                    <label class="form-label">Colors</label>
-                                                                    <input type="color"
-                                                                        class="form-control form-control-color"
-                                                                        id="exampleColorInput1" value="#ff6191"
-                                                                        title="Choose your color">
-                                                                    <input type="color"
-                                                                        class="form-control form-control-color"
-                                                                        id="exampleColorInput2" value="#33317d"
-                                                                        title="Choose your color">
-                                                                   
-                                                                </div>
-                                                                <div class="col-md-8 mb-25">
-                                                                    <label class="form-label">Size</label>
-                                                                    <div class="form-checkbox-box">
-                                                                        <div class="form-check form-check-inline">
-                                                                            <input type="checkbox" name="size1"
-                                                                                value="size">
-                                                                            <label>S</label>
-                                                                        </div>
-                                                                        <div class="form-check form-check-inline">
-                                                                            <input type="checkbox" name="size1"
-                                                                                value="size">
-                                                                            <label>M</label>
-                                                                        </div>
-                                                                        <div class="form-check form-check-inline">
-                                                                            <input type="checkbox" name="size1"
-                                                                                value="size">
-                                                                            <label>L</label>
-                                                                        </div>
-                                                                        
-                                                                    </div>
-                                                                </div>
+
                                                                 <div class="col-md-6">
                                                                     <label class="form-label">Price <span>( In Rupees
                                                                             )</span></label>
@@ -147,25 +117,24 @@
                                                                         id="price1">
                                                                 </div>
                                                                 <div class="col-md-6">
-                                                                    <label class="form-label">Quantity</label>
+                                                                    <label class="form-label">Product Stock</label>
                                                                     <input type="number" class="form-control"
-                                                                        id="quantity1">
+                                                                        id="product_stock">
                                                                 </div>
                                                                 <div class="col-md-12">
                                                                     <label class="form-label">Ful Detail</label>
-                                                                    <textarea class="form-control" rows="4"></textarea>
+                                                                    <textarea name="description" class="form-control" rows="4"></textarea>
                                                                 </div>
                                                                 <div class="col-md-12">
-                                                                    <label class="form-label">Product Tags <span>( Type
-                                                                            and
-                                                                            make comma to separate tags )</span></label>
+                                                                    <label class="form-label">SKU (Product
+                                                                        Code)</label>
                                                                     <input type="text" class="form-control"
-                                                                        id="group_tag" name="group_tag"
-                                                                        value="" placeholder=""
-                                                                        data-role="tagsinput" />
+                                                                        id="group_tag" name="group_tag" value=""
+                                                                        placeholder="" data-role="tagsinput" />
                                                                 </div>
-                                                                
-                                                            </form>
+
+
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -174,7 +143,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
 
 
@@ -183,21 +151,23 @@
 
 
 
-                        <div
-                            class="button-group add-product-btn d-flex justify-content-sm-end justify-content-center mt-40">
-                            <button class="btn btn-light btn-default btn-squared fw-400 text-capitalize">cancel
-                            </button>
-                            <button class="btn btn-primary btn-default btn-squared text-capitalize">save
-                                product
-                            </button>
-                        </div>
-
+                            <div
+                                class="button-group add-product-btn d-flex justify-content-sm-end justify-content-center mt-40">
+                                <button class="btn btn-light btn-default btn-squared fw-400 text-capitalize">cancel
+                                </button>
+                                <button class="btn btn-primary btn-default btn-squared text-capitalize">save
+                                    product
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </main>
+
+
 
 <style>
     .ec-vendor-uploads .ec-vendor-img-upload .ec-vendor-main-img .avatar-upload {
@@ -295,6 +265,11 @@
 
 
 @include('layouts.footer')
+
+<script>
+    CKEDITOR.replace('short_description');
+    CKEDITOR.replace('description');
+</script>
 
 <script>
     /*======== Image Change on Upload ========*/
