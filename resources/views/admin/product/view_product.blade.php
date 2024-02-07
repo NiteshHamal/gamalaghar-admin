@@ -55,7 +55,7 @@
 
                                 </div>
 
-                                <div class="project-category d-flex align-items-center ms-md-30 mt-xxl-10 mt-15">
+                                {{-- <div class="project-category d-flex align-items-center ms-md-30 mt-xxl-10 mt-15">
                                     <p class="fs-14 color-gray text-capitalize mb-10 mb-md-0  me-10">Status :</p>
                                     <div class="project-tap order-project-tap global-shadow">
                                         <ul class="nav px-1" id="ap-tab" role="tablist">
@@ -79,14 +79,14 @@
                                         </ul>
                                     </div>
 
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="content-center mt-10">
                                 <div class="button-group m-0 mt-xl-0 mt-sm-10 order-button-group">
                                     <button type="button"
                                         class="order-bg-opacity-secondary text-secondary btn radius-md">Export</button>
-                                    <button type="button" class="btn btn-sm btn-primary me-0 radius-md">
-                                        <i class="la la-plus"></i> Add order</button>
+                                    <a href="{{url('admin/products/add-product')}}" class="btn btn-sm btn-primary me-0 radius-md">
+                                        <i class="la la-plus"></i> Add order</a>
                                 </div>
                             </div>
                         </div>

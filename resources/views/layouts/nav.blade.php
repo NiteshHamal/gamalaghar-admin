@@ -77,11 +77,11 @@
                                <div class="nav-author__options">
                                    <ul>
                                        <li>
-                                           <a href="{{ url('admin/profile') }}">
+                                           <a href="{{ url('admin/profile') }}" class="text-primary">
                                                <i class="uil uil-user"></i>Profile</a>
                                        </li>
                                        <li>
-                                           <a href>
+                                           <a href class="text-primary">
                                                <i class="uil uil-setting"></i>
                                                Settings</a>
                                        </li>
@@ -94,11 +94,11 @@
                                                <i class="uil uil-users-alt"></i> Activity</a>
                                        </li> --}}
                                        <li>
-                                           <a href="{{ url('admin/support') }}">
+                                           <a href="{{ url('admin/support') }}" class="text-primary">
                                                <i class="uil uil-bell"></i>Support</a>
                                        </li>
                                    </ul>
-                                   <a href class="nav-author__signout">
+                                   <a href class="nav-author__signout text-primary">
                                        <i class="uil uil-sign-out-alt"></i> Sign Out</a>
                                </div>
                            </div>

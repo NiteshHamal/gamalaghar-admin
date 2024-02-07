@@ -41,7 +41,7 @@
                                         <input id="file-upload" type="file" name="fileUpload" class="d-none">
                                         <label for="file-upload">
 
-                                            <img class="ap-img__main rounded-circle wh-120" src="img/author/profile.png"
+                                            <img class="ap-img__main rounded-circle wh-120" src="{{ Avatar::create(Auth()->user()->name)->toBase64() }}"
                                                 alt="profile">
                                             <span class="cross" id="remove_pro_pic">
                                                 <img src="img/svg/camera.svg" alt="camera" class="svg">
@@ -49,7 +49,7 @@
                                         </label>
                                     </div>
                                     <div class="ap-nameAddress pb-3">
-                                        <h5 class="ap-nameAddress__title">Duran Clayton</h5>
+                                        <h5 class="ap-nameAddress__title">Duran </h5>
                                         <p class="ap-nameAddress__subTitle fs-14 m-0">UI/UX Designer</p>
                                     </div>
                                 </div>
