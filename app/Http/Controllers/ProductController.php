@@ -25,6 +25,19 @@ class ProductController extends Controller
         return view('admin.product.add_product', compact('Category', 'size'));
     }
 
+    public function viewProduct(){
+
+        $products=Product::with('media')->latest()->get();
+        return view('admin.product.view_product',compact('products'));
+    }
+
+    public function viewProductData()
+    {
+
+        $products = Product::latest()->get();
+        return response()->json(['data'=>$products]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */

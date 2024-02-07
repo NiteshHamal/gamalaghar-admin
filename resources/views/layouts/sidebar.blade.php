@@ -56,7 +56,7 @@
                     </ul>
                 </li> --}}
 
-                 <li class="has-child">
+                 <li class="has-child {{ request()->is('admin/products*') ? 'open' : '' }}">
                      <a href="#" class>
                          <span class="nav-icon bi bi-box-seam"></span>
 
@@ -64,11 +64,11 @@
                          <span class="toggle-icon"></span>
                      </a>
                      <ul>
-                         <li class>
+                         <li class="{{ request()->is('admin/products/add-product') ? 'active' : '' }}">
                              <a href="{{url('admin/products/add-product')}}">Add Product</a>
                          </li>
-                         <li class>
-                             <a href="read-email.html">Sub Category</a>
+                         <li class="{{ request()->is('admin/products/view-product') ? 'active' : '' }}">
+                             <a href="{{url('admin/products/view-product')}}">View Products</a>
                          </li>
                      </ul>
                  </li>
