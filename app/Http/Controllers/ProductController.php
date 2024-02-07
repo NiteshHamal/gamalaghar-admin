@@ -25,13 +25,23 @@ class ProductController extends Controller
         return view('admin.product.add_product', compact('Category', 'size'));
     }
 
-    public function viewProduct(){
+    public function viewProduct(Request $request)
+    {
 
-        $products=Product::with('media')->latest()->paginate(10);
-        return view('admin.product.view_product',compact('products'));
+        $keyword = $request->query('keyword');
+
+        $products = Product::with('media')->when($keyword, function ($query) use ($keyword) {
+            $query->where('product_name', 'like', "%{$keyword}%")
+                ->orWhere('product_code', 'like', "%{$keyword}%");
+        })->latest()->paginate(10);
+
+
+
+
+        return view('admin.product.view_product', compact('products'));
     }
 
-   
+
 
     /**
      * Show the form for creating a new resource.
@@ -77,7 +87,7 @@ class ProductController extends Controller
                     $productSizePrice->save();
                 }
 
-              
+
 
 
                 if ($request->product_image) {
