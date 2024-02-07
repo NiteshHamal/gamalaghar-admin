@@ -51,9 +51,9 @@
                                         <thead class="bg-primary text-light">
                                             <tr>
                                                 <th>ID</th>
+                                                <th>Image</th>
                                                 <th>Name</th>
                                                 <th>Product Code</th>
-                                                <th>Mobile No</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -61,10 +61,21 @@
                                             @forelse ($products as $product)
                                                 <tr>
                                                     <td>{{ $product->id }}</td>
-                                                    <td><img src="{{ $product->getFirstMediaUrl('product_image') }}" alt="Product Image" style="max-width: 100px"/>
+                                                    <td><img src="{{ $product->getFirstMediaUrl('product_image') }}"
+                                                            alt="Product Image" style="max-width: 100px" />
                                                     </td>
                                                     <td>{{ $product->product_name }}</td>
                                                     <td>{{ $product->product_code }}</td>
+                                                    <td>
+                                                        <div class="d-flex">
+                                                            <a class="btn btn-primary me-3"
+                                                                href="{{ url('admin/property/size/edit/' . $product->slug) }}"><i
+                                                                    class="bi bi-pencil-square"></i></a>
+                                                            <a class="btn btn-danger remove"
+                                                                href="{{ url('admin/property/size/delete/' . $product->id) }}"><i
+                                                                    class="bi bi-trash-fill"></i></a>
+                                                        </div>
+                                                    </td>
                                                 </tr>
                                             @empty
 
@@ -79,6 +90,7 @@
 
                                         </tbody>
                                     </table>
+                                    {{$products->links('pagination::bootstrap-5')}}
                                 </div>
                             </div>
                         </div>

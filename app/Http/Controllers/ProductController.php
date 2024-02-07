@@ -27,16 +27,11 @@ class ProductController extends Controller
 
     public function viewProduct(){
 
-        $products=Product::with('media')->latest()->get();
+        $products=Product::with('media')->latest()->paginate(10);
         return view('admin.product.view_product',compact('products'));
     }
 
-    public function viewProductData()
-    {
-
-        $products = Product::latest()->get();
-        return response()->json(['data'=>$products]);
-    }
+   
 
     /**
      * Show the form for creating a new resource.

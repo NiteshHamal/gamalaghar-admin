@@ -39,7 +39,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('admin/products/add-product', [ProductController::class, 'index']);
     Route::post('admin/products/add-product', [ProductController::class, 'store']);
     Route::get('admin/products/view-product', [ProductController::class, 'viewProduct']);
-    Route::get('admin/products/view-product/data', [ProductController::class, 'viewProductData']);
+   
 
     Route::get('admin/category/main-category', [MainCategoryController::class, 'index']);
     Route::post('admin/category/main-category', [MainCategoryController::class, 'store']);
