@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('product_size_prices', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable();
+            $table->foreignId('size_id')->nullable();
             $table->foreignId('product_id')->nullable();
             $table->float('price');
             $table->integer('product_stock');
