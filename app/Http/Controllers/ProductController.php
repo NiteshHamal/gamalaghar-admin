@@ -46,25 +46,40 @@ class ProductController extends Controller
                     'sub_category_id' => $request->sub_category_id,
                     'short_description' => $request->short_description,
                     'description' => $request->description,
+                    'discount' => $request->discount,
                     'product_code' => $request->product_code
 
                 ]);
+
+                $size = $request->input('size');
+                $price = $request->input('price');
+                $product_stock = $request->input('product_stock');
+
+                // Loop through the arrays and save each product
+                for (
+                    $i = 0;
+                    $i < count($size);
+                    $i++
+                ) {
+                    $productSizePrice = new ProductSizePrice();
+                    $productSizePrice->size_id = $size[$i];
+                    $productSizePrice->product_id = $product->id;
+                    $productSizePrice->price = $price[$i];
+                    $productSizePrice->product_stock = $product_stock[$i];
+                    $productSizePrice->save();
+                }
+
+              
+
+
                 if ($request->product_image) {
                     $product->addMedia($request->product_image)->toMediaCollection('product_image');
                 }
                 return $product;
             });
 
-            $productsizeprice = DB::transaction(function () use ($request, $product) {
-                $productsizeprice = ProductSizePrice::create([
-                    'size_id' => $request->size_id,
-                    'product_id' => $product->id,
-                    'price' => $request->price,
-                    'product_stock' => $request->product_stock,
-                ]);
-                return $productsizeprice;
-            });
-            if ($product && $productsizeprice) {
+
+            if ($product) {
                 return back()->with('success', 'Product Created Successfully!');
             }
         } catch (\Exception $e) {

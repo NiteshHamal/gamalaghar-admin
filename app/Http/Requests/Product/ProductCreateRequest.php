@@ -24,8 +24,8 @@ class ProductCreateRequest extends FormRequest
         return [
             'product_name'=>['required'],
             'product_image'=>['required'],
-            'price'=>['required','numeric'],
-            'product_stock'=>['required','numeric']
+            // 'price'=>['required','numeric'],
+            // 'product_stock'=>['required','numeric']
         ];
     }
 }

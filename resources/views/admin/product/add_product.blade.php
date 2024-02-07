@@ -126,39 +126,70 @@
                                                                     @enderror
                                                                 </div>
                                                                 <div class="col-md-6">
-                                                                    <label class="form-label">Select Size</label>
-                                                                    <select name="size_id" id="size"
-                                                                        class="form-select">
-                                                                        @foreach ($size as $productSize)
-                                                                            <option value=" {{ $productSize->id }}">
-                                                                                {{ $productSize->size }}
-                                                                            </option>
-                                                                        @endforeach
+                                                                    <label class="form-label">Discount %</label>
+                                                                    <input type="number" class="form-control"
+                                                                        name="discount" id="product_stock">
+                                                                    @error('discount')
+                                                                        <p class="text-danger">{{ $message }}</p>
+                                                                    @enderror
+                                                                </div>
 
-                                                                    </select>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <label class="form-label">Price <span>( In Rupees
-                                                                            )</span></label>
-                                                                    <input type="number" class="form-control"
-                                                                        name="price" id="price1">
-                                                                    @error('price')
-                                                                        <p class="text-danger">{{ $message }}</p>
-                                                                    @enderror
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <label class="form-label">Product Stock</label>
-                                                                    <input type="number" class="form-control"
-                                                                        name="product_stock" id="product_stock">
-                                                                    @error('product_stock')
-                                                                        <p class="text-danger">{{ $message }}</p>
-                                                                    @enderror
-                                                                </div>
+
 
                                                                 <div class="col-md-12">
                                                                     <label class="form-label">Description</label>
                                                                     <textarea name="description" class="form-control" rows="4"></textarea>
                                                                 </div>
+
+
+                                                                @foreach ($size as $productSize)
+                                                                    <div class="container card add-product">
+                                                                        <div class="row ">
+                                                                            <p class="mb-1 text-primary">Product Size:
+                                                                                {{ $productSize->size }}</p>
+                                                                            <input type="hidden" class="form-control"
+                                                                                name="size[]" value="{{$productSize->id}}">
+                                                                            <div class="col-md-6">
+                                                                                <label class="form-label">Price <span>(
+                                                                                        In
+                                                                                        Rupees
+                                                                                        )</span></label>
+                                                                                <input type="number"
+                                                                                    class="form-control"
+                                                                                    name="price[]" id="price1">
+                                                                                @error('price')
+                                                                                    <p class="text-danger">
+                                                                                        {{ $message }}
+                                                                                    </p>
+                                                                                @enderror
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                                <label class="form-label">Product
+                                                                                    Stock</label>
+                                                                                <input type="number"
+                                                                                    class="form-control"
+                                                                                    name="product_stock[]"
+                                                                                    id="product_stock">
+                                                                                @error('product_stock')
+                                                                                    <p class="text-danger">
+                                                                                        {{ $message }}
+                                                                                    </p>
+                                                                                @enderror
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                @endforeach
+
+
+
+
+
+
+
+
+
+
+
 
 
                                                             </div>

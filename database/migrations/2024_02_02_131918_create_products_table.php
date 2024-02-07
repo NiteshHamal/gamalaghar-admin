@@ -20,6 +20,7 @@ return new class extends Migration
             $table->longText('short_description')->nullable();
             $table->longText('description')->nullable();
             $table->string('product_code')->nullable();
+            $table->string('discount')->nullable();
             $table->string('status')->default('active')->nullable();
             $table->timestamps();
         });
