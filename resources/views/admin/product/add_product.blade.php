@@ -37,7 +37,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="product-add global-shadow px-sm-30 py-sm-50 px-0 py-20 bg-white radius-xl w-100 mb-40">
-                        <form action="{{ url('admin/products/add-product') }}" class="" method="POST" enctype="multipart/form-data">
+                        <form action="{{ url('admin/products/add-product') }}" class="" method="POST"
+                            enctype="multipart/form-data">
                             @csrf
 
                             <div class="ec-content-wrapper">
@@ -58,8 +59,7 @@
                                                                         <div class="avatar-edit">
                                                                             <input type='file' id="imageUpload"
                                                                                 name="product_image"
-                                                                                class="ec-image-upload"
-                                                                                 />
+                                                                                class="ec-image-upload" />
                                                                             <label for="imageUpload"><img
                                                                                     src="{{ url('assets/img/edit.svg') }}"
                                                                                     class="svg_img header_svg"
@@ -73,8 +73,7 @@
                                                                             </div>
                                                                         </div>
                                                                         @error('product_image')
-                                                                        <p class="text-danger">{{$message}}</p>
-                                                                            
+                                                                            <p class="text-danger">{{ $message }}</p>
                                                                         @enderror
                                                                     </div>
 
@@ -99,7 +98,8 @@
                                                                             <optgroup
                                                                                 label="{{ $data->main_category }}">
                                                                                 @foreach ($data->subCategories as $subCategoryy)
-                                                                                    <option value=" {{ $subCategoryy->id }}">
+                                                                                    <option
+                                                                                        value=" {{ $subCategoryy->id }}">
                                                                                         {{ $subCategoryy->sub_category }}
                                                                                     </option>
                                                                                 @endforeach
@@ -115,29 +115,7 @@
                                                                     <label class="form-label">Sort Description</label>
                                                                     <textarea name="short_description" class="form-control" rows="2"></textarea>
                                                                 </div>
-
                                                                 <div class="col-md-6">
-                                                                    <label class="form-label">Price <span>( In Rupees
-                                                                            )</span></label>
-                                                                    <input type="number" class="form-control"
-                                                                        name="price" id="price1">
-                                                                         @error('price')
-                                                                        <p class="text-danger">{{ $message }}</p>
-                                                                    @enderror
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <label class="form-label">Product Stock</label>
-                                                                    <input type="number" class="form-control"
-                                                                        name="product_stock" id="product_stock">
-                                                                         @error('product_stock')
-                                                                        <p class="text-danger">{{ $message }}</p>
-                                                                    @enderror
-                                                                </div>
-                                                                <div class="col-md-12">
-                                                                    <label class="form-label">Description</label>
-                                                                    <textarea name="description" class="form-control" rows="4"></textarea>
-                                                                </div>
-                                                                <div class="col-md-12">
                                                                     <label class="form-label">SKU (Product
                                                                         Code)</label>
                                                                     <input type="text" class="form-control"
@@ -146,6 +124,40 @@
                                                                     @error('product_code')
                                                                         <p class="text-danger">{{ $message }}</p>
                                                                     @enderror
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label class="form-label">Select Size</label>
+                                                                    <select name="size_id" id="size"
+                                                                        class="form-select">
+                                                                        @foreach ($size as $productSize)
+                                                                            <option value=" {{ $productSize->id }}">
+                                                                                {{ $productSize->size }}
+                                                                            </option>
+                                                                        @endforeach
+
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label class="form-label">Price <span>( In Rupees
+                                                                            )</span></label>
+                                                                    <input type="number" class="form-control"
+                                                                        name="price" id="price1">
+                                                                    @error('price')
+                                                                        <p class="text-danger">{{ $message }}</p>
+                                                                    @enderror
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label class="form-label">Product Stock</label>
+                                                                    <input type="number" class="form-control"
+                                                                        name="product_stock" id="product_stock">
+                                                                    @error('product_stock')
+                                                                        <p class="text-danger">{{ $message }}</p>
+                                                                    @enderror
+                                                                </div>
+
+                                                                <div class="col-md-12">
+                                                                    <label class="form-label">Description</label>
+                                                                    <textarea name="description" class="form-control" rows="4"></textarea>
                                                                 </div>
 
 
@@ -158,13 +170,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
-
-
-
-
-
 
                             <div
                                 class="button-group add-product-btn d-flex justify-content-sm-end justify-content-center mt-40">
@@ -287,7 +292,7 @@
 </script>
 
 <script>
-CKEDITOR.replace('description');
+    CKEDITOR.replace('description');
 </script>
 
 <script>

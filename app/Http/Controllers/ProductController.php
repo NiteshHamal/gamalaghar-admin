@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Product\ProductCreateRequest;
 use App\Models\MainCategory;
 use App\Models\Product;
+use App\Models\Size;
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -15,11 +16,12 @@ class ProductController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    
+
     {
         $Category=MainCategory::with('subCategories')->latest()->get();
+        $size=Size::latest()->get();
 
-        return view('admin.product.add_product',compact('Category'));
+        return view('admin.product.add_product',compact('Category', 'size'));
     }
 
     /**
@@ -46,22 +48,22 @@ class ProductController extends Controller
                     'product_stock'=>$request->product_stock,
                     'description'=>$request->description,
                     'product_code'=>$request->product_code
-                    
+
                 ]);
                 if($request->product_image){
                     $product->addMedia($request->product_image)->toMediaCollection('product_image');
                 }
                 return $product;
-                
+
             });
             if($product){
                 return back()->with('success','Product Created Successfully!');
             }
-            
+
         }
         catch(\Exception $e){
             return back()->with('error',$e->getMessage());
-            
+
         }
     }
 

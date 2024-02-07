@@ -30,11 +30,20 @@
                      </ul>
                  </li>
 
-                 <li class="has-child {{ request() ->is('admin/property*') ? 'open' : ''}}">
+                 <li class="{{ request()->is('admin/property/size') ? 'active' : '' }}">
+                    <a href="{{ url('admin/property/size') }}" class="{{ request()->is('admin/property/size') ? 'active' : '' }}">
+                        <span class="nav-icon uil uil-create-dashboard"></span>
+                        <span class="menu-text">Size</span>
+
+                    </a>
+
+                </li>
+
+                 {{-- <li class="has-child {{ request() ->is('admin/property*') ? 'open' : ''}}">
                     <a href="#" class>
                         <span class="nav-icon bx bxl-product-hunt"></span>
 
-                        <span class="menu-text">Property</span>
+                        <span class="menu-text">Size</span>
                         <span class="toggle-icon"></span>
                     </a>
                     <ul>
@@ -45,7 +54,7 @@
                             <a href="{{ url('admin/property/material') }}">Material</a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
 
                  <li class="has-child">
                      <a href="#" class>
@@ -67,7 +76,7 @@
                   <li class="has-child">
                      <a href="#" class>
                          <span class="nav-icon bx bx-cog"></span>
-                        
+
 
                          <span class="menu-text">Settings</span>
                          <span class="toggle-icon"></span>
@@ -81,7 +90,7 @@
                          </li> --}}
                      </ul>
                  </li>
-                
+
 
                 <li class>
                     <a href="sign-up.html">

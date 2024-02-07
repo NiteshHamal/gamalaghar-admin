@@ -18,8 +18,6 @@ return new class extends Migration
             $table->string('product_name')->nullable();
             $table->string('slug')->nullable();
             $table->longText('short_description')->nullable();
-            $table->float('price')->nullable();
-            $table->integer('product_stock')->nullable();
             $table->longText('description')->nullable();
             $table->string('product_code')->nullable();
             $table->string('status')->default('active')->nullable();
