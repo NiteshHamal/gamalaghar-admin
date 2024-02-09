@@ -87,9 +87,6 @@ class ProductController extends Controller
                     $productSizePrice->save();
                 }
 
-
-
-
                 if ($request->product_image) {
                     $product->addMedia($request->product_image)->toMediaCollection('product_image');
                 }
