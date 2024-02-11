@@ -12,7 +12,6 @@
 <main class="main-content">
     @include('layouts.sidebar')
     <div class="contents">
-
         {{-- ------ BredCrumb --}}
         <div class="container-fluid">
             <div class="row">
@@ -41,7 +40,6 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="product-add global-shadow px-sm-30 py-sm-50 px-0 py-20 bg-white radius-xl w-100 mb-40">
-
                         <div class="project-top-wrapper d-flex justify-content-between flex-wrap mb-25 mt-n10">
                             <div class="d-flex align-items-center flex-wrap justify-content-center">
                                 <div class="project-search order-search  global-shadow mt-10">
@@ -52,18 +50,13 @@
                                         <input class="form-control me-sm-2 border-0 box-shadow-none" type="search"
                                             name="keyword" placeholder="Filter by keyword" aria-label="Search">
                                     </form>
-
                                 </div>
                             </div>
-
                         </div>
-
                         <div class="row">
                             <div class="col-lg-12">
-
                                 <div class="table-responsive">
                                     <table class="table mb-0 table-borderless" id="table_data">
-
                                         <thead class="bg-primary text-light">
                                             <tr>
                                                 <th>ID</th>
@@ -90,7 +83,6 @@
                                                 </td>
                                             </tr>
                                             {{-- @empty
-
                                                 <tr>
                                                     <td colspan="5">
                                                         <img src="{{ url('assets/img/No data-rafiki.png') }}"
@@ -99,7 +91,6 @@
                                                     </td>
                                                 </tr>
                                             @endforelse --}}
-
                                         </tbody>
                                     </table>
                                     {{-- {{ $products->links('pagination::bootstrap-5') }} --}}
@@ -113,5 +104,4 @@
         </div>
     </div>
 </main>
-
 @include('layouts.footer')

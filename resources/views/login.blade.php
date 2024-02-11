@@ -23,10 +23,8 @@
                         <br><br>
                         <div class="edit-profile__logos mt-5">
                             <a href="index.html">
-                                <img class="dark"
-                                    src="{{ url('assets/img/Logo.png') }}" alt>
-                                <img class="light"
-                                    src="{{ url('assets/img/Logo.png') }}" alt>
+                                <img class="dark" src="{{ url('assets/img/Logo.png') }}" alt>
+                                <img class="light" src="{{ url('assets/img/Logo.png') }}" alt>
                             </a>
                         </div>
                         <div class="card border-0">
@@ -37,7 +35,6 @@
                             </div>
                             <div class="card-body">
                                 <div class="edit-profile__body">
-
                                     <form action="{{ url('login') }}" method="post">
                                         @csrf
                                         <div class="form-group mb-25">
@@ -80,10 +77,7 @@
                                     </form>
                                 </div>
                             </div>
-
-                           
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -108,11 +102,9 @@
             </li>
         </ul>
     </div>
-
     <script src="{{ url('assets/js/plugins.min.js') }}"></script>
     <script src="{{ url('assets/js/script.min.js') }}"></script>
     @livewireScripts()
-
 </body>
 
 </html>

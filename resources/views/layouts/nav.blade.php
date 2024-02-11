@@ -6,12 +6,9 @@
                    <img class="light" src="{{ url('assets/img/Logo.png') }}" alt>
                </a>
                <a href="{{ url('admin/dashboard') }}" class="sidebar-toggle">
-                   <img class="svg" src="{{url('admin/img/svg/align-center-alt.svg')}}" alt="img"></a>
+                   <img class="svg" src="{{ url('admin/img/svg/align-center-alt.svg') }}" alt="img"></a>
            </div>
-
-
        </div>
-
        <div class="navbar-right">
            <ul class="navbar-right__menu">
                <li class="nav-search">
@@ -25,12 +22,6 @@
                            aria-label="Search">
                    </form>
                </li>
-
-
-
-
-
-
                <li class="nav-flag-select">
                    <div class="dropdown-custom">
                        {{-- <a href="javascript:;" class="nav-item-toggle">
@@ -39,22 +30,17 @@
                            @else
                             <img src="{{ url('assets/img/nepali-flag.png') }}" alt class="rounded-circle">
                            @endif
-
                        </a> --}}
                        <div class="dropdown-parent-wrapper">
                            <div class="dropdown-wrapper dropdown-wrapper--small">
-
                                <a href="{{ url('locale/en') }}"><img src="{{ url('assets/img/flag.png') }}" alt>
                                    English</a>
                                <a href="{{ url('locale/ne') }}"><img src="{{ url('assets/img/nepali-flag.png') }}" alt>
                                    Nepali</a>
-
-
                            </div>
                        </div>
                    </div>
                </li>
-
                <li class="nav-author">
                    <div class="dropdown-custom">
                        <a href="javascript:;" class="nav-item-toggle"><img
@@ -102,13 +88,10 @@
                                        <i class="uil uil-sign-out-alt"></i> Sign Out</a>
                                </div>
                            </div>
-
                        </div>
                    </div>
                </li>
-
            </ul>
-
            <div class="navbar-right__mobileAction d-md-none">
                <a href="#" class="btn-search">
                    <img src="img/svg/search.svg" alt="search" class="svg feather-search">
@@ -117,5 +100,4 @@
                    <img class="svg" src="img/svg/more-vertical.svg" alt="more-vertical"></a>
            </div>
        </div>
-
    </nav>

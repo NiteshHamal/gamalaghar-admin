@@ -12,7 +12,6 @@
 <main class="main-content">
     @include('layouts.sidebar')
     <div class="contents">
-
         {{-- ------ BredCrumb --}}
         <div class="container-fluid">
             <div class="row">
@@ -41,9 +40,6 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="product-add global-shadow px-sm-30 py-sm-50 px-0 py-20 bg-white radius-xl w-100 mb-40">
-
-
-
                         <div class="card-header">
                             <h6 class="fw-500">Sub Category</h6>
                         </div>
@@ -85,11 +81,9 @@
                                 </div>
                             </form>
                         </div>
-
                         {{-- category table start --}}
                         <div class="row">
                             <div class="col-lg-12">
-
                                 <div class="table-responsive">
                                     <table class="table mb-0 table-borderless">
                                         <thead class="bg-primary text-light">
@@ -108,9 +102,11 @@
                                                     <td>{{ $data1->main_category }}</td>
                                                     <td>
                                                         <div class="d-flex">
-                                                            <a class="btn btn-primary me-3" href="{{ url('admin/category/sub-category/edit/'. $data1->slug) }}"><i
+                                                            <a class="btn btn-primary me-3"
+                                                                href="{{ url('admin/category/sub-category/edit/' . $data1->slug) }}"><i
                                                                     class="bi bi-pencil-square"></i></a>
-                                                            <a class="btn btn-danger remove" href="{{ url('admin/category/sub-category/delete/'. $data1->id) }}"><i
+                                                            <a class="btn btn-danger remove"
+                                                                href="{{ url('admin/category/sub-category/delete/' . $data1->id) }}"><i
                                                                     class="bi bi-trash-fill"></i></a>
                                                         </div>
                                                     </td>
@@ -124,23 +120,16 @@
                                                     </td>
                                                 </tr>
                                             @endforelse
-
                                         </tbody>
                                     </table>
                                 </div>
-
                             </div>
                         </div>
                         {{-- category table ends --}}
-
-
-
-
-
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    @include('layouts.footer')
+</main>
+@include('layouts.footer')

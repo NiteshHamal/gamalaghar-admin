@@ -1,5 +1,4 @@
 @include('layouts.header')
-
 <div class="mobile-search">
     <form action="/" class="search-form">
         <img src="img/svg/search.svg" alt="search" class="svg">
@@ -32,7 +31,6 @@
                         </div>
                     </div>
                     <div class="col-xxl-3 col-lg-4 col-sm-5">
-
                         <div class="card mb-25">
                             <div class="card-body text-center p-0">
                                 <div
@@ -40,8 +38,8 @@
                                     <div class="ap-img mb-20 pro_img_wrapper">
                                         <input id="file-upload" type="file" name="fileUpload" class="d-none">
                                         <label for="file-upload">
-
-                                            <img class="ap-img__main rounded-circle wh-120" src="{{ Avatar::create(Auth()->user()->name)->toBase64() }}"
+                                            <img class="ap-img__main rounded-circle wh-120"
+                                                src="{{ Avatar::create(Auth()->user()->name)->toBase64() }}"
                                                 alt="profile">
                                             <span class="cross" id="remove_pro_pic">
                                                 <img src="img/svg/camera.svg" alt="camera" class="svg">
@@ -77,7 +75,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                     <div class="col-xxl-9 col-lg-8 col-sm-7">
                         <div class="as-cover">
@@ -97,7 +94,6 @@
                             <div class="tab-content" id="v-pills-tabContent">
                                 <div class="tab-pane fade  show active" id="v-pills-home" role="tabpanel"
                                     aria-labelledby="v-pills-home-tab">
-
                                     <div class="edit-profile mt-25">
                                         <div class="card">
                                             <div class="card-header px-sm-25 px-3">
@@ -192,11 +188,9 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                                 <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
                                     aria-labelledby="v-pills-profile-tab">
-
                                     <div class="edit-profile mt-25">
                                         <div class="card">
                                             <div class="card-header  px-sm-25 px-3">
@@ -269,11 +263,9 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                                 <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
                                     aria-labelledby="v-pills-messages-tab">
-
                                     <div class="edit-profile mt-25">
                                         <div class="card">
                                             <div class="card-header  px-sm-25 px-3">
@@ -325,11 +317,9 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                                 <div class="tab-pane fade " id="v-pills-settings" role="tabpanel"
                                     aria-labelledby="v-pills-settings-tab">
-
                                     <div class="edit-profile edit-social mt-25">
                                         <div class="card">
                                             <div class="card-header  px-sm-25 px-3">
@@ -464,11 +454,9 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                                 <div class="tab-pane fade" id="v-pills-notification" role="tabpanel"
                                     aria-labelledby="v-pills-notification-tab">
-
                                     <div class="edit-profile edit-social mt-25">
                                         <div class="card">
                                             <div class="card-header px-sm-25 px-3">
@@ -656,7 +644,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -665,5 +652,5 @@
             </div>
         </div>
     </div>
-
-    @include('layouts.footer')
+</main>
+@include('layouts.footer')

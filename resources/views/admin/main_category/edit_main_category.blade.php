@@ -12,7 +12,6 @@
 <main class="main-content">
     @include('layouts.sidebar')
     <div class="contents">
-
         {{-- ------ BredCrumb --}}
         <div class="container-fluid">
             <div class="row">

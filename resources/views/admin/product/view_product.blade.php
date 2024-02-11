@@ -12,7 +12,6 @@
 <main class="main-content">
     @include('layouts.sidebar')
     <div class="contents">
-
         {{-- ------ BredCrumb --}}
         <div class="container-fluid">
             <div class="row">
@@ -41,7 +40,6 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="product-add global-shadow px-sm-30 py-sm-50 px-0 py-20 bg-white radius-xl w-100 mb-40">
-
                         <div class="project-top-wrapper d-flex justify-content-between flex-wrap mb-25 mt-n10">
                             <div class="d-flex align-items-center flex-wrap justify-content-center">
                                 <div class="project-search order-search  global-shadow mt-10">
@@ -52,34 +50,7 @@
                                         <input class="form-control me-sm-2 border-0 box-shadow-none" type="search"
                                             name="keyword" placeholder="Filter by keyword" aria-label="Search">
                                     </form>
-
                                 </div>
-
-                                {{-- <div class="project-category d-flex align-items-center ms-md-30 mt-xxl-10 mt-15">
-                                    <p class="fs-14 color-gray text-capitalize mb-10 mb-md-0  me-10">Status :</p>
-                                    <div class="project-tap order-project-tap global-shadow">
-                                        <ul class="nav px-1" id="ap-tab" role="tablist">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" id="ap-overview-tab" data-bs-toggle="pill"
-                                                    href="#ap-overview" role="tab" aria-selected="true">All</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="timeline-tab" data-bs-toggle="pill"
-                                                    href="#timeline" role="tab" aria-selected="false">Shipped</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="activity-tab" data-bs-toggle="pill"
-                                                    href="#activity" role="tab" aria-selected="false">Awaiting
-                                                    Shipment</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="draft-tab" data-bs-toggle="pill" href="#draft"
-                                                    role="tab" aria-selected="false">Canceled</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                </div> --}}
                             </div>
                             <div class="content-center mt-10">
                                 <div class="button-group m-0 mt-xl-0 mt-sm-10 order-button-group">
@@ -90,15 +61,10 @@
                                 </div>
                             </div>
                         </div>
-
-
-
                         <div class="row">
                             <div class="col-lg-12">
-
                                 <div class="table-responsive">
                                     <table class="table mb-0 table-borderless" id="table_data">
-
                                         <thead class="bg-primary text-light">
                                             <tr>
                                                 <th>ID</th>
@@ -129,7 +95,6 @@
                                                     </td>
                                                 </tr>
                                             @empty
-
                                                 <tr>
                                                     <td colspan="5">
                                                         <img src="{{ url('assets/img/No data-rafiki.png') }}"
@@ -138,7 +103,6 @@
                                                     </td>
                                                 </tr>
                                             @endforelse
-
                                         </tbody>
                                     </table>
                                     {{ $products->links('pagination::bootstrap-5') }}
@@ -152,12 +116,4 @@
         </div>
     </div>
 </main>
-
-
-
-
-
-
-
-
 @include('layouts.footer')

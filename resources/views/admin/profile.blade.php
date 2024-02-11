@@ -32,21 +32,17 @@
                     </div>
                     <div class="col-xxl-3 col-md-4  ">
                         <aside class="profile-sider">
-
                             <div class="card mb-25">
                                 <div class="card-body text-center pt-sm-30 pb-sm-0  px-25 pb-0">
                                     <div class="account-profile">
                                         <div class="ap-img w-100 d-flex justify-content-center">
-
                                             <img class="ap-img__main rounded-circle mb-3  wh-120 d-flex bg-opacity-primary"
                                                 src="{{ Avatar::create(Auth()->user()->name)->toBase64() }}"
                                                 alt="profile">
                                         </div>
                                         <div class="ap-nameAddress pb-3 pt-1">
                                             <h5 class="ap-nameAddress__title">{{ Auth()->user()->name }}</h5>
-
                                         </div>
-
                                     </div>
                                     <div class="card-footer mt-20 pt-20 pb-20 px-0 bg-transparent">
                                         <div class="profile-overview d-flex justify-content-between flex-wrap">
@@ -66,14 +62,9 @@
                                     </div>
                                 </div>
                             </div>
-
-
-
-
                         </aside>
                     </div>
                     <div class="col-xxl-9 col-md-8">
-
                         <div class="ap-tab ap-tab-header">
                             <div class="ap-tab-header__img">
                                 <img src="{{ url('assets/img/ap-header.png') }}" alt="ap-header"
@@ -85,18 +76,15 @@
                                         <a class="nav-link active" id="ap-overview-tab" data-bs-toggle="pill"
                                             href="#ap-overview" role="tab" aria-selected="true">Overview</a>
                                     </li>
-
                                 </ul>
                             </div>
                         </div>
-
                         <div class="tab-content mt-25" id="ap-tabContent">
                             <div class="tab-pane fade show active" id="ap-overview" role="tabpanel"
                                 aria-labelledby="ap-overview-tab">
                                 <div class="ap-content-wrapper">
                                     <div class="row">
                                         <div class="col-lg-4 mb-25">
-
                                             <div class="ap-po-details radius-xl d-flex justify-content-between">
                                                 <div>
                                                     <div class="overview-content">
@@ -120,10 +108,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
                                         <div class="col-lg-4 mb-25">
-
                                             <div class="ap-po-details radius-xl d-flex justify-content-between">
                                                 <div>
                                                     <div class="overview-content">
@@ -147,10 +133,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
                                         <div class="col-lg-4 mb-25">
-
                                             <div class="ap-po-details radius-xl d-flex justify-content-between">
                                                 <div>
                                                     <div class="overview-content">
@@ -175,11 +159,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
-
                                         <div class="col-lg-12">
-
                                             <div class="card mt-25 mb-40">
                                                 <div class="card-header text-capitalize px-md-25 px-3">
                                                     <h6>My products</h6>
@@ -248,17 +229,15 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    @include('layouts.footer')
+</main>
+@include('layouts.footer')

@@ -12,7 +12,6 @@
 <main class="main-content">
     @include('layouts.sidebar')
     <div class="contents">
-
         {{-- ------ BredCrumb --}}
         <div class="container-fluid">
             <div class="row">
@@ -23,7 +22,8 @@
                             <div class="breadcrumb-action justify-content-center flex-wrap">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}" class="text-primary"><i
+                                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}"
+                                                class="text-primary"><i
                                                     class="uil uil-estate text-primary"></i>Dashboard</a></li>
                                         <li class="breadcrumb-item active text-primary" aria-current="page">Size</li>
                                     </ol>
@@ -39,9 +39,6 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="product-add global-shadow px-sm-30 py-sm-50 px-0 py-20 bg-white radius-xl w-100 mb-40">
-
-
-
                         <div class="card-header">
                             <h6 class="fw-500">Size</h6>
                         </div>
@@ -70,7 +67,6 @@
                         {{-- category table start --}}
                         <div class="row">
                             <div class="col-lg-12">
-
                                 <div class="table-responsive">
                                     <table class="table mb-0 table-borderless">
                                         <thead class="bg-primary text-light">
@@ -78,7 +74,6 @@
                                                 <th>ID</th>
                                                 <th>Size</th>
                                                 <th>Action</th>
-
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -117,4 +112,5 @@
             </div>
         </div>
     </div>
-    @include('layouts.footer')
+</main>
+@include('layouts.footer')

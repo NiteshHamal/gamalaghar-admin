@@ -12,7 +12,6 @@
 <main class="main-content">
     @include('layouts.sidebar')
     <div class="contents">
-
         {{-- ------ BredCrumb --}}
         <div class="container-fluid">
             <div class="row">
@@ -26,7 +25,8 @@
                                         <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}"
                                                 class="text-primary"><i
                                                     class="uil uil-estate text-primary"></i>Dashboard</a></li>
-                                        <li class="breadcrumb-item active text-primary" aria-current="page"> edit Sub Category
+                                        <li class="breadcrumb-item active text-primary" aria-current="page"> edit Sub
+                                            Category
                                         </li>
                                     </ol>
                                 </nav>
@@ -88,4 +88,5 @@
             </div>
         </div>
     </div>
-    @include('layouts.footer')
+</main>
+@include('layouts.footer')

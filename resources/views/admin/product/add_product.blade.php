@@ -40,7 +40,6 @@
                         <form action="{{ url('admin/products/add-product') }}" class="" method="POST"
                             enctype="multipart/form-data">
                             @csrf
-
                             <div class="ec-content-wrapper">
                                 <div class="content">
                                     <div class="row">
@@ -49,7 +48,6 @@
                                                 <div class="card-header card-header-border-bottom">
                                                     <h2>Add Product</h2>
                                                 </div>
-
                                                 <div class="card-body">
                                                     <div class="row ec-vendor-uploads">
                                                         <div class="col-lg-4">
@@ -76,13 +74,11 @@
                                                                             <p class="text-danger">{{ $message }}</p>
                                                                         @enderror
                                                                     </div>
-
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-8">
                                                             <div class="ec-vendor-upload-detail row g-3">
-
                                                                 <div class="col-md-6">
                                                                     <label for="inputEmail4" class="form-label">Product
                                                                         name</label>
@@ -103,14 +99,10 @@
                                                                                         {{ $subCategoryy->sub_category }}
                                                                                     </option>
                                                                                 @endforeach
-
-
                                                                             </optgroup>
                                                                         @endforeach
-
                                                                     </select>
                                                                 </div>
-
                                                                 <div class="col-md-12">
                                                                     <label class="form-label">Sort Description</label>
                                                                     <textarea name="short_description" class="form-control" rows="2"></textarea>
@@ -133,15 +125,10 @@
                                                                         <p class="text-danger">{{ $message }}</p>
                                                                     @enderror
                                                                 </div>
-
-
-
                                                                 <div class="col-md-12">
                                                                     <label class="form-label">Description</label>
                                                                     <textarea name="description" class="form-control" rows="4"></textarea>
                                                                 </div>
-
-
                                                                 @foreach ($size as $productSize)
                                                                     <div class="container card add-product">
                                                                         <div class="row ">
@@ -179,19 +166,6 @@
                                                                         </div>
                                                                     </div>
                                                                 @endforeach
-
-
-
-
-
-
-
-
-
-
-
-
-
                                                             </div>
                                                         </div>
                                                     </div>
@@ -201,7 +175,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div
                                 class="button-group add-product-btn d-flex justify-content-sm-end justify-content-center mt-40">
                                 <button class="btn btn-light btn-default btn-squared fw-400 text-capitalize">cancel
@@ -217,29 +190,23 @@
         </div>
     </div>
 </main>
-
-
-
 <style>
     .ec-vendor-uploads .ec-vendor-img-upload .ec-vendor-main-img .avatar-upload {
         margin-bottom: 10px;
         position: relative;
     }
-
     @media (max-width: 991.98px) {
         .ec-vendor-uploads .ec-vendor-img-upload .ec-vendor-main-img .avatar-upload {
             max-width: 400px;
             margin: 0 auto 15px auto;
         }
     }
-
     .ec-vendor-uploads .ec-vendor-img-upload .ec-vendor-main-img .avatar-upload .avatar-edit {
         position: absolute;
         right: 25px;
         z-index: 1;
         top: 25px;
     }
-
     .ec-vendor-uploads .ec-vendor-img-upload .ec-vendor-main-img .avatar-upload .avatar-edit input {
         opacity: 0;
         width: 40px;
@@ -249,7 +216,6 @@
         position: absolute;
         z-index: 1;
     }
-
     .ec-vendor-uploads .ec-vendor-img-upload .ec-vendor-main-img .avatar-upload .avatar-edit input+label {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -275,17 +241,14 @@
         -webkit-transition: all 0.2s ease-in-out;
         transition: all 0.2s ease-in-out;
     }
-
     .ec-vendor-uploads .ec-vendor-img-upload .ec-vendor-main-img .avatar-upload .avatar-edit input+label .svg_img {
         width: 25px;
         opacity: 0.6;
     }
-
     .ec-vendor-uploads .ec-vendor-img-upload .ec-vendor-main-img .avatar-upload .avatar-edit input+label:hover {
         -webkit-box-shadow: none;
         box-shadow: none;
     }
-
     .ec-vendor-uploads .ec-vendor-img-upload .ec-vendor-main-img .avatar-upload .avatar-preview {
         width: 100%;
         height: 100%;
@@ -294,7 +257,6 @@
         border: 1px solid #eeeeee;
         border-radius: 15px;
     }
-
     .ec-vendor-uploads .ec-vendor-img-upload .ec-vendor-main-img .avatar-upload .avatar-preview>div {
         width: 100%;
         height: 100%;
@@ -305,7 +267,6 @@
         background-repeat: no-repeat;
         background-position: center;
     }
-
     .ec-vendor-uploads .ec-vendor-img-upload .ec-vendor-main-img .avatar-upload .avatar-preview .imagePreview img {
         margin: auto;
         vertical-align: middle;
@@ -313,33 +274,23 @@
         border-radius: 10px;
     }
 </style>
-
-
 @include('layouts.footer')
-
 <script>
     CKEDITOR.replace('short_description');
     CKEDITOR.replace('description');
 </script>
-
 <script>
     CKEDITOR.replace('description');
 </script>
-
 <script>
     /*======== Image Change on Upload ========*/
     $("body").on("change", ".ec-image-upload", function(e) {
-
         var lkthislk = $(this);
-
         if (this.files && this.files[0]) {
-
             var reader = new FileReader();
             reader.onload = function(e) {
-
                 var ec_image_preview = lkthislk.parent().parent().children('.ec-preview').find(
                     '.ec-image-preview').attr('src', e.target.result);
-
                 ec_image_preview.hide();
                 ec_image_preview.fadeIn(650);
             }

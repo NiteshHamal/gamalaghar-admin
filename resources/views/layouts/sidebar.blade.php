@@ -6,17 +6,11 @@
                     <a href="{{ url('admin/dashboard') }}" class="{{ request()->is('admin/dashboard') ? 'active' : '' }}">
                         <span class="nav-icon uil uil-create-dashboard"></span>
                         <span class="menu-text">Dashboard</span>
-
                     </a>
-
                 </li>
-
-
-
                 <li class="has-child {{ request()->is('admin/category*') ? 'open' : '' }}">
                     <a href="#" class>
                         <span class="nav-icon bx bxl-product-hunt"></span>
-
                         <span class="menu-text">Category</span>
                         <span class="toggle-icon"></span>
                     </a>
@@ -29,21 +23,16 @@
                         </li>
                     </ul>
                 </li>
-
                 <li class="{{ request()->is('admin/property/size') ? 'active' : '' }}">
                     <a href="{{ url('admin/property/size') }}"
                         class="{{ request()->is('admin/property/size') ? 'active' : '' }}">
                         <span class="nav-icon uil uil-create-dashboard"></span>
                         <span class="menu-text">Size</span>
-
                     </a>
-
                 </li>
-
                 <li class="has-child {{ request()->is('admin/products*') ? 'open' : '' }}">
                     <a href="#" class>
                         <span class="nav-icon bi bi-box-seam"></span>
-
                         <span class="menu-text">Products</span>
                         <span class="toggle-icon"></span>
                     </a>
@@ -56,26 +45,21 @@
                         </li>
                     </ul>
                 </li>
-
                 <li class="has-child {{ request()->is('admin/orders*') ? 'open' : '' }}">
                     <a href="#" class>
                         <span class="nav-icon bi bi-box-seam"></span>
-
                         <span class="menu-text">Orders</span>
                         <span class="toggle-icon"></span>
                     </a>
                     <ul>
-                        <li class="{{ request()->is('admin/orders') ?'active': '' }}">
+                        <li class="{{ request()->is('admin/orders') ? 'active' : '' }}">
                             <a href="{{ url('admin/orders') }}">View Orders</a>
                         </li>
                     </ul>
                 </li>
-
                 <li class="has-child">
                     <a href="#" class>
                         <span class="nav-icon bx bx-cog"></span>
-
-
                         <span class="menu-text">Settings</span>
                         <span class="toggle-icon"></span>
                     </a>
@@ -83,11 +67,8 @@
                         <li class>
                             <a href="#">App Settings</a>
                         </li>
-                        
                     </ul>
                 </li>
-
-
                 <li class>
                     <a href="sign-up.html">
                         <span class="nav-icon uil uil-sign-out-alt"></span>
