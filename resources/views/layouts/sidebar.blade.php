@@ -83,9 +83,7 @@
                         <li class>
                             <a href="#">App Settings</a>
                         </li>
-                        {{-- <li class>
-                             <a href="read-email.html">Sub Category</a>
-                         </li> --}}
+                        
                     </ul>
                 </li>
 
