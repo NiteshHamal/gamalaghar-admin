@@ -19,7 +19,7 @@
                 <div class="col-lg-12">
                     <div class="shop-breadcrumb">
                         <div class="breadcrumb-main">
-                            <h4 class="text-capitalize breadcrumb-title">View Product</h4>
+                            <h4 class="text-capitalize breadcrumb-title">View Orders</h4>
                             <div class="breadcrumb-action justify-content-center flex-wrap">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
@@ -27,7 +27,7 @@
                                                 class="text-primary"><i
                                                     class="uil uil-estate text-primary"></i>Dashboard</a></li>
                                         <li class="breadcrumb-item active text-primary" aria-current="page">View
-                                            Products</li>
+                                            Orders</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -54,44 +54,9 @@
                                     </form>
 
                                 </div>
-
-                                {{-- <div class="project-category d-flex align-items-center ms-md-30 mt-xxl-10 mt-15">
-                                    <p class="fs-14 color-gray text-capitalize mb-10 mb-md-0  me-10">Status :</p>
-                                    <div class="project-tap order-project-tap global-shadow">
-                                        <ul class="nav px-1" id="ap-tab" role="tablist">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" id="ap-overview-tab" data-bs-toggle="pill"
-                                                    href="#ap-overview" role="tab" aria-selected="true">All</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="timeline-tab" data-bs-toggle="pill"
-                                                    href="#timeline" role="tab" aria-selected="false">Shipped</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="activity-tab" data-bs-toggle="pill"
-                                                    href="#activity" role="tab" aria-selected="false">Awaiting
-                                                    Shipment</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="draft-tab" data-bs-toggle="pill" href="#draft"
-                                                    role="tab" aria-selected="false">Canceled</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                </div> --}}
                             </div>
-                            <div class="content-center mt-10">
-                                <div class="button-group m-0 mt-xl-0 mt-sm-10 order-button-group">
-                                    <button type="button"
-                                        class="order-bg-opacity-secondary text-secondary btn radius-md">Export</button>
-                                    <a href="{{url('admin/products/add-product')}}" class="btn btn-sm btn-primary me-0 radius-md">
-                                        <i class="la la-plus"></i> Add Product</a>
-                                </div>
-                            </div>
+
                         </div>
-
-
 
                         <div class="row">
                             <div class="col-lg-12">
@@ -109,26 +74,22 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @forelse ($products as $product)
-                                                <tr>
-                                                    <td>{{ $product->id }}</td>
-                                                    <td><img src="{{ $product->getFirstMediaUrl('product_image') }}"
-                                                            alt="Product Image" style="max-width: 100px" />
-                                                    </td>
-                                                    <td>{{ $product->product_name }}</td>
-                                                    <td>{{ $product->product_code }}</td>
-                                                    <td>
-                                                        <div class="d-flex">
-                                                            <a class="btn btn-primary me-3"
-                                                                href="{{ url('admin/property/size/edit/' . $product->slug) }}"><i
-                                                                    class="bi bi-pencil-square"></i></a>
-                                                            <a class="btn btn-danger remove"
-                                                                href="{{ url('admin/property/size/delete/' . $product->id) }}"><i
-                                                                    class="bi bi-trash-fill"></i></a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            @empty
+                                            <tr>
+                                                <td></td>
+                                                <td><img src="" alt="Product Image" style="max-width: 100px" />
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <div class="d-flex">
+                                                        <a class="btn btn-primary me-3" href=""><i
+                                                                class="bi bi-pencil-square"></i></a>
+                                                        <a class="btn btn-danger remove" href=""><i
+                                                                class="bi bi-trash-fill"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            {{-- @empty
 
                                                 <tr>
                                                     <td colspan="5">
@@ -137,11 +98,11 @@
                                                             style="max-width: 300px" />
                                                     </td>
                                                 </tr>
-                                            @endforelse
+                                            @endforelse --}}
 
                                         </tbody>
                                     </table>
-                                    {{ $products->links('pagination::bootstrap-5') }}
+                                    {{-- {{ $products->links('pagination::bootstrap-5') }} --}}
                                 </div>
                             </div>
                         </div>
@@ -152,12 +113,5 @@
         </div>
     </div>
 </main>
-
-
-
-
-
-
-
 
 @include('layouts.footer')

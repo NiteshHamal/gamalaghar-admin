@@ -6,6 +6,7 @@ use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MainCategoryController;
 use App\Http\Controllers\MaterialController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SizeController;
 use App\Http\Controllers\SubCategoryController;
@@ -39,7 +40,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('admin/products/add-product', [ProductController::class, 'index']);
     Route::post('admin/products/add-product', [ProductController::class, 'store']);
     Route::get('admin/products/view-product', [ProductController::class, 'viewProduct']);
-   
+
 
     Route::get('admin/category/main-category', [MainCategoryController::class, 'index']);
     Route::post('admin/category/main-category', [MainCategoryController::class, 'store']);
@@ -65,8 +66,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('admin/property/material/update', [MaterialController::class, 'update']);
     Route::get('admin/property/material/delete/{id}', [MaterialController::class, 'destroy']);
 
+    Route::get('admin/orders', [OrderController::class, 'index']);
 
-    
+
+
 });
 
 Route::get('admin/profile', function () {
