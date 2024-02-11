@@ -57,7 +57,7 @@
                     </ul>
                 </li>
 
-                <li class="has-child ">
+                <li class="has-child {{ request()->is('admin/orders*') ? 'open' : '' }}">
                     <a href="#" class>
                         <span class="nav-icon bi bi-box-seam"></span>
 
@@ -65,7 +65,7 @@
                         <span class="toggle-icon"></span>
                     </a>
                     <ul>
-                        <li class="">
+                        <li class="{{ request()->is('admin/orders') ?'active': '' }}">
                             <a href="{{ url('admin/orders') }}">View Orders</a>
                         </li>
                     </ul>
