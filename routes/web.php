@@ -68,8 +68,6 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('admin/orders', [OrderController::class, 'index']);
 
-
-
 });
 
 Route::get('admin/profile', function () {
