@@ -75,6 +75,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('admin/setting/province/delete/{id}', [ProvinceController::class, 'destroy']);
 
     Route::get('admin/setting/city', [CityController::class, 'index']);
+    Route::post('admin/setting/city', [CityController::class, 'store']);
 
     Route::get('admin/orders', [OrderController::class, 'index']);
 });

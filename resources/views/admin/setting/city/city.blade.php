@@ -60,7 +60,7 @@
                                             province Name
                                         </label>
                                         <select class="js-example-basic-single js-states form-control"
-                                            id="countryOption" name="main_category_id">
+                                            id="countryOption" name="province_id">
                                             @forelse ($province as $provinceData)
                                                 <option value="{{ $provinceData->id }}"> {{ $provinceData->province }}
                                                 </option>
