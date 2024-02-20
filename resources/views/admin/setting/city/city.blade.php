@@ -18,14 +18,14 @@
                 <div class="col-lg-12">
                     <div class="shop-breadcrumb">
                         <div class="breadcrumb-main">
-                            <h4 class="text-capitalize breadcrumb-title">Add Sub category</h4>
+                            <h4 class="text-capitalize breadcrumb-title">Add City</h4>
                             <div class="breadcrumb-action justify-content-center flex-wrap">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}"
                                                 class="text-primary"><i
                                                     class="uil uil-estate text-primary"></i>Dashboard</a></li>
-                                        <li class="breadcrumb-item active text-primary" aria-current="page">Sub Category
+                                        <li class="breadcrumb-item active text-primary" aria-current="page">City
                                         </li>
                                     </ol>
                                 </nav>
@@ -41,28 +41,28 @@
                 <div class="col-lg-12">
                     <div class="product-add global-shadow px-sm-30 py-sm-50 px-0 py-20 bg-white radius-xl w-100 mb-40">
                         <div class="card-header">
-                            <h6 class="fw-500">Sub Category</h6>
+                            <h6 class="fw-500">City</h6>
                         </div>
                         <div class="add-product__body px-sm-40 px-20">
-                            <form action="{{ url('admin/category/sub-category') }}" method="POST">
+                            <form action="{{ url('admin/setting/city') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="name1">sub-categoy name</label>
+                                    <label for="name1">city name</label>
                                     <input type="text" class="form-control" id="name1" placeholder="Pot"
-                                        name="sub_category">
-                                    @error('sub_category')
+                                        name="city">
+                                    @error('city')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
                                 <div class="form-group">
                                     <div class="countryOption">
                                         <label for="countryOption">
-                                            main category
+                                            province Name
                                         </label>
                                         <select class="js-example-basic-single js-states form-control"
                                             id="countryOption" name="main_category_id">
-                                            @forelse ($mainCategory as $category)
-                                                <option value="{{ $category->id }}"> {{ $category->main_category }}
+                                            @forelse ($province as $provinceData)
+                                                <option value="{{ $provinceData->id }}"> {{ $provinceData->province }}
                                                 </option>
                                             @empty
                                                 <option>Empty</option>
@@ -76,7 +76,7 @@
                                     </button>
                                     <button class="btn btn-primary btn-default btn-squared text-capitalize"
                                         type="submit">save
-                                        category
+                                        city
                                     </button>
                                 </div>
                             </form>

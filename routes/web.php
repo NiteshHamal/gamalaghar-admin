@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CityController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\LoginController;
@@ -72,6 +73,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('admin/setting/province/edit/{slug}', [ProvinceController::class, 'edit']);
     Route::post('admin/setting/province/update', [ProvinceController::class, 'update']);
     Route::get('admin/setting/province/delete/{id}', [ProvinceController::class, 'destroy']);
+
+    Route::get('admin/setting/city', [CityController::class, 'index']);
 
     Route::get('admin/orders', [OrderController::class, 'index']);
 });
