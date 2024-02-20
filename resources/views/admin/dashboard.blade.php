@@ -21,9 +21,10 @@
                             <div class="breadcrumb-action justify-content-center flex-wrap">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="#"><i
-                                                    class="uil uil-estate"></i>Dashboard</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Gamala Ghar</li>
+                                       <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}"
+                                                class="text-primary"><i
+                                                    class="uil uil-estate text-primary"></i>Dashboard</a></li>
+                                        <li class="breadcrumb-item active text-primary" aria-current="page">Gamala Ghar</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -37,7 +38,7 @@
                                     <div class="overview-content w-100">
                                         <div class=" ap-po-details-content d-flex flex-wrap justify-content-between">
                                             <div class="ap-po-details__titlebar">
-                                                <h1>100+</h1>
+                                                <h1>{{ $productCount }}</h1>
                                                 <p>Total Products</p>
                                             </div>
                                             <div class="ap-po-details__icon-area">
@@ -46,11 +47,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="ap-po-details-time">
-                                            <span class="color-success"><i class="las la-arrow-up"></i>
-                                                <strong>25.36%</strong></span>
-                                            <small>Since last month</small>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -69,11 +66,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="ap-po-details-time">
-                                            <span class="color-success"><i class="las la-arrow-up"></i>
-                                                <strong>25.36%</strong></span>
-                                            <small>Since last month</small>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -92,11 +85,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="ap-po-details-time">
-                                            <span class="color-danger"><i class="las la-arrow-down"></i>
-                                                <strong>25.36%</strong></span>
-                                            <small>Since last month</small>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -106,8 +95,8 @@
                                     <div class="overview-content w-100">
                                         <div class=" ap-po-details-content d-flex flex-wrap justify-content-between">
                                             <div class="ap-po-details__titlebar">
-                                                <h1>30,825</h1>
-                                                <p>New Customers</p>
+                                                <h1>{{ $countCustomer }}</h1>
+                                                <p>Total Customers</p>
                                             </div>
                                             <div class="ap-po-details__icon-area">
                                                 <div class="svg-icon order-bg-opacity-warning color-warning">
@@ -115,11 +104,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="ap-po-details-time">
-                                            <span class="color-success"><i class="las la-arrow-up"></i>
-                                                <strong>25.36%</strong></span>
-                                            <small>Since last month</small>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
