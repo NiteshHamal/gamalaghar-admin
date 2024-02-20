@@ -10,7 +10,9 @@ use Illuminate\Support\Facades\DB;
 class ProvinceController extends Controller
 {
     public function index(){
-        return view('admin.setting.province');
+
+        $province=Province::all();
+        return view('admin.setting.province', compact('province'));
     }
 
     public function store(ProvinceStoreRequest $request){

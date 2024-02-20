@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('province_id');
             $table->foreignId('city_id');
             $table->string('area');
+            $table->string('slug')->nullable();
             $table->timestamps();
         });
     }
