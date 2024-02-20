@@ -25,7 +25,8 @@
                                         <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}"
                                                 class="text-primary"><i
                                                     class="uil uil-estate text-primary"></i>Dashboard</a></li>
-                                        <li class="breadcrumb-item active text-primary" aria-current="page">Province</li>
+                                        <li class="breadcrumb-item active text-primary" aria-current="page">Province
+                                        </li>
                                     </ol>
                                 </nav>
                             </div>
@@ -47,8 +48,7 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="name1">province name</label>
-                                    <input type="text" class="form-control" id="name1" placeholder="Pot"
-                                        name="province">
+                                    <input type="text" class="form-control" id="name1" name="province">
                                     @error('province')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
@@ -80,14 +80,14 @@
                                             @forelse ($province as $provinceData)
                                                 <tr>
                                                     <td>{{ $provinceData->id }}</td>
-                                                    <td>{{ $provinceData->province  }}</td>
+                                                    <td>{{ $provinceData->province }}</td>
                                                     <td>
                                                         <div class="d-flex">
                                                             <a class="btn btn-primary me-3"
-                                                                href="{{ url('admin/category/main-category/edit/' . $provinceData->slug) }}"><i
+                                                                href="{{ url('admin/setting/province/edit/' . $provinceData->slug) }}"><i
                                                                     class="bi bi-pencil-square"></i></a>
                                                             <a class="btn btn-danger remove"
-                                                                href="{{ url('admin/category/main-category/delete/' . $provinceData->id) }}"><i
+                                                                href="{{ url('admin/setting/province/delete/' . $provinceData->id) }}"><i
                                                                     class="bi bi-trash-fill"></i></a>
                                                         </div>
                                                     </td>

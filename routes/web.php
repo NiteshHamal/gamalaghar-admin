@@ -69,6 +69,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('admin/setting/province',[ProvinceController::class, 'index']);
     Route::post('admin/setting/province',[ProvinceController::class, 'store']);
+    Route::get('admin/setting/province/edit/{slug}',[ProvinceController::class, 'edit']);
+    Route::post('admin/setting/province/update',[ProvinceController::class, 'update']);
 
     Route::get('admin/orders', [OrderController::class, 'index']);
 
