@@ -44,8 +44,9 @@
                             <h6 class="fw-500">City</h6>
                         </div>
                         <div class="add-product__body px-sm-40 px-20">
-                            <form action="{{ url('admin/setting/city') }}" method="POST">
+                            <form action="{{ url('admin/setting/city/update') }}" method="POST">
                                 @csrf
+                                <input type="hidden" value="{{ $city->id }}" name="id">
                                 <div class="form-group">
                                     <div class="countryOption">
                                         <label for="countryOption">
@@ -65,7 +66,7 @@
                                 <div class="form-group">
                                     <label for="name1">city name</label>
                                     <input type="text" class="form-control" id="name1" placeholder="Pot"
-                                        name="city">
+                                        name="city" value="{{ $city->city }}">
                                     @error('city')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
@@ -82,51 +83,6 @@
                                 </div>
                             </form>
                         </div>
-                        {{-- category table start --}}
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="table-responsive">
-                                    <table class="table mb-0 table-borderless">
-                                        <thead class="bg-primary text-light">
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>City</th>
-                                                <th>Province</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @forelse ($city as $cityData)
-                                                <tr>
-                                                    <td>{{ $cityData->id }}</td>
-                                                    <td>{{ $cityData->city }}</td>
-                                                    <td>{{ $cityData->province }}</td>
-                                                    <td>
-                                                        <div class="d-flex">
-                                                            <a class="btn btn-primary me-3"
-                                                                href="{{ url('admin/setting/city/edit/' . $cityData->slug) }}"><i
-                                                                    class="bi bi-pencil-square"></i></a>
-                                                            <a class="btn btn-danger remove"
-                                                                href="{{ url('admin/setting/city/delete/' . $cityData->id) }}"><i
-                                                                    class="bi bi-trash-fill"></i></a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            @empty
-                                                <tr>
-                                                    <td colspan="5">
-                                                        <img src="{{ url('assets/img/No data-rafiki.png') }}"
-                                                            class="img-fluid d-block mx-auto"
-                                                            style="max-width: 300px" />
-                                                    </td>
-                                                </tr>
-                                            @endforelse
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        {{-- category table ends --}}
                     </div>
                 </div>
             </div>
