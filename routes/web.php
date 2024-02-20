@@ -8,6 +8,7 @@ use App\Http\Controllers\MainCategoryController;
 use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProvinceController;
 use App\Http\Controllers\SizeController;
 use App\Http\Controllers\SubCategoryController;
 use App\Models\MainCategory;
@@ -65,6 +66,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('admin/property/material/edit/{slug}', [MaterialController::class, 'edit']);
     Route::post('admin/property/material/update', [MaterialController::class, 'update']);
     Route::get('admin/property/material/delete/{id}', [MaterialController::class, 'destroy']);
+
+    Route::get('admin/setting/province',[ProvinceController::class, 'index']);
+    Route::post('admin/setting/province',[ProvinceController::class, 'store']);
 
     Route::get('admin/orders', [OrderController::class, 'index']);
 

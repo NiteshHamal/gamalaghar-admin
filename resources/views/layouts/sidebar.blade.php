@@ -57,7 +57,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="has-child">
+                <li class="has-child {{ request()->is('admin/setting*') ? 'open':'' }}">
                     <a href="#" class>
                         <span class="nav-icon bx bx-cog"></span>
                         <span class="menu-text">Settings</span>
@@ -66,6 +66,9 @@
                     <ul>
                         <li class>
                             <a href="#">App Settings</a>
+                        </li>
+                        <li class ="{{ request()->is('admin/setting/province') ? 'active' : '' }}">
+                            <a href="{{ url('admin/setting/province') }}">Province</a>
                         </li>
                     </ul>
                 </li>

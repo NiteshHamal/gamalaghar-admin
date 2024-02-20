@@ -18,15 +18,14 @@
                 <div class="col-lg-12">
                     <div class="shop-breadcrumb">
                         <div class="breadcrumb-main">
-                            <h4 class="text-capitalize breadcrumb-title">Add Main category</h4>
+                            <h4 class="text-capitalize breadcrumb-title">Add Province</h4>
                             <div class="breadcrumb-action justify-content-center flex-wrap">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}"
                                                 class="text-primary"><i
                                                     class="uil uil-estate text-primary"></i>Dashboard</a></li>
-                                        <li class="breadcrumb-item active text-primary" aria-current="page">Main
-                                            Category</li>
+                                        <li class="breadcrumb-item active text-primary" aria-current="page">Province</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -41,16 +40,16 @@
                 <div class="col-lg-12">
                     <div class="product-add global-shadow px-sm-30 py-sm-50 px-0 py-20 bg-white radius-xl w-100 mb-40">
                         <div class="card-header">
-                            <h6 class="fw-500">Main Category</h6>
+                            <h6 class="fw-500">Province</h6>
                         </div>
                         <div class="add-product__body px-sm-40 px-20">
-                            <form action="{{ url('admin/category/main-category') }}" method="POST">
+                            <form action="{{ url('admin/setting/province') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="name1">categoy name</label>
+                                    <label for="name1">province name</label>
                                     <input type="text" class="form-control" id="name1" placeholder="Pot"
-                                        name="main_category">
-                                    @error('main_category')
+                                        name="province">
+                                    @error('province')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
@@ -60,20 +59,20 @@
                                     </button>
                                     <button class="btn btn-primary btn-default btn-squared text-capitalize"
                                         type="submit">save
-                                        category
+                                        province
                                     </button>
                                 </div>
                             </form>
                         </div>
                         {{-- category table start --}}
-                        <div class="row">
+                        {{-- <div class="row">
                             <div class="col-lg-12">
                                 <div class="table-responsive">
                                     <table class="table mb-0 table-borderless">
                                         <thead class="bg-primary text-light">
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Main Category</th>
+                                                <th>Province</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -106,7 +105,7 @@
                                     </table>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         {{-- category table ends --}}
                     </div>
                 </div>
