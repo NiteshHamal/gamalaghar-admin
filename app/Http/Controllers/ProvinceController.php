@@ -61,4 +61,22 @@ class ProvinceController extends Controller
             return back()->with('error', $e->getMessage());
         }
     }
+
+    public function destroy(string $id){
+        $province= Province::find($id);
+        if (is_null($province)) {
+            return back()->with('error', 'Province not Found!');
+        }
+        try {
+            $province=DB::transaction(function () use($province) {
+                $province->delete();
+                return $province;
+            });
+            if ($province) {
+                return back()->with('success', 'Province Deleted Successfully!');
+            }
+        } catch (\Exception $e) {
+            return back()->with('error', $e->getMessage());
+        }
+    }
 }

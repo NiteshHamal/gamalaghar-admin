@@ -67,13 +67,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('admin/property/material/update', [MaterialController::class, 'update']);
     Route::get('admin/property/material/delete/{id}', [MaterialController::class, 'destroy']);
 
-    Route::get('admin/setting/province',[ProvinceController::class, 'index']);
-    Route::post('admin/setting/province',[ProvinceController::class, 'store']);
-    Route::get('admin/setting/province/edit/{slug}',[ProvinceController::class, 'edit']);
-    Route::post('admin/setting/province/update',[ProvinceController::class, 'update']);
+    Route::get('admin/setting/province', [ProvinceController::class, 'index']);
+    Route::post('admin/setting/province', [ProvinceController::class, 'store']);
+    Route::get('admin/setting/province/edit/{slug}', [ProvinceController::class, 'edit']);
+    Route::post('admin/setting/province/update', [ProvinceController::class, 'update']);
+    Route::get('admin/setting/province/delete/{id}', [ProvinceController::class, 'destroy']);
 
     Route::get('admin/orders', [OrderController::class, 'index']);
-
 });
 
 Route::get('admin/profile', function () {

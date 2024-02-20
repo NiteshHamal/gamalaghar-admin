@@ -70,6 +70,9 @@
                         <li class ="{{ request()->is('admin/setting/province') ? 'active' : '' }}">
                             <a href="{{ url('admin/setting/province') }}">Province</a>
                         </li>
+                        <li class ="{{ request()->is('admin/setting/city') ? 'active' : '' }}">
+                            <a href="{{ url('admin/setting/city') }}">City</a>
+                        </li>
                     </ul>
                 </li>
                 <li class>
