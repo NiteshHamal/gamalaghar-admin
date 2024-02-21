@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AreaController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ForgotPasswordController;
@@ -77,6 +78,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('admin/setting/city/edit/{slug}', [CityController::class, 'edit']);
     Route::post('admin/setting/city/update', [CityController::class, 'update']);
     Route::get('admin/setting/city/delete/{id}', [CityController::class, 'destroy']);
+
+    Route::get('admin/setting/area', [AreaController::class, 'index']);
 
     Route::get('admin/orders', [OrderController::class, 'index']);
 });

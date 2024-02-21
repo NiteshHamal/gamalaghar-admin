@@ -22,7 +22,7 @@ class CityStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'city'=>['required'],
+            'cities.*'=>['required'],
             'province_id'=>['required'],
         ];
     }

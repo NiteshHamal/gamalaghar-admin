@@ -18,14 +18,14 @@
                 <div class="col-lg-12">
                     <div class="shop-breadcrumb">
                         <div class="breadcrumb-main">
-                            <h4 class="text-capitalize breadcrumb-title">Add City</h4>
+                            <h4 class="text-capitalize breadcrumb-title">Add Area</h4>
                             <div class="breadcrumb-action justify-content-center flex-wrap">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}"
                                                 class="text-primary"><i
                                                     class="uil uil-estate text-primary"></i>Dashboard</a></li>
-                                        <li class="breadcrumb-item active text-primary" aria-current="page">City
+                                        <li class="breadcrumb-item active text-primary" aria-current="page">Area
                                         </li>
                                     </ol>
                                 </nav>
@@ -41,7 +41,7 @@
                 <div class="col-lg-12">
                     <div class="product-add global-shadow px-sm-30 py-sm-50 px-0 py-20 bg-white radius-xl w-100 mb-40">
                         <div class="card-header">
-                            <h6 class="fw-500">City</h6>
+                            <h6 class="fw-500">Area</h6>
                         </div>
                         <div class="add-product__body px-sm-40 px-20">
                             <form action="{{ url('admin/setting/city') }}" method="POST">
@@ -49,24 +49,40 @@
                                 <div class="form-group">
                                     <div class="countryOption">
                                         <label for="countryOption">
-                                            province Name
+                                            province
                                         </label>
                                         <select class="js-example-basic-single js-states form-control"
                                             id="countryOption" name="province_id">
-                                            @forelse ($province as $provinceData)
+                                            {{-- @forelse ($province as $provinceData)
                                                 <option value="{{ $provinceData->id }}"> {{ $provinceData->province }}
                                                 </option>
                                             @empty
                                                 <option>Empty</option>
-                                            @endforelse
+                                            @endforelse --}}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="countryOption">
+                                        <label for="countryOption">
+                                            City
+                                        </label>
+                                        <select class="js-example-basic-single js-states form-control"
+                                            id="countryOption" name="province_id">
+                                            {{-- @forelse ($province as $provinceData)
+                                                <option value="{{ $provinceData->id }}"> {{ $provinceData->province }}
+                                                </option>
+                                            @empty
+                                                <option>Empty</option>
+                                            @endforelse --}}
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="name1">city name</label>
                                     <input type="text" class="form-control" id="name1" placeholder="Pot"
-                                        name="cities[]" multiple>
-                                    @error('cities')
+                                        name="city">
+                                    @error('city')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
@@ -83,7 +99,7 @@
                             </form>
                         </div>
                         {{-- category table start --}}
-                        <div class="row">
+                        {{-- <div class="row">
                             <div class="col-lg-12">
                                 <div class="table-responsive">
                                     <table class="table mb-0 table-borderless">
@@ -125,7 +141,7 @@
                                     </table>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         {{-- category table ends --}}
                     </div>
                 </div>

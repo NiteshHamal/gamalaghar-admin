@@ -22,14 +22,21 @@ class CityController extends Controller
     public function store(CityStoreRequest $request)
     {
         try {
-            $city = DB::transaction(function () use ($request) {
-                $city = City::create([
-                    'city' => $request->city,
-                    'province_id' => $request->province_id,
-                ]);
-                return $city;
+            $cities = DB::transaction(function () use ($request) {
+                // dd($request->all());
+                $cityNamesString = $request->input('cities')[0]; // Get the first (and only) element of the cities array
+                $cityNames = explode(',', $cityNamesString);
+
+                foreach ($cityNames as $cityName) {
+                    $city = City::create([
+                        'city' => trim($cityName), // Trim whitespace from city name
+                        'province_id' => $request->province_id,
+                    ]);
+                    $cities[] = $city;
+                }
+                return $cities;
             });
-            if ($city) {
+            if (!empty($cities)) {
                 return back()->with('success', 'City Created Successfully!');
             }
         } catch (\Exception $e) {
@@ -66,13 +73,14 @@ class CityController extends Controller
         }
     }
 
-    public function destroy(string $id){
+    public function destroy(string $id)
+    {
         $city = City::find($id);
-        if(is_null($city)){
+        if (is_null($city)) {
             return back()->with('error',  'City Not Found!');
         }
         try {
-            $city=DB::transaction(function() use($city) {
+            $city = DB::transaction(function () use ($city) {
                 $city->delete();
                 return $city;
             });
