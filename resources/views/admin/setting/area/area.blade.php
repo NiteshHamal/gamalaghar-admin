@@ -50,9 +50,9 @@
                                 <div class="form-group">
                                     <div class="countryOption">
                                         <label for="provinceOption">Province</label>
-                                        <select class=" select2 js-example-basic-single js-states form-control"
+                                        <select class="select2 js-example-basic-single js-states form-control"
                                             id="provinceOption" name="province_id">
-                                            <option value="">Select an Option</option>
+                                            <option value=""></option>
                                             @foreach ($province as $provinceData)
                                                 <option value="{{ $provinceData->id }}">
                                                     {{ $provinceData->province }}
@@ -64,9 +64,9 @@
                                 <div class="form-group">
                                     <div class="countryOption">
                                         <label for="cityOption">City</label>
-                                        <select class="select2 js-example-basic-single js-states form-control"
+                                        <select class="select3 js-example-basic-single js-states form-control"
                                             id="cityOption" name="city_id">
-                                            <option value="">Select a province first</option>
+                                            <option value=""></option>
                                         </select>
                                     </div>
                                 </div>
@@ -184,6 +184,14 @@
     $(document).ready(function() {
         $('.select2').select2({
             placeholder: 'Select an option'
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function() {
+        $('.select3').select2({
+            placeholder: 'Select a province first'
         });
     });
 </script>
