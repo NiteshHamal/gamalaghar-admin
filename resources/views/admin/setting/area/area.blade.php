@@ -44,59 +44,51 @@
                             <h6 class="fw-500">Area</h6>
                         </div>
                         <div class="add-product__body px-sm-40 px-20">
-                            <form action="{{ url('admin/setting/city') }}" method="POST">
+                            <form action="{{ url('admin/setting/area') }}" method="POST" id="areaForm">
                                 @csrf
+                                <input type="hidden" class="form-control" id="id" name="id">
                                 <div class="form-group">
                                     <div class="countryOption">
-                                        <label for="countryOption">
-                                            province
-                                        </label>
-                                        <select class="js-example-basic-single js-states form-control"
-                                            id="countryOption" name="province_id">
-                                            {{-- @forelse ($province as $provinceData)
-                                                <option value="{{ $provinceData->id }}"> {{ $provinceData->province }}
+                                        <label for="provinceOption">Province</label>
+                                        <select class=" select2 js-example-basic-single js-states form-control"
+                                            id="provinceOption" name="province_id">
+                                            <option value="">Select an Option</option>
+                                            @foreach ($province as $provinceData)
+                                                <option value="{{ $provinceData->id }}">
+                                                    {{ $provinceData->province }}
                                                 </option>
-                                            @empty
-                                                <option>Empty</option>
-                                            @endforelse --}}
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="countryOption">
-                                        <label for="countryOption">
-                                            City
-                                        </label>
-                                        <select class="js-example-basic-single js-states form-control"
-                                            id="countryOption" name="province_id">
-                                            {{-- @forelse ($province as $provinceData)
-                                                <option value="{{ $provinceData->id }}"> {{ $provinceData->province }}
-                                                </option>
-                                            @empty
-                                                <option>Empty</option>
-                                            @endforelse --}}
+                                        <label for="cityOption">City</label>
+                                        <select class="select2 js-example-basic-single js-states form-control"
+                                            id="cityOption" name="city_id">
+                                            <option value="">Select a province first</option>
                                         </select>
                                     </div>
                                 </div>
+
+
                                 <div class="form-group">
-                                    <label for="name1">city name</label>
-                                    <input type="text" class="form-control" id="name1" placeholder="Pot"
-                                        name="city">
-                                    @error('city')
+                                    <label for="name1">Area name</label>
+                                    <input type="text" class="form-control" id="name1"
+                                        placeholder="Enter area name" name="area">
+                                    @error('area')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
-
                                 <div
                                     class="button-group add-product-btn d-flex justify-content-sm-end justify-content-center mt-40">
-                                    <button class="btn btn-light btn-default btn-squared fw-400 text-capitalize">cancel
-                                    </button>
+                                    <button
+                                        class="btn btn-light btn-default btn-squared fw-400 text-capitalize">Cancel</button>
                                     <button class="btn btn-primary btn-default btn-squared text-capitalize"
-                                        type="submit">save
-                                        city
-                                    </button>
+                                        type="submit">Save area</button>
                                 </div>
                             </form>
+
                         </div>
                         {{-- category table start --}}
                         {{-- <div class="row">
@@ -149,4 +141,49 @@
         </div>
     </div>
 </main>
+
+
 @include('layouts.footer')
+
+<script>
+    $(document).ready(function() {
+        $('#provinceOption').on('change', function() {
+            var selectedOption = $(this).val();
+            if (selectedOption !== "") {
+                // Retrieve the data based on the selected option's value
+                $.ajax({
+                    url: '/admin/setting/cities/' + selectedOption,
+                    method: 'GET',
+                    success: function(response) {
+                        // Clear previous options
+                        $('#cityOption').empty();
+
+                        // Append new options based on retrieved data
+                        for (var i = 0; i < response.length; i++) {
+                            var option = $('<option>');
+                            option.val(response[i].id);
+                            option.text(response[i].city);
+                            $('#cityOption').append(option);
+                        }
+                    }
+                });
+            } else {
+                // Clear the second field if no option is selected
+                $('#cityOption').empty();
+                // $('#id').val(''); // Clear the tea_id input field
+            }
+        });
+        // $('#cityOption').on('change', function() {
+        //     var selectedId = $(this).val();
+        //     $('#id').val(selectedId);
+        // });
+    });
+</script>
+
+<script>
+    $(document).ready(function() {
+        $('.select2').select2({
+            placeholder: 'Select an option'
+        });
+    });
+</script>
