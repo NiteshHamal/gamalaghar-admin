@@ -23,7 +23,6 @@ class CityController extends Controller
     {
         try {
             $cities = DB::transaction(function () use ($request) {
-                // dd($request->all());
                 $cityNamesString = $request->input('cities')[0]; // Get the first (and only) element of the cities array
                 $cityNames = explode(',', $cityNamesString);
 

@@ -85,6 +85,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
     Route::get('admin/setting/area', [AreaController::class, 'index']);
+    Route::post('admin/setting/area', [AreaController::class, 'store']);
 
     Route::get('admin/orders', [OrderController::class, 'index']);
 });

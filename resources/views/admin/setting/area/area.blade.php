@@ -44,7 +44,7 @@
                             <h6 class="fw-500">Area</h6>
                         </div>
                         <div class="add-product__body px-sm-40 px-20">
-                            <form action="{{ url('admin/setting/area') }}" method="POST" id="areaForm">
+                            <form action="{{ url('admin/setting/area') }}" method="POST">
                                 @csrf
                                 <input type="hidden" class="form-control" id="id" name="id">
                                 <div class="form-group">
@@ -68,6 +68,9 @@
                                             id="cityOption" name="city_id">
                                             <option value=""></option>
                                         </select>
+                                        @error('city_id')
+                                            <p class="text-danger">{{ $message }}</p>
+                                        @enderror
                                     </div>
                                 </div>
 
@@ -75,8 +78,8 @@
                                 <div class="form-group">
                                     <label for="name1">Area name</label>
                                     <input type="text" class="form-control" id="name1"
-                                        placeholder="Enter area name" name="area">
-                                    @error('area')
+                                        placeholder="Enter area name" name="areas[]" multiple>
+                                    @error('areas')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
