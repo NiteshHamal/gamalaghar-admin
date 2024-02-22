@@ -22,7 +22,7 @@ class AreaStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            // 'area'=>['required'],
+            'areas'=>['required'],
             // 'city_id'=>['required'],
         ];
     }
