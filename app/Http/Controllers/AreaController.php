@@ -17,19 +17,12 @@ class AreaController extends Controller
         return view('admin.setting.area.area', compact('province'));
     }
 
-    public function getCities($provinceId)
-    {
-        $cities = City::where('province_id', $provinceId)->get();
-        return response()->json($cities);
-    }
-
     public function store(AreaStoreRequest $request)
     {
         try {
             $areas = DB::transaction(function () use ($request) {
                 $areaNamesString = $request->input('areas')[0];
                 $areaNames = explode(',', $areaNamesString);
-
 
                 foreach ($areaNames as $areaName) {
                     $area = Area::create([
@@ -49,4 +42,9 @@ class AreaController extends Controller
         }
     }
 
+    public function getCities($provinceId)
+    {
+        $cities = City::where('province_id', $provinceId)->get();
+        return response()->json($cities);
+    }
 }

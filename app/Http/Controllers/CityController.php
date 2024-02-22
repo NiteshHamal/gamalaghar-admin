@@ -26,6 +26,8 @@ class CityController extends Controller
                 $cityNamesString = $request->input('cities')[0]; // Get the first (and only) element of the cities array
                 $cityNames = explode(',', $cityNamesString);
 
+                dd($cityNames);
+
                 foreach ($cityNames as $cityName) {
                     $city = City::create([
                         'city' => trim($cityName), // Trim whitespace from city name
