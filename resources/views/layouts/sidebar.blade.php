@@ -76,6 +76,9 @@
                         <li class="{{ request()->is('admin/setting/area') ? 'active' : '' }}">
                             <a href="{{ url('admin/setting/area') }}">Area</a>
                         </li>
+                        <li class="{{ request()->is('admin/setting/delivery-price') ? 'active' : '' }}">
+                            <a href="{{ url('admin/setting/delivery-price') }}">Delivery Price</a>
+                        </li>
                     </ul>
                 </li>
                 <li class>

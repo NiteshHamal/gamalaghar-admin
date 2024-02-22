@@ -3,6 +3,7 @@
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DeliveryPriceController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MainCategoryController;
@@ -85,8 +86,10 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('admin/setting/area', [AreaController::class, 'index']);
     Route::post('admin/setting/area', [AreaController::class, 'store']);
-
     Route::get('admin/setting/cities/{provinceId}', [AreaController::class, 'getCities']);
+
+    Route::get('admin/setting/delivery-price', [DeliveryPriceController::class, 'index']);
+    Route::post('admin/setting/delivery-charge', [DeliveryPriceController::class, 'deliveryCharge']);
 
 
     Route::get('admin/orders', [OrderController::class, 'index']);
