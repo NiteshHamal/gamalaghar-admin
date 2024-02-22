@@ -22,8 +22,8 @@ class AreaStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'area'=>['required'],
-            'city_id'=>['required'],
+            // 'area'=>['required'],
+            // 'city_id'=>['required'],
         ];
     }
 }
