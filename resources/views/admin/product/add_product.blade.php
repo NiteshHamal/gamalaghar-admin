@@ -135,7 +135,8 @@
                                                                             <p class="mb-1 text-primary">Product Size:
                                                                                 {{ $productSize->size }}</p>
                                                                             <input type="hidden" class="form-control"
-                                                                                name="size[]" value="{{$productSize->id}}">
+                                                                                name="size[]"
+                                                                                value="{{ $productSize->id }}">
                                                                             <div class="col-md-6">
                                                                                 <label class="form-label">Price <span>(
                                                                                         In
@@ -195,18 +196,21 @@
         margin-bottom: 10px;
         position: relative;
     }
+
     @media (max-width: 991.98px) {
         .ec-vendor-uploads .ec-vendor-img-upload .ec-vendor-main-img .avatar-upload {
             max-width: 400px;
             margin: 0 auto 15px auto;
         }
     }
+
     .ec-vendor-uploads .ec-vendor-img-upload .ec-vendor-main-img .avatar-upload .avatar-edit {
         position: absolute;
         right: 25px;
         z-index: 1;
         top: 25px;
     }
+
     .ec-vendor-uploads .ec-vendor-img-upload .ec-vendor-main-img .avatar-upload .avatar-edit input {
         opacity: 0;
         width: 40px;
@@ -216,6 +220,7 @@
         position: absolute;
         z-index: 1;
     }
+
     .ec-vendor-uploads .ec-vendor-img-upload .ec-vendor-main-img .avatar-upload .avatar-edit input+label {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -241,14 +246,17 @@
         -webkit-transition: all 0.2s ease-in-out;
         transition: all 0.2s ease-in-out;
     }
+
     .ec-vendor-uploads .ec-vendor-img-upload .ec-vendor-main-img .avatar-upload .avatar-edit input+label .svg_img {
         width: 25px;
         opacity: 0.6;
     }
+
     .ec-vendor-uploads .ec-vendor-img-upload .ec-vendor-main-img .avatar-upload .avatar-edit input+label:hover {
         -webkit-box-shadow: none;
         box-shadow: none;
     }
+
     .ec-vendor-uploads .ec-vendor-img-upload .ec-vendor-main-img .avatar-upload .avatar-preview {
         width: 100%;
         height: 100%;
@@ -257,6 +265,7 @@
         border: 1px solid #eeeeee;
         border-radius: 15px;
     }
+
     .ec-vendor-uploads .ec-vendor-img-upload .ec-vendor-main-img .avatar-upload .avatar-preview>div {
         width: 100%;
         height: 100%;
@@ -267,6 +276,7 @@
         background-repeat: no-repeat;
         background-position: center;
     }
+
     .ec-vendor-uploads .ec-vendor-img-upload .ec-vendor-main-img .avatar-upload .avatar-preview .imagePreview img {
         margin: auto;
         vertical-align: middle;
