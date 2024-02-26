@@ -16,8 +16,9 @@ return new class extends Migration
             $table->foreignId('user_id')->nullable();
             $table->string('order_number')->nullable();
             $table->string('fullname')->nullable();
+            $table->string('province')->nullable();
             $table-> string('address')->nullable();
-            $table->string('shipping_address')->nullable();
+            $table->string('area')->nullable();
             $table->float('sub_total')->nullable();
             $table->float('delivery_charge')->nullable();
             $table->float('total_amount')->nullable();
