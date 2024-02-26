@@ -198,3 +198,26 @@
         });
     });
 </script>
+
+
+<style>
+    .select2-container--default .select2-selection--single {
+        height: 48px;
+        outline: none;
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .select2-search__field {
+
+        height: 30px !important;
+        /* Adjust height as needed */
+        font-size: 16px;
+        /* Adjust font size as needed */
+    }
+
+    .select2-selection__arrow {
+        display: none !important;
+        /* Hide the arrow */
+    }
+</style>
