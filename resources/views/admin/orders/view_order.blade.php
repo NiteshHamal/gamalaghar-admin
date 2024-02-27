@@ -60,37 +60,50 @@
                                         <thead class="bg-primary text-light">
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Image</th>
-                                                <th>Product Name</th>
-                                                <th>Product Code</th>
+                                                <th>Fullname</th>
+                                                <th>Order Number</th>
+                                                <th>Province</th>
+                                                <th>City</th>
+                                                <th>Area</th>
+                                                <th>SubTotal</th>
+                                                <th>Delivery Charge</th>
+                                                <th>Total</th>
+                                                <th>Order Status</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td></td>
-                                                <td><img src="" alt="Product Image" style="max-width: 100px" />
-                                                </td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                    <div class="d-flex">
-                                                        <a class="btn btn-primary me-3" href=""><i
-                                                                class="bi bi-pencil-square"></i></a>
-                                                        <a class="btn btn-danger remove" href=""><i
-                                                                class="bi bi-trash-fill"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            {{-- @empty
+                                            @forelse ($orders as $order)
                                                 <tr>
-                                                    <td colspan="5">
+                                                    <td>{{ $order->id }}</td>
+                                                    <td>{{ $order->fullname }}</td>
+                                                    <td>{{ $order->order_number }}</td>
+                                                    <td>{{ $order->province }}</td>
+                                                    <td>{{ $order->city }}</td>
+                                                    <td>{{ $order->area }}</td>
+                                                    <td>{{ $order->sub_total }}</td>
+                                                    <td>{{ $order->delivery_charge }}</td>
+                                                    <td>{{ $order->total_amount }}</td>
+                                                    <td>{{ $order->order_status }}</td>
+                                                    <td>
+                                                        <div class="d-flex">
+                                                            <a class="btn btn-primary me-3" href=""><i
+                                                                    class="bi bi-pencil-square"></i></a>
+                                                            <a class="btn btn-danger remove" href=""><i
+                                                                    class="bi bi-trash-fill"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                            @empty
+                                                <tr>
+                                                    <td colspan="11">
                                                         <img src="{{ url('assets/img/No data-rafiki.png') }}"
                                                             class="img-fluid d-block mx-auto"
                                                             style="max-width: 300px" />
                                                     </td>
                                                 </tr>
-                                            @endforelse --}}
+                                            @endforelse
                                         </tbody>
                                     </table>
                                     {{-- {{ $products->links('pagination::bootstrap-5') }} --}}
