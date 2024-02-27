@@ -40,19 +40,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="product-add global-shadow px-sm-30 py-sm-50 px-0 py-20 bg-white radius-xl w-100 mb-40">
-                        <div class="project-top-wrapper d-flex justify-content-between flex-wrap mb-25 mt-n10">
-                            <div class="d-flex align-items-center flex-wrap justify-content-center">
-                                <div class="project-search order-search  global-shadow mt-10">
-                                    <form action="{{ url('admin/products/view-product') }}" method="GET"
-                                        class="order-search__form">
-                                        @csrf
-                                        <img src="img/svg/search.svg" alt="search" class="svg text-primary">
-                                        <input class="form-control me-sm-2 border-0 box-shadow-none" type="search"
-                                            name="keyword" placeholder="Filter by keyword" aria-label="Search">
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="table-responsive">
@@ -60,20 +48,23 @@
                                         <thead class="bg-primary text-light">
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Fullname</th>
-                                                <th>Order Number</th>
-                                                <th>Province</th>
-                                                <th>City</th>
-                                                <th>Area</th>
-                                                <th>SubTotal</th>
-                                                <th>Delivery Charge</th>
-                                                <th>Total</th>
-                                                <th>Order Status</th>
-                                                <th>Action</th>
+                                                <th>Product Image</th>
+                                                <th>Product Name</th>
+                                                <th>Quantity</th>
+                                                <th>Price</th>
+                                                <th>Amount</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @forelse ($orders as $order)
+                                            <tr>
+                                                <td>1</td>
+                                                <td></td>
+                                                <td>Chinese Pot</td>
+                                                <td>2</td>
+                                                <td>1000</td>
+                                                <td>2000</td>
+                                            </tr>
+                                            {{-- @forelse ($orders as $order)
                                                 <tr>
                                                     <td>{{ $order->id }}</td>
                                                     <td>{{ $order->fullname }}</td>
@@ -102,8 +93,44 @@
                                                             style="max-width: 300px" />
                                                     </td>
                                                 </tr>
-                                            @endforelse
+                                            @endforelse --}}
                                         </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td class="border-none" colspan="3">
+                                                    <span></span>
+                                                </td>
+                                                <td class="border-color" colspan="1">
+                                                    <span><strong>Sub Total</strong></span>
+                                                </td>
+                                                <td class="border-color">
+                                                    <span><b>Rs. 3520</b></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border-none" colspan="3">
+                                                    <span></span>
+                                                </td>
+                                                <td class="border-color" colspan="1">
+                                                    <span><strong>Tax (13%)</strong></span>
+                                                </td>
+                                                <td class="border-color">
+                                                    <span><b>Rs. 352</b></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border-none" colspan="3">
+                                                    <span></span>
+                                                </td>
+                                                <td class="border-color" colspan="1">
+                                                    <span><strong>Total</strong></span>
+                                                </td>
+                                                <td class="border-color">
+                                                    <span><b>Rs. 3872</b></span>
+                                                </td>
+
+                                            </tr>
+                                        </tfoot>
                                     </table>
                                     {{-- {{ $products->links('pagination::bootstrap-5') }} --}}
                                 </div>

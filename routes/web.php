@@ -93,11 +93,13 @@ Route::group(['middleware' => 'auth'], function () {
 
 
     Route::get('admin/orders', [OrderController::class, 'index']);
+    Route::get('admin/single-orders', [OrderController::class, 'singleorder']);
 });
 
 Route::get('admin/profile', function () {
     return view('admin.profile');
 });
+
 
 Route::get('admin/profile/setting', function () {
     return view('admin.profile_setting');

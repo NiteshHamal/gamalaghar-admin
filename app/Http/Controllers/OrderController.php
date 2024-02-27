@@ -12,4 +12,8 @@ class OrderController extends Controller
         $orders= Order::latest()->get();
         return view('admin.orders.view_order', compact('orders'));
     }
+
+    public function singleorder(){
+        return view('admin.orders.view_single_order');
+    }
 }
