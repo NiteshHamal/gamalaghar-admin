@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('order_number')->nullable();
             $table->string('fullname')->nullable();
             $table->string('province')->nullable();
-            $table-> string('address')->nullable();
+            $table-> string('city')->nullable();
             $table->string('area')->nullable();
             $table->float('sub_total')->nullable();
             $table->float('delivery_charge')->nullable();

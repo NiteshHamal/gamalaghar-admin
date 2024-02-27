@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('order_items', function (Blueprint $table) {
             $table->id();
             $table->foreignId('order_id')->nullable();
+            $table->foreignId('product_id')->nullable();
             $table->string('product_name')->nullable();
             $table->string('size')->nullable();
             $table->float('price')->nullable();
