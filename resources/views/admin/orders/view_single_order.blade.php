@@ -97,7 +97,7 @@
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <td class="border-none" colspan="3">
+                                                <td class="border-none" colspan="4">
                                                     <span></span>
                                                 </td>
                                                 <td class="border-color" colspan="1">
@@ -108,7 +108,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="border-none" colspan="3">
+                                                <td class="border-none" colspan="4">
                                                     <span></span>
                                                 </td>
                                                 <td class="border-color" colspan="1">
@@ -119,7 +119,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="border-none" colspan="3">
+                                                <td class="border-none" colspan="4">
                                                     <span></span>
                                                 </td>
                                                 <td class="border-color" colspan="1">

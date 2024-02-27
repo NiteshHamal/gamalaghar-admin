@@ -9,11 +9,13 @@ class OrderController extends Controller
 {
     public function index()
     {
-        $orders= Order::latest()->get();
+        $orders = Order::latest()->get();
         return view('admin.orders.view_order', compact('orders'));
     }
 
-    public function singleorder(){
+    public function singleorder()
+    {
+
         return view('admin.orders.view_single_order');
     }
 }
