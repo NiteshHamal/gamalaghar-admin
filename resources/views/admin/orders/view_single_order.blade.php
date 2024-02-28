@@ -73,7 +73,7 @@
                                                     </td>
 
                                                     <td>{{ $orderItems->product_name }}</td>
-                                                    <td></td>
+                                                    <td>{{ $orderItems->quantity }}</td>
                                                     <td>{{ $orderItems->price }}</td>
                                                     <td></td>
                                                 </tr>
