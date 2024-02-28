@@ -75,7 +75,7 @@
                                                     <td>{{ $orderItems->product_name }}</td>
                                                     <td>{{ $orderItems->quantity }}</td>
                                                     <td>{{ $orderItems->price }}</td>
-                                                    <td></td>
+                                                    <td>{{ $orderItems->quantity * $orderItems->price }}</td>
                                                 </tr>
 
                                             @empty
@@ -97,7 +97,7 @@
                                                     <span><strong>Sub Total</strong></span>
                                                 </td>
                                                 <td class="border-color">
-                                                    <span><b>Rs. 3520</b></span>
+                                                    <span><b>Rs. {{ $order->sub_total }}</b></span>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -119,7 +119,7 @@
                                                     <span><strong>Total</strong></span>
                                                 </td>
                                                 <td class="border-color">
-                                                    <span><b>Rs. 3872</b></span>
+                                                    <span><b>Rs. {{ $order->total_amount }}</b></span>
                                                 </td>
 
                                             </tr>
