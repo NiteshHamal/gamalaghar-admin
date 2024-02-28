@@ -88,7 +88,7 @@
                                                     <td>
                                                         <div class="d-flex">
                                                             <a class="btn btn-primary me-3"
-                                                                href="{{ url('admin/single-orders') }}"><i
+                                                                href="{{ url('admin/single-order/' . $order->id) }}"><i
                                                                     class="bi bi-eye"></i></a>
                                                         </div>
                                                     </td>

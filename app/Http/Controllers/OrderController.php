@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -13,9 +14,11 @@ class OrderController extends Controller
         return view('admin.orders.view_order', compact('orders'));
     }
 
-    public function singleorder()
+    public function singleorder(string $id)
     {
-
-        return view('admin.orders.view_single_order');
+        $order = Order::with('orderItems')->where('id', $id)->first();
+        $productId = $order->orderItems->pluck('product_id')->toArray();
+        $productImages = Product::with('media')->whereIn('id', $productId)->get();
+        return view('admin.orders.view_single_order', compact('order', 'productImages'));
     }
 }

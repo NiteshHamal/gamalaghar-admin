@@ -57,32 +57,25 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>1</td>
-                                                <td></td>
-                                                <td>Chinese Pot</td>
-                                                <td>2</td>
-                                                <td>1000</td>
-                                                <td>2000</td>
+
                                             </tr>
-                                            {{-- @forelse ($orders as $order)
+                                            @forelse ($order->orderItems as $orderItems)
                                                 <tr>
-                                                    <td>{{ $order->id }}</td>
-                                                    <td>{{ $order->fullname }}</td>
-                                                    <td>{{ $order->order_number }}</td>
-                                                    <td>{{ $order->province }}</td>
-                                                    <td>{{ $order->city }}</td>
-                                                    <td>{{ $order->area }}</td>
-                                                    <td>{{ $order->sub_total }}</td>
-                                                    <td>{{ $order->delivery_charge }}</td>
-                                                    <td>{{ $order->total_amount }}</td>
-                                                    <td>{{ $order->order_status }}</td>
+                                                    <td>{{ $orderItems->id }}</td>
                                                     <td>
-                                                        <div class="d-flex">
-                                                            <a class="btn btn-primary me-3"
-                                                                href="{{ url('admin/single-orders') }}"><i
-                                                                    class="bi bi-eye"></i></a>
-                                                        </div>
+                                                        @foreach ($productImages as $productImage)
+                                                            @if ($productImage->id == $orderItems->product_id)
+                                                                <img src="{{ $productImage->getFirstMediaUrl('product_image') }}"
+                                                                    alt="{{ $orderItems->product_name }}"
+                                                                    style="max-width: 100px" />
+                                                            @endif
+                                                        @endforeach
                                                     </td>
+
+                                                    <td>{{ $orderItems->product_name }}</td>
+                                                    <td></td>
+                                                    <td>{{ $orderItems->price }}</td>
+                                                    <td></td>
                                                 </tr>
 
                                             @empty
@@ -93,7 +86,7 @@
                                                             style="max-width: 300px" />
                                                     </td>
                                                 </tr>
-                                            @endforelse --}}
+                                            @endforelse
                                         </tbody>
                                         <tfoot>
                                             <tr>
