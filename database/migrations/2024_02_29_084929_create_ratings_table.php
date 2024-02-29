@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->nullable();
             $table->foreignId('product_id')->nullable();
             $table->integer('rating')->nullable();
-            $table->longText('review')->nullable();
+            $table->longText('comment')->nullable();
             $table->timestamps();
         });
     }
