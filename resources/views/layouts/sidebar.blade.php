@@ -57,7 +57,14 @@
                         </li>
                     </ul>
                 </li>
-                <li class="has-child {{ request()->is('admin/setting*') ? 'open':'' }}">
+                <li class="{{ request()->is('admin/faq') ? 'active' : '' }}">
+                    <a href="{{ url('admin/faq') }}" class="{{ request()->is('admin/faq') ? 'active' : '' }}">
+                        <span class="nav-icon uil uil-question-circle"></span>
+                        <span class="menu-text">FAQ's</span>
+                    </a>
+                </li>
+
+                <li class="has-child {{ request()->is('admin/setting*') ? 'open' : '' }}">
                     <a href="#" class>
                         <span class="nav-icon bx bx-cog"></span>
                         <span class="menu-text">Settings</span>

@@ -4,6 +4,7 @@ use App\Http\Controllers\AreaController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DeliveryPriceController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MainCategoryController;
@@ -94,6 +95,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('admin/orders', [OrderController::class, 'index']);
     Route::get('admin/single-order/{id}', [OrderController::class, 'singleorder']);
+
+    Route::get('admin/faq', [FaqController::class, 'index']);
 });
 
 Route::get('admin/profile', function () {
