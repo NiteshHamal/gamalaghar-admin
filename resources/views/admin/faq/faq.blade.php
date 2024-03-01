@@ -43,21 +43,21 @@
                 <div class="col-lg-12">
                     <div class="product-add global-shadow px-sm-30 py-sm-50 px-0 py-20 bg-white radius-xl w-100 mb-40">
                         <div class="add-product__body px-sm-40 px-20">
-                            <form action="{{ url('admin/category/main-category') }}" method="POST">
+                            <form action="{{ url('admin/faq') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <label for="name1">Question</label>
                                     <input type="text" class="form-control" id="name1" placeholder="Pot"
                                         name="question">
-                                    @error('main_category')
+                                    @error('question')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="name1">Answer</label>
-                                    <input type="text" class="form-control" id="name1" placeholder="Pot"
+                                    <input type="text" class="form-control" id="name1"
                                         name="answer">
-                                    @error('main_category')
+                                    @error('answer')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
@@ -72,29 +72,31 @@
                             </form>
                         </div>
                         {{-- category table start --}}
-                        {{-- <div class="row">
+                        <div class="row">
                             <div class="col-lg-12">
                                 <div class="table-responsive">
                                     <table class="table mb-0 table-borderless">
                                         <thead class="bg-primary text-light">
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Main Category</th>
+                                                <th>Question</th>
+                                                <th>Answer</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @forelse ($mainCategory as $data)
+                                            @forelse ($faqs as $faq)
                                                 <tr>
-                                                    <td>{{ $data->id }}</td>
-                                                    <td>{{ $data->main_category }}</td>
+                                                    <td>{{ $faq->id }}</td>
+                                                    <td>{{ $faq->question }}</td>
+                                                    <td>{{ $faq->answer }}</td>
                                                     <td>
                                                         <div class="d-flex">
                                                             <a class="btn btn-primary me-3"
-                                                                href="{{ url('admin/category/main-category/edit/' . $data->slug) }}"><i
+                                                                href="{{ url('admin/faq/edit/' . $faq->slug) }}"><i
                                                                     class="bi bi-pencil-square"></i></a>
                                                             <a class="btn btn-danger remove"
-                                                                href="{{ url('admin/category/main-category/delete/' . $data->id) }}"><i
+                                                                href="{{ url('admin/faq/delete/' . $faq->id) }}"><i
                                                                     class="bi bi-trash-fill"></i></a>
                                                         </div>
                                                     </td>
@@ -112,7 +114,7 @@
                                     </table>
                                 </div>
                             </div>
-                        </div> --}}
+                        </div>
                         {{-- category table ends --}}
                     </div>
                 </div>

@@ -97,6 +97,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('admin/single-order/{id}', [OrderController::class, 'singleorder']);
 
     Route::get('admin/faq', [FaqController::class, 'index']);
+    Route::post('admin/faq', [FaqController::class, 'store']);
+    Route::get('admin/faq/edit/{slug}', [FaqController::class, 'edit']);
+    Route::post('admin/faq/update', [FaqController::class, 'update']);
+    Route::get('admin/faq/delete/{id}', [FaqController::class, 'destroy']);
 });
 
 Route::get('admin/profile', function () {
