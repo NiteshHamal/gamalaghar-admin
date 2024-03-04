@@ -63,7 +63,12 @@
                         <span class="menu-text">FAQ's</span>
                     </a>
                 </li>
-
+                <li class="{{ request()->is('admin/contact') ? 'active' : '' }}">
+                    <a href="{{ url('admin/contact') }}" class="{{ request()->is('admin/contact') ? 'active' : '' }}">
+                        <span class="nav-icon uil uil-question-circle"></span>
+                        <span class="menu-text">Contact</span>
+                    </a>
+                </li>
                 <li class="has-child {{ request()->is('admin/setting*') ? 'open' : '' }}">
                     <a href="#" class>
                         <span class="nav-icon bx bx-cog"></span>

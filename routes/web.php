@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\CityController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DeliveryPriceController;
 use App\Http\Controllers\FaqController;
@@ -101,6 +102,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('admin/faq/edit/{slug}', [FaqController::class, 'edit']);
     Route::post('admin/faq/update', [FaqController::class, 'update']);
     Route::get('admin/faq/delete/{id}', [FaqController::class, 'destroy']);
+
+    Route::get('admin/contact', [ContactController::class, 'index']); 
 });
 
 Route::get('admin/profile', function () {
