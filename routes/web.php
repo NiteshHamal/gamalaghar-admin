@@ -103,7 +103,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('admin/faq/update', [FaqController::class, 'update']);
     Route::get('admin/faq/delete/{id}', [FaqController::class, 'destroy']);
 
-    Route::get('admin/contact', [ContactController::class, 'index']); 
+    Route::get('admin/contact', [ContactController::class, 'index']);
+    Route::get('admin/contact/delete/{id}', [ContactController::class, 'destroy']);
 });
 
 Route::get('admin/profile', function () {

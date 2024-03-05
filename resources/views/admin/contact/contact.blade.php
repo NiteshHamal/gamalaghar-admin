@@ -67,11 +67,11 @@
                                                     <td>{{ $message->subject }}</td>
                                                     <td>{{ $message->message }}</td>
                                                     <td>
-                                                        {{-- <div class="d-flex">
+                                                        <div class="d-flex">
                                                             <a class="btn btn-danger remove"
-                                                                href="{{ url('admin/property/size/delete/' . $product->id) }}"><i
+                                                                href="{{ url('admin/contact/delete/' . $message->id) }}"><i
                                                                     class="bi bi-trash-fill"></i></a>
-                                                        </div> --}}
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             @empty
