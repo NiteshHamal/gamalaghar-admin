@@ -47,7 +47,7 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="name1">Question</label>
-                                    <input type="text" class="form-control" id="name1" placeholder="Pot"
+                                    <input type="text" class="form-control" id="name1"
                                         name="question">
                                     @error('question')
                                         <p class="text-danger">{{ $message }}</p>
