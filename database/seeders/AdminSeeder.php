@@ -15,13 +15,16 @@ class AdminSeeder extends Seeder
      */
     public function run(): void
     {
-        User::create([
-            'name' => "Nitesh Hamal",
-            'email' => "nitesh0hamal@gmail.com",
-            'password' => Hash::make('password'),
-            'email_verified_at'=>Carbon::today(),
-            'role'=>'admin',
-            'phone'=>'9813371345'
-        ]);
+        $user = User::firstOrCreate(
+            ['email' => 'nitesh0hamal@gmail.com'],
+            [
+                'name' => 'Nitesh Hamal',
+                'password' => Hash::make('password'),
+                'email_verified_at' => Carbon::now(),
+                'role' => 'admin',
+                'phone' => '9813371345'
+            ]
+        );
+
     }
 }
