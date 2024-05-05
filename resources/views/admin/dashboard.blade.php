@@ -57,7 +57,7 @@
                                     <div class="overview-content w-100">
                                         <div class=" ap-po-details-content d-flex flex-wrap justify-content-between">
                                             <div class="ap-po-details__titlebar">
-                                                <h1>30,825</h1>
+                                                <h1>{{$totalOrders}}</h1>
                                                 <p>Total Orders</p>
                                             </div>
                                             <div class="ap-po-details__icon-area">
@@ -76,7 +76,7 @@
                                     <div class="overview-content w-100">
                                         <div class=" ap-po-details-content d-flex flex-wrap justify-content-between">
                                             <div class="ap-po-details__titlebar">
-                                                <h1>$30,825</h1>
+                                                <h1>Rs. {{$totalSales}}</h1>
                                                 <p>Total Sales</p>
                                             </div>
                                             <div class="ap-po-details__icon-area">
