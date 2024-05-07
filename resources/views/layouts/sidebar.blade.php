@@ -38,10 +38,12 @@
                     </a>
                     <ul>
                         <li class="{{ request()->is('admin/products/add-product') ? 'active' : '' }}">
-                            <a href="{{ url('admin/products/add-product') }}">Add Product</a>
+                            <a href="{{ url('admin/products/add-product') }}"><span
+                                    class=" nav-icon bx bx-add-to-queue"></span>Add Product</a>
                         </li>
                         <li class="{{ request()->is('admin/products/view-product') ? 'active' : '' }}">
-                            <a href="{{ url('admin/products/view-product') }}">View Products</a>
+                            <a href="{{ url('admin/products/view-product') }}"><span
+                                    class=" nav-icon bx bx-show-alt"></span>View Products</a>
                         </li>
                     </ul>
                 </li>
@@ -53,7 +55,8 @@
                     </a>
                     <ul>
                         <li class="{{ request()->is('admin/orders') ? 'active' : '' }}">
-                            <a href="{{ url('admin/orders') }}">View Orders</a>
+                            <a href="{{ url('admin/orders') }}"><span class=" nav-icon bx bx-show-alt"></span>View
+                                Orders</a>
                         </li>
                     </ul>
                 </li>
