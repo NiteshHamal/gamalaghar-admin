@@ -4,13 +4,13 @@
             <ul class="sidebar_nav">
                 <li class="{{ request()->is('admin/dashboard') ? 'active' : '' }}">
                     <a href="{{ url('admin/dashboard') }}" class="{{ request()->is('admin/dashboard') ? 'active' : '' }}">
-                        <span class="nav-icon uil uil-create-dashboard"></span>
+                        <span class="nav-icon bx bxs-dashboard"></span>
                         <span class="menu-text">Dashboard</span>
                     </a>
                 </li>
                 <li class="has-child {{ request()->is('admin/category*') ? 'open' : '' }}">
                     <a href="#" class>
-                        <span class="nav-icon bx bxl-product-hunt"></span>
+                        <span class="nav-icon uil uil-package "></span>
                         <span class="menu-text">Category</span>
                         <span class="toggle-icon"></span>
                     </a>
@@ -32,7 +32,7 @@
                 </li>
                 <li class="has-child {{ request()->is('admin/products*') ? 'open' : '' }}">
                     <a href="#" class>
-                        <span class="nav-icon bi bi-box-seam"></span>
+                        <span class=" nav-icon bx bxl-product-hunt"></span>
                         <span class="menu-text">Products</span>
                         <span class="toggle-icon"></span>
                     </a>
@@ -64,16 +64,16 @@
                     </a>
                 </li>
 
-                 <li class="{{ request()->is('admin/blogs') ? 'active' : '' }}">
+                <li class="{{ request()->is('admin/blogs') ? 'active' : '' }}">
                     <a href="{{ url('admin/blogs') }}" class="{{ request()->is('admin/blogs') ? 'active' : '' }}">
-                        <span class="nav-icon uil uil-question-circle"></span>
+                        <span class="nav-icon uil uil-blogger"></span>
                         <span class="menu-text">Blogs</span>
                     </a>
                 </li>
 
                 <li class="{{ request()->is('admin/contact') ? 'active' : '' }}">
                     <a href="{{ url('admin/contact') }}" class="{{ request()->is('admin/contact') ? 'active' : '' }}">
-                        <span class="nav-icon uil uil-question-circle"></span>
+                        <span class="nav-icon bx bxs-contact"></span>
                         <span class="menu-text">Contact</span>
                     </a>
                 </li>
