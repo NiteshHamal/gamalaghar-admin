@@ -183,10 +183,11 @@
                             </div>
                             <div
                                 class="button-group add-product-btn d-flex justify-content-sm-end justify-content-center mt-40">
-                                <button class="btn btn-light btn-default btn-squared fw-400 text-capitalize">cancel
+                                <button class="btn btn-light btn-default btn-squared fw-400 text-capitalize">
+                                    Cancel
                                 </button>
-                                <button class="btn btn-primary btn-default btn-squared text-capitalize">save
-                                    product
+                                <button class="btn btn-primary btn-default btn-squared text-capitalize">Edit
+                                    Product
                                 </button>
                             </div>
                         </form>

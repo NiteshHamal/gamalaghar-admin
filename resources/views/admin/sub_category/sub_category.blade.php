@@ -72,8 +72,6 @@
                                 </div>
                                 <div
                                     class="button-group add-product-btn d-flex justify-content-sm-end justify-content-center mt-40">
-                                    <button class="btn btn-light btn-default btn-squared fw-400 text-capitalize">cancel
-                                    </button>
                                     <button class="btn btn-primary btn-default btn-squared text-capitalize"
                                         type="submit">save
                                         category
