@@ -86,10 +86,10 @@
                                                     <td>
                                                         <div class="d-flex">
                                                             <a class="btn btn-primary me-3"
-                                                                href="{{ url('admin/property/size/edit/' . $product->slug) }}"><i
+                                                                href="{{ url('admin/products/edit/' . $product->slug) }}"><i
                                                                     class="bi bi-pencil-square"></i></a>
                                                             <a class="btn btn-danger remove"
-                                                                href="{{ url('admin/property/size/delete/' . $product->id) }}"><i
+                                                                href="{{ url('admin/products/view-product/delete/' . $product->id) }}"><i
                                                                     class="bi bi-trash-fill"></i></a>
                                                         </div>
                                                     </td>

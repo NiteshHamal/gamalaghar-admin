@@ -45,6 +45,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('admin/products/add-product', [ProductController::class, 'index']);
     Route::post('admin/products/add-product', [ProductController::class, 'store']);
     Route::get('admin/products/view-product', [ProductController::class, 'viewProduct']);
+    Route::get('admin/products/view-product/delete/{id}', [ProductController::class, 'destroy']);
+    Route::get('admin/products/edit/{slug}', [ProductController::class, 'edit']);
+    Route::post('admin/products/update', [ProductController::class, 'update']);
 
 
     Route::get('admin/category/main-category', [MainCategoryController::class, 'index']);
@@ -84,8 +87,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('admin/setting/city/delete/{id}', [CityController::class, 'destroy']);
 
     // Route::get('admin/setting/cities/{selectedOption}', [AreaController::class, 'getCitiesByProvince']);
-
-
 
     Route::get('admin/setting/area', [AreaController::class, 'index']);
     Route::post('admin/setting/area', [AreaController::class, 'store']);
