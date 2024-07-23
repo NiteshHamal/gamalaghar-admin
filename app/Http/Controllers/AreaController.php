@@ -14,7 +14,18 @@ class AreaController extends Controller
     public function index()
     {
         $province = Province::all();
-        return view('admin.setting.area.area', compact('province'));
+        $areas = Area::join('cities', 'cities.id', '=', 'areas.city_id')
+             ->join('provinces', 'provinces.id', '=', 'cities.province_id')
+             ->select(
+                 'areas.id',
+                 'areas.area',
+                 'cities.city',
+                 'provinces.province',
+                 'areas.slug'
+             )
+             ->get();
+
+        return view('admin.setting.area.area', compact('province', 'areas'));
     }
 
     public function store(AreaStoreRequest $request)
@@ -46,5 +57,31 @@ class AreaController extends Controller
     {
         $cities = City::where('province_id', $provinceId)->get();
         return response()->json($cities);
+    }
+
+    public function edit(string $slug)
+    {
+        $area = Area::where('slug', $slug)->first();
+        $city = City::all();
+        $province = Province::all();
+        return view('admin.setting.area.edit_area', compact('area', 'province', 'city'));
+    }
+
+    public function destroy(string $id){
+        $area = Area::find($id);
+        if (is_null($area)) {
+            return back()->with('error',  'Area Not Found!');
+        }
+        try {
+            $area = DB::transaction(function () use ($area) {
+                $area->delete();
+                return $area;
+            });
+            if ($area) {
+                return back()->with('success', 'Area Deleted Successfully!');
+            }
+        } catch (\Exception $e) {
+            return back()->with('error', $e->getMessage());
+        }
     }
 }

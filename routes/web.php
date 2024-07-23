@@ -91,6 +91,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('admin/setting/area', [AreaController::class, 'index']);
     Route::post('admin/setting/area', [AreaController::class, 'store']);
     Route::get('admin/setting/cities/{provinceId}', [AreaController::class, 'getCities']);
+    Route::get('admin/setting/area/delete/{id}', [AreaController::class, 'destroy']);
+    Route::get('admin/setting/area/edit/{slug}', [AreaController::class, 'edit']);
+
 
     Route::get('admin/setting/delivery-price', [DeliveryPriceController::class, 'index']);
     Route::post('admin/setting/delivery-charge', [DeliveryPriceController::class, 'deliveryCharge']);

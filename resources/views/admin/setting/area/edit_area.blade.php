@@ -50,7 +50,7 @@
                                 <div class="form-group">
                                     <div class="countryOption">
                                         <label for="provinceOption">Province</label>
-                                        <select class="select2 js-example-basic-single js-states form-control"
+                                        <select class="select2"
                                             id="provinceOption" name="province_id">
                                             <option value=""></option>
                                             @foreach ($province as $provinceData)
@@ -64,7 +64,7 @@
                                 <div class="form-group">
                                     <div class="countryOption">
                                         <label for="cityOption">City</label>
-                                        <select class="select3 js-example-basic-single js-states form-control"
+                                        <select class="select2"
                                             id="cityOption" name="city_id">
                                             <option value=""></option>
                                         </select>
@@ -91,53 +91,6 @@
                             </form>
 
                         </div>
-                        {{-- category table start --}}
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="table-responsive">
-                                    <table class="table mb-0 table-borderless">
-                                        <thead class="bg-primary text-light">
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Province</th>
-                                                <th>City</th>
-                                                <th>Area</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @forelse ($areas as $area)
-                                                <tr>
-                                                    <td>{{ $area->id }}</td>
-                                                    <td>{{ $area->province }}</td>
-                                                    <td>{{ $area->city }}</td>
-                                                    <td>{{ $area->area }}</td>
-                                                    <td>
-                                                        <div class="d-flex">
-                                                            <a class="btn btn-primary me-3"
-                                                                href="{{ url('admin/setting/area/edit/' . $area->slug) }}"><i
-                                                                    class="bi bi-pencil-square"></i></a>
-                                                            <a class="btn btn-danger remove"
-                                                                href="{{ url('admin/setting/area/delete/' . $area->id) }}"><i
-                                                                    class="bi bi-trash-fill"></i></a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            @empty
-                                                <tr>
-                                                    <td colspan="5">
-                                                        <img src="{{ url('assets/img/No data-rafiki.png') }}"
-                                                            class="img-fluid d-block mx-auto"
-                                                            style="max-width: 300px" />
-                                                    </td>
-                                                </tr>
-                                            @endforelse
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        {{-- category table ends --}}
                     </div>
                 </div>
             </div>
@@ -155,7 +108,7 @@
             if (selectedOption !== "") {
                 // Retrieve the data based on the selected option's value
                 $.ajax({
-                    url: '/admin/setting/cities/' + selectedOption,
+                    url: '/user/checkout/cities/' + selectedOption,
                     method: 'GET',
                     success: function(response) {
                         // Clear previous options
@@ -173,15 +126,65 @@
             } else {
                 // Clear the second field if no option is selected
                 $('#cityOption').empty();
-                // $('#id').val(''); // Clear the tea_id input field
             }
         });
-        // $('#cityOption').on('change', function() {
-        //     var selectedId = $(this).val();
-        //     $('#id').val(selectedId);
-        // });
+    });
+
+    $(document).ready(function() {
+        $('#cityOption').on('change', function() {
+            var selectedOption = $(this).val();
+            if (selectedOption !== "") {
+                // Retrieve the data based on the selected option's value
+                $.ajax({
+                    url: '/user/checkout/areas/' + selectedOption,
+                    method: 'GET',
+                    success: function(response) {
+                        // Clear previous options
+                        $('#areaOption').empty();
+
+                        // Append new options based on retrieved data
+                        for (var i = 0; i < response.length; i++) {
+                            var option = $('<option>');
+                            option.val(response[i].id);
+                            option.text(response[i].area);
+                            $('#areaOption').append(option);
+                        }
+                        $('#delivery_charge').text(response.delivery_charge)
+                    }
+                });
+            } else {
+                // Clear the second field if no option is selected
+                $('#areaOption').empty();
+            }
+        });
+    });
+
+
+
+    $(document).ready(function() {
+        $('#areaOption').on('change', function() {
+            var selectedOption = $(this).val();
+            if (selectedOption !== "") {
+                // Retrieve the data based on the selected option's value
+                $.ajax({
+                    url: '/user/checkout/areas/deliveryCharge/' + selectedOption,
+                    method: 'GET',
+                    success: function(response) {
+
+
+
+                        $('#delivery_charge').text('Rs. ' + response.delivery_charge);
+                        $('#deliveryCharge').val(response.delivery_charge);
+
+                    }
+                });
+            } else {
+                $('#delivery_charge').text('N/A');
+            }
+        });
     });
 </script>
+
 
 <script>
     $(document).ready(function() {
@@ -191,13 +194,6 @@
     });
 </script>
 
-<script>
-    $(document).ready(function() {
-        $('.select3').select2({
-            placeholder: 'Select a province first'
-        });
-    });
-</script>
 
 
 <style>
