@@ -1,4 +1,6 @@
 @include('layouts.header')
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.8/dist/trix.css">
+<script type="text/javascript" src="https://unpkg.com/trix@2.0.8/dist/trix.umd.min.js"></script>
 <div class="mobile-search">
     <form action="/" class="search-form">
         <img src="img/svg/search.svg" alt="search" class="svg">
@@ -66,9 +68,16 @@
                                                                         </div>
                                                                         <div class="avatar-preview ec-preview">
                                                                             <div class="imagePreview ec-div-preview">
-                                                                                <img class="ec-image-preview"
-                                                                                    src="{{ url('assets/img/vender-upload-preview.jpg') }}"
-                                                                                    alt="edit" />
+                                                                                @if ($product->getFirstMediaUrl('product_image'))
+                                                                                    <img class="ec-image-preview"
+                                                                                        src="{{ $product->getFirstMediaUrl('product_image') }}"
+                                                                                        alt="product image" />
+                                                                                @else
+                                                                                    <img class="ec-image-preview"
+                                                                                        src="{{ url('assets/img/vender-upload-preview.jpg') }}"
+                                                                                        alt="default image" />
+                                                                                @endif
+
                                                                             </div>
                                                                         </div>
                                                                         @error('product_image')
@@ -107,7 +116,7 @@
                                                                 </div>
                                                                 <div class="col-md-12">
                                                                     <label class="form-label">Short Description</label>
-                                                                    <textarea name="short_description" class="form-control" rows="2" value="{{ $product->short_description }}"></textarea>
+                                                                    <textarea name="short_description" class="form-control" rows="2">{{ $product->short_description }}</textarea>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <label class="form-label">SKU (Product
@@ -131,16 +140,16 @@
                                                                 </div>
                                                                 <div class="col-md-12">
                                                                     <label class="form-label">Description</label>
-                                                                    <textarea name="description" class="form-control" rows="4" value="{{ $product->description }}"></textarea>
+                                                                    <textarea name="description" class="form-control" rows="4">{{ $product->description }}</textarea>
                                                                 </div>
-                                                                @foreach ($size as $productSize)
+                                                                @foreach ($productSizePrices as $productSize)
                                                                     <div class="container card add-product">
                                                                         <div class="row ">
                                                                             <p class="mb-1 text-primary">Product Size:
                                                                                 {{ $productSize->size }}</p>
                                                                             <input type="hidden" class="form-control"
                                                                                 name="size[]"
-                                                                                value="{{ $productSize->id }}">
+                                                                                value="{{ $productSize->size_id }}">
                                                                             <div class="col-md-6">
                                                                                 <label class="form-label">Price <span>(
                                                                                         In
@@ -148,7 +157,8 @@
                                                                                         )</span></label>
                                                                                 <input type="number"
                                                                                     class="form-control"
-                                                                                    name="price[]" id="price1">
+                                                                                    name="price[]" id="price1"
+                                                                                    value="{{ $productSize->price }}">
                                                                                 @error('price')
                                                                                     <p class="text-danger">
                                                                                         {{ $message }}
@@ -162,7 +172,7 @@
                                                                                     class="form-control"
                                                                                     name="product_stock[]"
                                                                                     id="product_stock",
-                                                                                    value="">
+                                                                                    value="{{ $productSize->product_stock }}">
                                                                                 @error('product_stock')
                                                                                     <p class="text-danger">
                                                                                         {{ $message }}
