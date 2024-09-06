@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Product\ProductCreateRequest;
 use App\Models\MainCategory;
 use App\Models\Product;
+use App\Models\ProductImage;
 use App\Models\ProductSizePrice;
 use App\Models\Size;
 use App\Models\SubCategory;
@@ -34,8 +35,6 @@ class ProductController extends Controller
             $query->where('product_name', 'like', "%{$keyword}%")
                 ->orWhere('product_code', 'like', "%{$keyword}%");
         })->latest()->paginate(10);
-
-
 
 
         return view('admin.product.view_product', compact('products'));
@@ -94,9 +93,18 @@ class ProductController extends Controller
                         }
                     }
                 }
-                if ($request->product_image) {
-                    $product->addMedia($request->product_image)->toMediaCollection('product_image');
+                // dd($request->product_image);
+                foreach ($request->file('product_image') as $image) {
+                    $productImage=ProductImage::create([
+                        'product_id'=>$product->id
+                    ]);
+                    $productImage->addMedia($image)
+                        ->toMediaCollection('product_image');
                 }
+                
+                // if ($request->product_image) {
+                //     $product->addMedia($request->product_image)->toMediaCollection('product_image');
+                // }
                 return $product;
             });
 
@@ -167,9 +175,14 @@ class ProductController extends Controller
                     }
                 }
 
-                if ($request->hasFile('product_image')) {
-                    $product->clearMediaCollection('product_image');
-                    $product->addMedia($request->product_image)->toMediaCollection('product_image');
+                // if ($request->hasFile('product_image')) {
+                //     $product->clearMediaCollection('product_image');
+                //     $product->addMedia($request->product_image)->toMediaCollection('product_image');
+                // }
+
+                foreach ($request->file('product_image') as $image) {
+                    $product->addMedia($image)
+                        ->toMediaCollection('product_image');
                 }
 
                 return $product;

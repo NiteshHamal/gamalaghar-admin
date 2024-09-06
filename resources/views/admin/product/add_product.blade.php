@@ -54,7 +54,7 @@
                                                     <div class="row ec-vendor-uploads">
                                                         <div class="col-lg-4">
                                                             <div class="input-group control-group increment">
-                                                                <input type="file" name="images[]"
+                                                                <input type="file" name="product_image[]"
                                                                     class="form-control" id="images" multiple>
                                                                 <div class="input-group-btn">
                                                                     <button class="btn btn-success" type="button"><i
@@ -62,13 +62,13 @@
                                                                 </div>
 
                                                             </div>
-                                                            @error('images.0')
+                                                            @error('product_image.0')
                                                                 <p class="text-danger">{{ $message }}</p>
                                                             @enderror
                                                             <div class="clone hide" style="display: none;">
                                                                 <div class="control-group input-group"
                                                                     style="margin-top:10px">
-                                                                    <input type="file" name="images[]"
+                                                                    <input type="file" name="product_image[]"
                                                                         class="form-control">
                                                                     <div class="input-group-btn">
                                                                         <button class="btn btn-danger" type="button"><i

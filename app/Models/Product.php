@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Sluggable\HasSlug;
@@ -24,5 +25,9 @@ class Product extends BaseModel implements HasMedia
             ->generateSlugsFrom('product_name')
             ->saveSlugsTo('slug')
             ->slugsShouldBeNoLongerThan(50);
+    }
+
+    public function productImages(){
+        return $this->hasMany(ProductImage::class,'product_id');
     }
 }

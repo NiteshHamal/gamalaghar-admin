@@ -56,7 +56,8 @@
                                 <div class="button-group m-0 mt-xl-0 mt-sm-10 order-button-group">
                                     <button type="button"
                                         class="order-bg-opacity-secondary text-secondary btn radius-md">Export</button>
-                                    <a href="{{url('admin/products/add-product')}}" class="btn btn-sm btn-primary me-0 radius-md">
+                                    <a href="{{ url('admin/products/add-product') }}"
+                                        class="btn btn-sm btn-primary me-0 radius-md">
                                         <i class="la la-plus"></i> Add Product</a>
                                 </div>
                             </div>
@@ -78,8 +79,23 @@
                                             @forelse ($products as $product)
                                                 <tr>
                                                     <td>{{ $product->id }}</td>
-                                                    <td><img src="{{ $product->getFirstMediaUrl('product_image') }}"
-                                                            alt="Product Image" style="max-width: 100px" />
+                                                    <td>
+                                                       
+                                                            @foreach ($product->productImages as $productImage)
+                                                                @foreach ($productImage->getMedia('product_image') as $media)
+                                                                    <a href="#" data-toggle="modal"
+                                                                        data-target="#ImageModal{{ $media->id }}">
+                                                                        <img src="{{ $media->getUrl() }}"
+                                                                            alt="{{ $product->product_name }}"
+                                                                            class="gallery-thumbnail img-fluid"
+                                                                            style="max-width: 40px; max-height: 40px;">
+                                                                    </a>
+
+                                                                
+                                                                @endforeach
+                                                            @endforeach
+
+                                                       
                                                     </td>
                                                     <td>{{ $product->product_name }}</td>
                                                     <td>{{ $product->product_code }}</td>
