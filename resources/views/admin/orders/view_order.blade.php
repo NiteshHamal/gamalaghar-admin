@@ -43,7 +43,7 @@
                         <div class="project-top-wrapper d-flex justify-content-between flex-wrap mb-25 mt-n10">
                             <div class="d-flex align-items-center flex-wrap justify-content-center">
                                 <div class="project-search order-search  global-shadow mt-10">
-                                    <form action="{{ url('admin/products/view-product') }}" method="GET"
+                                    <form action="{{ url('admin/orders') }}" method="GET"
                                         class="order-search__form">
                                         @csrf
                                         <img src="img/svg/search.svg" alt="search" class="svg text-primary">
