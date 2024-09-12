@@ -29,6 +29,6 @@ class OrderController extends Controller
             $query->where('order_number', 'like', "%{$keyword}%");
         })->latest()->paginate(10);
 
-        return view('admin.orders.view_order', compact('products'));
+        return view('admin.orders.view_order', compact('order'));
     }
 }
