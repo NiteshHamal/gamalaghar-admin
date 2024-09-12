@@ -69,6 +69,7 @@
                                                 <th>Delivery Charge</th>
                                                 <th>Total</th>
                                                 <th>Order Status</th>
+                                                <th>Order Time</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -85,6 +86,7 @@
                                                     <td>{{ $order->delivery_charge }}</td>
                                                     <td>{{ $order->total_amount }}</td>
                                                     <td>{{ $order->order_status }}</td>
+                                                    <td>{{$order->created_at}}</td>
                                                     <td>
                                                         <div class="d-flex">
                                                             <a class="btn btn-primary me-3"
