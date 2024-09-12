@@ -100,6 +100,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
     Route::get('admin/orders', [OrderController::class, 'index']);
+    Route::get('admin/orders/search', [OrderController::class, 'searchOrder']);
     Route::get('admin/single-order/{id}', [OrderController::class, 'singleorder']);
 
     Route::get('admin/faq', [FaqController::class, 'index']);

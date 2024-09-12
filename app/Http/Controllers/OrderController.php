@@ -21,4 +21,14 @@ class OrderController extends Controller
         $productImages = Product::with('media')->whereIn('id', $productId)->get();
         return view('admin.orders.view_single_order', compact('order', 'productImages'));
     }
+
+    public function searchOrder(Request $request)
+    {
+        $keyword = $request->query('keyword');
+        $order = Order::when($keyword, function ($query) use ($keyword) {
+            $query->where('order_number', 'like', "%{$keyword}%");
+        })->latest()->paginate(10);
+
+        return view('admin.orders.view_order', compact('products'));
+    }
 }
