@@ -25,10 +25,10 @@ class OrderController extends Controller
     public function searchOrder(Request $request)
     {
         $keyword = $request->query('keyword');
-        $order = Order::when($keyword, function ($query) use ($keyword) {
+        $orders = Order::when($keyword, function ($query) use ($keyword) {
             $query->where('order_number', 'like', "%{$keyword}%");
         })->latest()->paginate(10);
 
-        return view('admin.orders.view_order', compact('order'));
+        return view('admin.orders.view_order', compact('orders'));
     }
 }
