@@ -80,22 +80,20 @@
                                                 <tr>
                                                     <td>{{ $product->id }}</td>
                                                     <td>
-                                                       
-                                                            @foreach ($product->productImages as $productImage)
-                                                                @foreach ($productImage->getMedia('product_image') as $media)
-                                                                    <a href="#" data-toggle="modal"
-                                                                        data-target="#ImageModal{{ $media->id }}">
-                                                                        <img src="{{ $media->getUrl() }}"
-                                                                            alt="{{ $product->product_name }}"
-                                                                            class="gallery-thumbnail img-fluid"
-                                                                            style="max-width: 40px; max-height: 40px;">
-                                                                    </a>
 
-                                                                
-                                                                @endforeach
+                                                        @foreach ($product->productImages as $productImage)
+                                                            @foreach ($productImage->getMedia('product_image') as $media)
+                                                                <a href="#" data-toggle="modal"
+                                                                    data-target="#ImageModal{{ $media->id }}">
+                                                                    <img src="{{ $media->getUrl() }}"
+                                                                        alt="{{ $product->product_name }}"
+                                                                        class="gallery-thumbnail img-fluid"
+                                                                        style="max-width: 40px; max-height: 40px;">
+                                                                </a>
                                                             @endforeach
+                                                        @endforeach
 
-                                                       
+
                                                     </td>
                                                     <td>{{ $product->product_name }}</td>
                                                     <td>{{ $product->product_code }}</td>

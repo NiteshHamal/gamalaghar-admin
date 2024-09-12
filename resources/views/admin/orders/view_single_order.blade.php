@@ -108,7 +108,7 @@
                                                     <span><strong>Delivery Charge</strong></span>
                                                 </td>
                                                 <td class="border-color">
-                                                    <span><b>Rs. {{$order->delivery_charge}}</b></span>
+                                                    <span><b>Rs. {{ $order->delivery_charge }}</b></span>
                                                 </td>
                                             </tr>
                                             <tr>

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ url('assets/img/infolocket-favicon-color.png') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@iconscout/unicons@4.0.8/css/line.min.css">
 </head>
+
 <body>
     <main class="main-content">
         <div class="admin">
@@ -76,4 +78,5 @@
     <script src="{{ url('assets/js/plugins.min.js') }}"></script>
     <script src="{{ url('assets/js/script.min.js') }}"></script>
 </body>
+
 </html>

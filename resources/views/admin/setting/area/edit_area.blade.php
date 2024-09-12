@@ -50,8 +50,7 @@
                                 <div class="form-group">
                                     <div class="countryOption">
                                         <label for="provinceOption">Province</label>
-                                        <select class="select2"
-                                            id="provinceOption" name="province_id">
+                                        <select class="select2" id="provinceOption" name="province_id">
                                             <option value=""></option>
                                             @foreach ($province as $provinceData)
                                                 <option value="{{ $provinceData->id }}">
@@ -64,8 +63,7 @@
                                 <div class="form-group">
                                     <div class="countryOption">
                                         <label for="cityOption">City</label>
-                                        <select class="select2"
-                                            id="cityOption" name="city_id">
+                                        <select class="select2" id="cityOption" name="city_id">
                                             <option value=""></option>
                                         </select>
                                         @error('city_id')
@@ -73,7 +71,6 @@
                                         @enderror
                                     </div>
                                 </div>
-
 
                                 <div class="form-group">
                                     <label for="name1">Area name</label>

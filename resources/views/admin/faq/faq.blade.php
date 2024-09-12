@@ -47,16 +47,14 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="name1">Question</label>
-                                    <input type="text" class="form-control" id="name1"
-                                        name="question">
+                                    <input type="text" class="form-control" id="name1" name="question">
                                     @error('question')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="name1">Answer</label>
-                                    <input type="text" class="form-control" id="name1"
-                                        name="answer">
+                                    <input type="text" class="form-control" id="name1" name="answer">
                                     @error('answer')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror

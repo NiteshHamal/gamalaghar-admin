@@ -173,13 +173,9 @@
             } else {
                 // Clear the second field if no option is selected
                 $('#cityOption').empty();
-                // $('#id').val(''); // Clear the tea_id input field
             }
         });
-        // $('#cityOption').on('change', function() {
-        //     var selectedId = $(this).val();
-        //     $('#id').val(selectedId);
-        // });
+
     });
 </script>
 

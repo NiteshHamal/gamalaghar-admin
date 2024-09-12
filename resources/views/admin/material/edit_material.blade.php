@@ -22,9 +22,11 @@
                             <div class="breadcrumb-action justify-content-center flex-wrap">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}" class="text-primary"><i
+                                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}"
+                                                class="text-primary"><i
                                                     class="uil uil-estate text-primary"></i>Dashboard</a></li>
-                                        <li class="breadcrumb-item active text-primary" aria-current="page">edit material</li>
+                                        <li class="breadcrumb-item active text-primary" aria-current="page">edit
+                                            material</li>
                                     </ol>
                                 </nav>
                             </div>

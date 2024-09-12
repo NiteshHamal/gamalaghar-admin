@@ -82,7 +82,7 @@
                                                     <td>{{ $order->area }}</td>
                                                     <td>{{ $order->total_amount }}</td>
                                                     <td>{{ $order->order_status }}</td>
-                                                    <td>{{$order->created_at}}</td>
+                                                    <td>{{ $order->created_at }}</td>
                                                     <td>
                                                         <div class="d-flex">
                                                             <a class="btn btn-primary me-3"

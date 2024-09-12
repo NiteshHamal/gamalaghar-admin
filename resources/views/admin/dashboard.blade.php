@@ -21,10 +21,11 @@
                             <div class="breadcrumb-action justify-content-center flex-wrap">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                       <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}"
+                                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}"
                                                 class="text-primary"><i
                                                     class="uil uil-estate text-primary"></i>Dashboard</a></li>
-                                        <li class="breadcrumb-item active text-primary" aria-current="page">Gamala Ghar</li>
+                                        <li class="breadcrumb-item active text-primary" aria-current="page">Gamala Ghar
+                                        </li>
                                     </ol>
                                 </nav>
                             </div>
@@ -57,7 +58,7 @@
                                     <div class="overview-content w-100">
                                         <div class=" ap-po-details-content d-flex flex-wrap justify-content-between">
                                             <div class="ap-po-details__titlebar">
-                                                <h1>{{$totalOrders}}</h1>
+                                                <h1>{{ $totalOrders }}</h1>
                                                 <p>Total Orders</p>
                                             </div>
                                             <div class="ap-po-details__icon-area">
@@ -76,7 +77,7 @@
                                     <div class="overview-content w-100">
                                         <div class=" ap-po-details-content d-flex flex-wrap justify-content-between">
                                             <div class="ap-po-details__titlebar">
-                                                <h1>Rs. {{$totalSales}}</h1>
+                                                <h1>Rs. {{ $totalSales }}</h1>
                                                 <p>Total Sales</p>
                                             </div>
                                             <div class="ap-po-details__icon-area">

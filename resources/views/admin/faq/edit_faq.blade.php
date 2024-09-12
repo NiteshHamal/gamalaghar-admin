@@ -65,7 +65,9 @@
                                 </div>
                                 <div
                                     class="button-group add-product-btn d-flex justify-content-sm-end justify-content-center mt-40">
-                                    <button type="button" class="btn btn-light btn-default btn-squared fw-400 text-capitalize" onclick="window.location.href='{{ url('admin/faq') }}'">Cancel</button>
+                                    <button type="button"
+                                        class="btn btn-light btn-default btn-squared fw-400 text-capitalize"
+                                        onclick="window.location.href='{{ url('admin/faq') }}'">Cancel</button>
                                     <button class="btn btn-primary btn-default btn-squared text-capitalize"
                                         type="submit">edit
                                     </button>

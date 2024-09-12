@@ -82,7 +82,8 @@
                                                     <form action="{{ url('admin/setting/delivery-charge') }}"
                                                         method="POST">
                                                         @csrf
-                                                        <input type="hidden" value="{{ $area->id }}" name="id">
+                                                        <input type="hidden" value="{{ $area->id }}"
+                                                            name="id">
                                                         <td>{{ $area->id }}
                                                         </td>
                                                         <td>{{ $area->city }}

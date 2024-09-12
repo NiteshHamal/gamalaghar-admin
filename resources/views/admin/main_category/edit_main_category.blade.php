@@ -22,9 +22,11 @@
                             <div class="breadcrumb-action justify-content-center flex-wrap">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}" class="text-primary"><i
+                                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}"
+                                                class="text-primary"><i
                                                     class="uil uil-estate text-primary"></i>Dashboard</a></li>
-                                        <li class="breadcrumb-item active text-primary" aria-current="page">Edit Main Category</li>
+                                        <li class="breadcrumb-item active text-primary" aria-current="page">Edit Main
+                                            Category</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -55,7 +57,9 @@
                                 </div>
                                 <div
                                     class="button-group add-product-btn d-flex justify-content-sm-end justify-content-center mt-40">
-                                    <button type="button" class="btn btn-light btn-default btn-squared fw-400 text-capitalize" onclick="window.location.href='{{ url('admin/category/main-category') }}'">Cancel</button>
+                                    <button type="button"
+                                        class="btn btn-light btn-default btn-squared fw-400 text-capitalize"
+                                        onclick="window.location.href='{{ url('admin/category/main-category') }}'">Cancel</button>
                                     <button class="btn btn-primary btn-default btn-squared text-capitalize"
                                         type="submit">save
                                         category
