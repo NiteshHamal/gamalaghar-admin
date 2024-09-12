@@ -65,8 +65,6 @@
                                                 <th>Province</th>
                                                 <th>City</th>
                                                 <th>Area</th>
-                                                <th>SubTotal</th>
-                                                <th>Delivery Charge</th>
                                                 <th>Total</th>
                                                 <th>Order Status</th>
                                                 <th>Order Time</th>
@@ -82,8 +80,6 @@
                                                     <td>{{ $order->province }}</td>
                                                     <td>{{ $order->city }}</td>
                                                     <td>{{ $order->area }}</td>
-                                                    <td>{{ $order->sub_total }}</td>
-                                                    <td>{{ $order->delivery_charge }}</td>
                                                     <td>{{ $order->total_amount }}</td>
                                                     <td>{{ $order->order_status }}</td>
                                                     <td>{{$order->created_at}}</td>

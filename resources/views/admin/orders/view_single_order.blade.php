@@ -105,10 +105,10 @@
                                                     <span></span>
                                                 </td>
                                                 <td class="border-color" colspan="1">
-                                                    <span><strong>Tax (13%)</strong></span>
+                                                    <span><strong>Delivery Charge</strong></span>
                                                 </td>
                                                 <td class="border-color">
-                                                    <span><b>Rs. 352</b></span>
+                                                    <span><b>Rs. {{$order->delivery_charge}}</b></span>
                                                 </td>
                                             </tr>
                                             <tr>
