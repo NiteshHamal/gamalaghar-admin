@@ -186,27 +186,27 @@ class ProductController extends Controller
                 // }
 
                 // Update images through the ProductImage model
-            if ($request->hasFile('product_image')) {
-                // Get existing product images
-                $productImages = ProductImage::where('product_id', $product->id)->get();
+                if ($request->hasFile('product_image')) {
+                    // Get existing product images
+                    $productImages = ProductImage::where('product_id', $product->id)->get();
 
-                // Delete old media for each existing ProductImage entry
-                foreach ($productImages as $productImage) {
-                    $productImage->clearMediaCollection('product_image');
+                    // Delete old media for each existing ProductImage entry
+                    foreach ($productImages as $productImage) {
+                        $productImage->clearMediaCollection('product_image');
+                    }
+
+                    // Add the new media
+                    foreach ($request->file('product_image') as $image) {
+                        // Create a new ProductImage entry or update existing ones
+                        $productImage = ProductImage::updateOrCreate(
+                            ['product_id' => $product->id],
+                            ['product_id' => $product->id]
+                        );
+
+                        // Add the new image to media collection
+                        $productImage->addMedia($image)->toMediaCollection('product_image');
+                    }
                 }
-
-                // Add the new media
-                foreach ($request->file('product_image') as $image) {
-                    // Create a new ProductImage entry or update existing ones
-                    $productImage = ProductImage::updateOrCreate(
-                        ['product_id' => $product->id],
-                        ['product_id' => $product->id]
-                    );
-
-                    // Add the new image to media collection
-                    $productImage->addMedia($image)->toMediaCollection('product_image');
-                }
-            }
 
                 return $product;
             });
