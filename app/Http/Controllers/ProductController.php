@@ -101,7 +101,7 @@ class ProductController extends Controller
                     $productImage->addMedia($image)
                         ->toMediaCollection('product_image');
                 }
-                
+
                 // if ($request->product_image) {
                 //     $product->addMedia($request->product_image)->toMediaCollection('product_image');
                 // }
@@ -130,7 +130,7 @@ class ProductController extends Controller
      */
     public function edit(string $slug)
     {
-        $product = Product::with('media')->where('slug', $slug)->first();
+        $product = Product::with('media', 'productImages')->where('slug', $slug)->first();
         $Category = MainCategory::with('subCategories')->latest()->get();
         $productSizePrices = ProductSizePrice::where('product_id', $product->id)->get();
         return view('admin.product.edit_product', compact('product', 'Category', 'productSizePrices'));
@@ -180,10 +180,33 @@ class ProductController extends Controller
                 //     $product->addMedia($request->product_image)->toMediaCollection('product_image');
                 // }
 
-                foreach ($request->file('product_image') as $image) {
-                    $product->addMedia($image)
-                        ->toMediaCollection('product_image');
+                // foreach ($request->file('product_image') as $image) {
+                //     $product->addMedia($image)
+                //         ->toMediaCollection('product_image');
+                // }
+
+                // Update images through the ProductImage model
+            if ($request->hasFile('product_image')) {
+                // Get existing product images
+                $productImages = ProductImage::where('product_id', $product->id)->get();
+
+                // Delete old media for each existing ProductImage entry
+                foreach ($productImages as $productImage) {
+                    $productImage->clearMediaCollection('product_image');
                 }
+
+                // Add the new media
+                foreach ($request->file('product_image') as $image) {
+                    // Create a new ProductImage entry or update existing ones
+                    $productImage = ProductImage::updateOrCreate(
+                        ['product_id' => $product->id],
+                        ['product_id' => $product->id]
+                    );
+
+                    // Add the new image to media collection
+                    $productImage->addMedia($image)->toMediaCollection('product_image');
+                }
+            }
 
                 return $product;
             });

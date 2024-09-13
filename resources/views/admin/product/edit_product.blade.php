@@ -1,6 +1,9 @@
 @include('layouts.header')
 <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.8/dist/trix.css">
 <script type="text/javascript" src="https://unpkg.com/trix@2.0.8/dist/trix.umd.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+
 <div class="mobile-search">
     <form action="/" class="search-form">
         <img src="img/svg/search.svg" alt="search" class="svg">
@@ -53,9 +56,38 @@
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="row ec-vendor-uploads">
+
                                                         <div class="col-lg-4">
-                                                            <div class="ec-vendor-img-upload">
-                                                                <div class="ec-vendor-main-img">
+                                                            <div class="input-group control-group increment">
+                                                                <input type="file" name="product_image[]"
+                                                                    class="form-control" id="images" multiple>
+                                                                <div class="input-group-btn">
+                                                                    <button class="btn btn-success" type="button"><i
+                                                                            class="bi bi-plus-circle"></i> Add</button>
+                                                                </div>
+
+                                                            </div>
+                                                            @error('product_image.0')
+                                                                <p class="text-danger">{{ $message }}</p>
+                                                            @enderror
+                                                            <div class="clone hide" style="display: none;">
+                                                                <div class="control-group input-group"
+                                                                    style="margin-top:10px">
+                                                                    <input type="file" name="product_image[]"
+                                                                        class="form-control">
+                                                                    <div class="input-group-btn">
+                                                                        <button class="btn btn-danger" type="button"><i
+                                                                                class="glyphicon glyphicon-remove"></i>
+                                                                            Remove</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+
+
+                                                        {{-- <div class="ec-vendor-main-img">
                                                                     <div class="avatar-upload">
                                                                         <div class="avatar-edit">
                                                                             <input type='file' id="imageUpload"
@@ -84,9 +116,8 @@
                                                                             <p class="text-danger">{{ $message }}</p>
                                                                         @enderror
                                                                     </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                                </div> --}}
+
                                                         <div class="col-lg-8">
                                                             <div class="ec-vendor-upload-detail row g-3">
                                                                 <div class="col-md-6">
@@ -207,6 +238,17 @@
         </div>
     </div>
 </main>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".btn-success").click(function() {
+            var html = $(".clone").html();
+            $(".increment").after(html);
+        });
+        $("body").on("click", ".btn-danger", function() {
+            $(this).closest(".control-group").remove();
+        });
+    });
+</script>
 <style>
     .ec-vendor-uploads .ec-vendor-img-upload .ec-vendor-main-img .avatar-upload {
         margin-bottom: 10px;
