@@ -73,8 +73,6 @@
                                         @enderror
                                     </div>
                                 </div>
-
-
                                 <div class="form-group">
                                     <label for="name1">Area name</label>
                                     <input type="text" class="form-control" id="name1"
@@ -89,7 +87,6 @@
                                         type="submit">Save area</button>
                                 </div>
                             </form>
-
                         </div>
                         {{-- category table start --}}
                         <div class="row">

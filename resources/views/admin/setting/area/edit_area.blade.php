@@ -95,7 +95,6 @@
     </div>
 </main>
 
-
 @include('layouts.footer')
 
 <script>

@@ -24,13 +24,6 @@
                </li>
                <li class="nav-flag-select">
                    <div class="dropdown-custom">
-                       {{-- <a href="javascript:;" class="nav-item-toggle">
-                           @if ($lang->lang == 'en')
-                               <img src="{{ url('assets/img/flag.png') }}" alt class="rounded-circle">
-                           @else
-                            <img src="{{ url('assets/img/nepali-flag.png') }}" alt class="rounded-circle">
-                           @endif
-                       </a> --}}
                        <div class="dropdown-parent-wrapper">
                            <div class="dropdown-wrapper dropdown-wrapper--small">
                                <a href="{{ url('locale/en') }}"><img src="{{ url('assets/img/flag.png') }}" alt>
@@ -71,14 +64,6 @@
                                                <i class="uil uil-setting"></i>
                                                Settings</a>
                                        </li>
-                                       {{-- <li>
-                                           <a href>
-                                               <i class="uil uil-key-skeleton"></i> Billing</a>
-                                       </li> --}}
-                                       {{-- <li>
-                                           <a href>
-                                               <i class="uil uil-users-alt"></i> Activity</a>
-                                       </li> --}}
                                        <li>
                                            <a href="{{ url('admin/support') }}" class="text-primary">
                                                <i class="uil uil-bell"></i>Support</a>

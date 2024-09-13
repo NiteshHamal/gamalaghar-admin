@@ -71,7 +71,6 @@
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
-
                                 <div
                                     class="button-group add-product-btn d-flex justify-content-sm-end justify-content-center mt-40">
                                     <button type="button"

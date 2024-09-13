@@ -56,7 +56,6 @@
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="row ec-vendor-uploads">
-
                                                         <div class="col-lg-4">
                                                             <div class="input-group control-group increment">
                                                                 <input type="file" name="product_image[]"
@@ -65,7 +64,6 @@
                                                                     <button class="btn btn-success" type="button"><i
                                                                             class="bi bi-plus-circle"></i> Add</button>
                                                                 </div>
-
                                                             </div>
                                                             @error('product_image.0')
                                                                 <p class="text-danger">{{ $message }}</p>
@@ -83,41 +81,6 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-
-
-
-
-                                                        {{-- <div class="ec-vendor-main-img">
-                                                                    <div class="avatar-upload">
-                                                                        <div class="avatar-edit">
-                                                                            <input type='file' id="imageUpload"
-                                                                                name="product_image"
-                                                                                class="ec-image-upload" />
-                                                                            <label for="imageUpload"><img
-                                                                                    src="{{ url('assets/img/edit.svg') }}"
-                                                                                    class="svg_img header_svg"
-                                                                                    alt="edit" /></label>
-                                                                        </div>
-                                                                        <div class="avatar-preview ec-preview">
-                                                                            <div class="imagePreview ec-div-preview">
-                                                                                @if ($product->getFirstMediaUrl('product_image'))
-                                                                                    <img class="ec-image-preview"
-                                                                                        src="{{ $product->getFirstMediaUrl('product_image') }}"
-                                                                                        alt="product image" />
-                                                                                @else
-                                                                                    <img class="ec-image-preview"
-                                                                                        src="{{ url('assets/img/vender-upload-preview.jpg') }}"
-                                                                                        alt="default image" />
-                                                                                @endif
-
-                                                                            </div>
-                                                                        </div>
-                                                                        @error('product_image')
-                                                                            <p class="text-danger">{{ $message }}</p>
-                                                                        @enderror
-                                                                    </div>
-                                                                </div> --}}
-
                                                         <div class="col-lg-8">
                                                             <div class="ec-vendor-upload-detail row g-3">
                                                                 <div class="col-md-6">
