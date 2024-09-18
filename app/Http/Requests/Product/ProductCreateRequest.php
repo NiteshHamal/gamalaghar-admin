@@ -23,9 +23,6 @@ class ProductCreateRequest extends FormRequest
     {
         return [
             'product_name'=>['required'],
-            // 'product_image.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            // 'price'=>['required','numeric'],
-            // 'product_stock'=>['required','numeric']
         ];
     }
 }

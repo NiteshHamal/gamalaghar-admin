@@ -86,7 +86,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('admin/setting/city/update', [CityController::class, 'update']);
     Route::get('admin/setting/city/delete/{id}', [CityController::class, 'destroy']);
 
-    // Route::get('admin/setting/cities/{selectedOption}', [AreaController::class, 'getCitiesByProvince']);
 
     Route::get('admin/setting/area', [AreaController::class, 'index']);
     Route::post('admin/setting/area', [AreaController::class, 'store']);

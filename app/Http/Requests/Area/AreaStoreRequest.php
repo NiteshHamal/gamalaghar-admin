@@ -23,7 +23,6 @@ class AreaStoreRequest extends FormRequest
     {
         return [
             'areas'=>['required'],
-            // 'city_id'=>['required'],
         ];
     }
 }

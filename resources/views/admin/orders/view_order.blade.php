@@ -103,7 +103,6 @@
                                             @endforelse
                                         </tbody>
                                     </table>
-                                    {{-- {{ $products->links('pagination::bootstrap-5') }} --}}
                                 </div>
                             </div>
                         </div>

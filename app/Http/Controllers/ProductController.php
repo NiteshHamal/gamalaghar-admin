@@ -40,16 +40,6 @@ class ProductController extends Controller
         return view('admin.product.view_product', compact('products'));
     }
 
-
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
     /**
      * Store a newly created resource in storage.
      */
@@ -76,8 +66,6 @@ class ProductController extends Controller
 
                 ]);
 
-
-
                 // Loop through the arrays and save each product
                 if (!empty($size) && !empty($price) && !empty($product_stock) && count($size) === count($price) && count($price) === count($product_stock)) {
                     // Loop through the arrays and save each product
@@ -101,10 +89,6 @@ class ProductController extends Controller
                     $productImage->addMedia($image)
                         ->toMediaCollection('product_image');
                 }
-
-                // if ($request->product_image) {
-                //     $product->addMedia($request->product_image)->toMediaCollection('product_image');
-                // }
                 return $product;
             });
 
@@ -118,14 +102,6 @@ class ProductController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $slug)
@@ -135,7 +111,6 @@ class ProductController extends Controller
         $productSizePrices = ProductSizePrice::where('product_id', $product->id)->get();
         return view('admin.product.edit_product', compact('product', 'Category', 'productSizePrices'));
     }
-
 
 
     public function update(Request $request)
@@ -175,16 +150,6 @@ class ProductController extends Controller
                     }
                 }
 
-                // if ($request->hasFile('product_image')) {
-                //     $product->clearMediaCollection('product_image');
-                //     $product->addMedia($request->product_image)->toMediaCollection('product_image');
-                // }
-
-                // foreach ($request->file('product_image') as $image) {
-                //     $product->addMedia($image)
-                //         ->toMediaCollection('product_image');
-                // }
-
                 // Update images through the ProductImage model
                 if ($request->hasFile('product_image')) {
                     // Get existing product images
@@ -207,7 +172,6 @@ class ProductController extends Controller
                         $productImage->addMedia($image)->toMediaCollection('product_image');
                     }
                 }
-
                 return $product;
             });
 

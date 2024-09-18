@@ -155,8 +155,6 @@
         });
     });
 
-
-
     $(document).ready(function() {
         $('#areaOption').on('change', function() {
             var selectedOption = $(this).val();
@@ -166,12 +164,8 @@
                     url: '/user/checkout/areas/deliveryCharge/' + selectedOption,
                     method: 'GET',
                     success: function(response) {
-
-
-
                         $('#delivery_charge').text('Rs. ' + response.delivery_charge);
                         $('#deliveryCharge').val(response.delivery_charge);
-
                     }
                 });
             } else {
@@ -189,7 +183,6 @@
         });
     });
 </script>
-
 
 
 <style>
