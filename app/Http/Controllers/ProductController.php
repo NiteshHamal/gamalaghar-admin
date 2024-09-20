@@ -108,7 +108,8 @@ class ProductController extends Controller
     {
         $product = Product::with('media', 'productImages')->where('slug', $slug)->first();
         $Category = MainCategory::with('subCategories')->latest()->get();
-        $productSizePrices = ProductSizePrice::where('product_id', $product->id)->get();
+        // Eager load 'size' when fetching productSizePrices
+        $productSizePrices = ProductSizePrice::with('size')->where('product_id', $product->id)->get();
         return view('admin.product.edit_product', compact('product', 'Category', 'productSizePrices'));
     }
 

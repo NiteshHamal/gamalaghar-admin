@@ -140,7 +140,7 @@
                                                                     <div class="container card add-product">
                                                                         <div class="row ">
                                                                             <p class="mb-1 text-primary">Product Size:
-                                                                                {{ $productSize->size }}</p>
+                                                                                {{ $productSize->size->size }}</p>
                                                                             <input type="hidden" class="form-control"
                                                                                 name="size[]"
                                                                                 value="{{ $productSize->size_id }}">
