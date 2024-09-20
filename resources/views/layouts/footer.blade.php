@@ -8,24 +8,6 @@
                         </p>
                     </div>
                 </div>
-                {{-- <div class="col-md-6">
-                    <div class="footer-menu text-end">
-                        <ul>
-                            <li>
-                                <a href="#">@lang('translation.about_btn')</a>
-                            </li>
-                            <li>
-                                <a href="#">@lang('translation.team_btn')</a>
-                            </li>
-                             <li>
-                                <a href="{{url('admin/terms-and-conditions')}}">@lang('translation.term_and_condition_btn')</a>
-                            </li>
-                            <li>
-                                <a href="#">@lang('translation.contact_btn')</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div> --}}
             </div>
         </div>
     </div>
